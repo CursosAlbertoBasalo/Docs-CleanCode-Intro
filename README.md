@@ -1,12 +1,7 @@
-# CleanCodeLab
+# Name
 
 Laboratories for [Clean Code course](https://github.com/BitAdemy/CleanCode)
 
+## [✨ 1 - Style](./style.md)
 
-### [NAME](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
-
-### [FUNCTION](https://github.com/LabsAdemy/CleanCodeLab/FUNCTION)
-
-### [DATA](https://github.com/LabsAdemy/CleanCodeLab/DATA)
-
-### [OBJECT](https://github.com/LabsAdemy/CleanCodeLab/OBJECT)
+## [📏 2 - Size](./size.md)
