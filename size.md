@@ -42,5 +42,5 @@ npm i eslint eslint-config-prettier eslint-plugin-prettier -D
 npm i typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
 # yarn
 yarn add eslint eslint-config-prettier eslint-plugin-prettier -D
-yarn add  typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
+yarn add typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
 ```

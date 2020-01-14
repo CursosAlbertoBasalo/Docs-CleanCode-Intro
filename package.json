@@ -16,12 +16,16 @@
     "course",
     "tutorial"
   ],
-  "author": "@AlbertoBasalo",
+  "author": {
+    "name": "Alberto Basalo",
+    "email": "learn@bitademy.com",
+    "url": "https://twitter.com/bit_ademy"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/LabsAdemy/CleanCodeLab/issues"
   },
-  "homepage": "https://github.com/LabsAdemy/CleanCodeLab#readme",
+  "homepage": "https://bitademy.com/cleancode",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.16.0",
     "@typescript-eslint/parser": "^2.16.0",
