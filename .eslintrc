@@ -11,7 +11,8 @@
     "node": true
   },
   "rules": {
-    "prettier/prettier": "error"
+    "max-lines": ["error", 160],
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }]
   },
   "plugins": ["prettier"]
 }

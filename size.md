@@ -44,3 +44,35 @@ npm i typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
 yarn add eslint eslint-config-prettier eslint-plugin-prettier -D
 yarn add typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
 ```
+
+```json
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "max-lines": ["error", 160],
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }]
+  },
+  "plugins": ["prettier"]
+}
+```
+
+## Package Json scripts
+
+```json
+{
+  "scripts": {
+    "format": "prettier --write",
+    "lint": "eslint . --ext .ts"
+  }
+}
+```
