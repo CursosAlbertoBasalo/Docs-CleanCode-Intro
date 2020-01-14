@@ -4,9 +4,10 @@
   "description": "Clean Code course laboratories",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watch -o",
     "format": "prettier --write",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "jest": "jest"
   },
   "repository": {
     "type": "git",
@@ -28,11 +29,17 @@
   },
   "homepage": "https://bitademy.com/cleancode",
   "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/jest": "^24.0.25",
     "@typescript-eslint/eslint-plugin": "^2.16.0",
     "@typescript-eslint/parser": "^2.16.0",
+    "babel-jest": "^24.9.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "typescript": "^3.7.4"
   }
