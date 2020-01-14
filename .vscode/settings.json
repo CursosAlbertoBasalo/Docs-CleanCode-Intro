@@ -18,5 +18,7 @@
   },
   "peacock.color": "#43d9b8",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Night Owl Light"
+  "workbench.colorTheme": "Night Owl Light",
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true
 }
