@@ -12,9 +12,7 @@ export function getDateStructure(date: Date): object {
 
 // ❌
 export function getMinutesBetweenDates(first: Date, second: Date): number {
-  const minutes = Math.floor(
-    Math.abs(second.getTime() - first.getTime()) / 1000 / 60
-  );
+  const minutes = Math.floor(Math.abs(second.getTime() - first.getTime()) / 1000 / 60);
   return minutes;
 }
 
@@ -25,11 +23,5 @@ export function isLeapConditionals(year: number): boolean {
 
 // ❌
 export function isLeapTernary(year: number): boolean {
-  return year % 400 === 0
-    ? true
-    : year % 100 === 0
-    ? false
-    : year % 4 === 0
-    ? true
-    : false;
+  return year % 400 === 0 ? true : year % 100 === 0 ? false : year % 4 === 0 ? true : false;
 }
