@@ -1,8 +1,8 @@
 // ❌
 export function getPrimes(limit: number): number[] {
   const FIRST_PRIME = 2;
-  const composites = new Array(limit + 1).fill(false);
-  const primes = [];
+  const composites: boolean[] = [...Array(limit + 1).fill(false)];
+  const primes: number[] = [];
 
   for (let number = FIRST_PRIME; number <= limit; number++) {
     if (!composites[number]) {
