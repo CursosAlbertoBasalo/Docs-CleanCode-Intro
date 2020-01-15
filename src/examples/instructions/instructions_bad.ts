@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 // ❌
 export function getDateStructure(date: Date): object {
   let year: number, month: number, day: number;
