@@ -2,8 +2,6 @@
 
 Laboratories for [Clean Code course](https://github.com/BitAdemy/CleanCode)
 
-## [👉 1 - Instructions](./docs/instructions.md)
+## [👉 1 - Structures](./docs/structures.md)
 
-## [📜 2 - Blocks](./docs/blocks.md)
-
-## [🧩 3 - Functions](./docs/functions.md)
+## [📜 2 - Algorithms](./docs/algorithms.md)
