@@ -3,7 +3,7 @@ export function getDateStructure(date: Date): object {
   const MONTHS_BASE = 1;
   const year = date.getFullYear();
   const month = date.getMonth() + MONTHS_BASE;
-  const day = date.getDay();
+  const day = date.getDate();
   return { year, month, day };
 }
 

@@ -1,9 +1,15 @@
-import { getDateStructure } from './instructions_bad';
 import * as year from './instructions_ok';
+import { getDateStructure } from './instructions_ok';
 
 describe('Get date structure from date object', () => {
   test('get the Structure of a Date', () => {
-    expect(getDateStructure(new Date(2020, 1, 31))).toEqual({});
+    const date = new Date('2020-02-29');
+    console.log(date);
+    expect(getDateStructure(date)).toEqual({
+      year: 2020,
+      month: 2,
+      day: 29,
+    });
   });
 });
 

@@ -4,7 +4,7 @@ export function getDateStructure(date: Date): object {
   const MONTHS_BASE = 1;
   year = date.getFullYear();
   month = date.getMonth() + MONTHS_BASE;
-  day = date.getDay();
+  day = date.getDate();
   return { year, month, day };
 }
 
