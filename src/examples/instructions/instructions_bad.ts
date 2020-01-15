@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable prefer-const */
 // ❌
 export function getDateStructure(date: Date): object {
@@ -12,7 +13,7 @@ export function getDateStructure(date: Date): object {
 // ❌
 export function getMinutesBetweenDates(first: Date, second: Date): number {
   const minutes = Math.floor(
-    Math.abs(second.getMilliseconds() - first.getMilliseconds()) / 1000 / 60
+    Math.abs(second.getTime() - first.getTime()) / 1000 / 60
   );
   return minutes;
 }
