@@ -9,11 +9,13 @@ export function getDateStructure(date: Date): object {
 
 // ✔️
 export function getMinutesBetweenDates(first: Date, second: Date): number {
-  const milisecondsBetween = Math.abs(
-    second.getMilliseconds() - first.getMilliseconds()
+  const MILLISECONDS_PER_MINUTE = 1000 * 60;
+  const millisecondsDifference =
+    second.getMilliseconds() - first.getMilliseconds();
+  const absoluteMilisecondsDifference = Math.abs(millisecondsDifference);
+  const minutes = Math.floor(
+    absoluteMilisecondsDifference / MILLISECONDS_PER_MINUTE
   );
-  const milisecondsPerMinute = 1000 * 60;
-  const minutes = Math.floor(milisecondsBetween / milisecondsPerMinute);
   return minutes;
 }
 

@@ -1,9 +1,9 @@
-# Name
+# Function
 
 Laboratories for [Clean Code course](https://github.com/BitAdemy/CleanCode)
 
-## [✨ 1 - Style](./docs/style-config.md)
+## [✨ 1 - Instructions](./docs/instructions.md)
 
-## [📏 2 - Size](./docs/size-config.md)
+## [📏 2 - Blocks](./docs/blocks.md)
 
-## [🧪 3 - Test](./docs/jest-tests.md)
+## [🧪 3 - Functions](./docs/functions.md)
