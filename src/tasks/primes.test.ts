@@ -3,8 +3,7 @@
 import { getPrimeFactors as primeFactors } from './primes_ok';
 
 describe('primeFactors', () => {
-  test('returns an empty array for 1', () =>
-    expect(primeFactors(1)).toEqual([]));
+  test('returns an empty array for 1', () => expect(primeFactors(1)).toEqual([]));
 
   test('factors 2', () => expect(primeFactors(2)).toEqual([2]));
 
@@ -22,6 +21,5 @@ describe('primeFactors', () => {
 
   test('factors 625', () => expect(primeFactors(625)).toEqual([5, 5, 5, 5]));
 
-  test('factors 901255', () =>
-    expect(primeFactors(901255)).toEqual([5, 17, 23, 461]));
+  test('factors 901255', () => expect(primeFactors(901255)).toEqual([5, 17, 23, 461]));
 });

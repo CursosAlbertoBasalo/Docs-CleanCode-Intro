@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watch -o",
-    "format": "prettier --write",
+    "format": "prettier --write \"./**/*.{js,ts,json}\"",
     "lint": "eslint . --ext .ts",
     "jest": "jest"
   },

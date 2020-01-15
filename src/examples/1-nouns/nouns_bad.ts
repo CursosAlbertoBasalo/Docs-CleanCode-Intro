@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/class-name-casing */
 // ❌ Bad nouns
 export class client {
   regOn: Date;

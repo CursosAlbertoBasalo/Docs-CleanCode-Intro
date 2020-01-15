@@ -1,5 +1,5 @@
 // ❌
-export const primeFactors = nmbr => {
+export function primes(nmbr: number): number[] {
   const result = [];
   let i = 2;
   while (nmbr > 1) {
@@ -11,4 +11,4 @@ export const primeFactors = nmbr => {
     }
   }
   return result;
-};
+}
