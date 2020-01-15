@@ -1,11 +1,19 @@
 // ❌
 export function getDateStructure(date: Date): object {
-  let year, month, day;
+  let year: number, month: number, day: number;
   const MONTHS_BASE = 1;
   year = date.getFullYear();
   month = date.getMonth() + MONTHS_BASE;
   day = date.getDay();
   return { year, month, day };
+}
+
+// ❌
+export function getMinutesBetweenDates(first: Date, second: Date): number {
+  const minutes = Math.floor(
+    Math.abs(second.getMilliseconds() - first.getMilliseconds()) / 1000 / 60
+  );
+  return minutes;
 }
 
 // ❌

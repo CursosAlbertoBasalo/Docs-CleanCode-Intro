@@ -2,7 +2,7 @@
   "name": "cleancodelab",
   "version": "1.0.0",
   "description": "Clean Code course laboratories",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "test": "jest --watch -o",
     "format": "prettier --write",

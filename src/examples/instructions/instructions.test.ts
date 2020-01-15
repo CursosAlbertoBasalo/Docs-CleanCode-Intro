@@ -1,9 +1,9 @@
 import { getDateStructure } from './instructions_bad';
 import * as year from './instructions_ok';
 
-describe('get Structure Date', () => {
-  test('getStructureDate', () => {
-    expect(getDateStructure(new Date(2020, 1, 15))).toBe({});
+describe('Get date structure from date object', () => {
+  test('get the Structure of a Date', () => {
+    expect(getDateStructure(new Date(2020, 1, 31))).toEqual({});
   });
 });
 
