@@ -9,3 +9,5 @@ const
 helloworld
 javascript
 sut
+eslint
+cyclomatic

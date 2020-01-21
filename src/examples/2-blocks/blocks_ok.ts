@@ -1,18 +1,20 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-// ✔️
+// ✔️ no nested blocks
+// ✔️ reduce cyclomatic complexity
 export function getPrimes(limit: number): number[] {
   const FIRST_PRIME = 2;
-  const composites: boolean[] = createAllNumbersAsNoComposites(limit);
+  const TOTAL_NUMBERS = limit + 1;
+  const composites: boolean[] = createAllNumbersAsNoComposites(TOTAL_NUMBERS);
   const primes: number[] = [];
 
-  for (let number = FIRST_PRIME; number <= limit; number++) {
+  for (let number = FIRST_PRIME; number < TOTAL_NUMBERS; number++) {
     classifyNumber(number, composites, primes);
   }
   return primes;
 }
 
-function createAllNumbersAsNoComposites(limit: number): boolean[] {
-  return [...Array(limit + 1).fill(false)];
+function createAllNumbersAsNoComposites(totalNumbers: number): boolean[] {
+  return [...Array(totalNumbers).fill(false)];
 }
 
 function classifyNumber(number: number, composites: boolean[], primes: number[]): void {

@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable prefer-const */
 // ❌
@@ -22,6 +23,6 @@ export function isLeapConditionals(year: number): boolean {
 }
 
 // ❌
-export function isLeapTernary(year: number): boolean {
+export function isLeapTernaries(year: number): boolean {
   return year % 400 === 0 ? true : year % 100 === 0 ? false : year % 4 === 0 ? true : false;
 }

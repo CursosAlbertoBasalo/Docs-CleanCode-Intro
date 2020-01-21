@@ -7,6 +7,8 @@ I want to:  compare two strands of DNA and count the differences between them
 So:         I can see how many mistakes occurred.
 */
 
+// more info: https://en.wikipedia.org/wiki/Hamming_distance
+
 // Scenario: we have two valid sequences of equal length
 describe('GIVEN: a Hamming Calculator that receives two valid strings', () => {
   // Arrange

@@ -1,3 +1,5 @@
+/* eslint-disable no-magic-numbers */
+/* eslint-disable max-depth */
 // ❌
 export class HammingCalculator {
   compare(a: string, b: string): number | string {

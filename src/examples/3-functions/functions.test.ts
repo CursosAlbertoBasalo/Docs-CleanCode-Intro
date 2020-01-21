@@ -1,5 +1,42 @@
-// import { Words } from './functions_bad';
-import { Words } from './functions_ok';
+/* eslint-disable no-magic-numbers */
+// import { getErrorMessage, Words, writeMessageLog } from './functions_bad';
+import { getErrorMessage, Words, writeErrorMessageLog, writeMessageLog } from './functions_ok';
+
+describe('getErrorMessage()', () => {
+  test('shows message when there is an error and form was touched', () => {
+    const error = { required: true };
+    const formWasTouched = true;
+    const expectedError = JSON.stringify(error);
+    expect(getErrorMessage(error, formWasTouched)).toEqual(expectedError);
+  });
+  test('do not show message when there is no error ', () => {
+    const error = null;
+    const formWasTouched = true;
+    const expectedError = '';
+    expect(getErrorMessage(error, formWasTouched)).toEqual(expectedError);
+  });
+  test('do not show message when the form was not touched ', () => {
+    const error = { required: true };
+    const formWasTouched = false;
+    const expectedError = '';
+    expect(getErrorMessage(error, formWasTouched)).toEqual(expectedError);
+  });
+});
+
+describe('writeMessageLog()', () => {
+  test('writes an error message', () => {
+    const message = 'Required data empty';
+    const isError = true;
+    // expect(writeMessageLog(message, isError)).toEqual(undefined);
+    expect(isError ? writeErrorMessageLog(message) : writeMessageLog(message)).toEqual(undefined);
+  });
+  test('writes an normal message', () => {
+    const message = 'Application started';
+    const isError = false;
+    // expect(writeMessageLog(message, isError)).toEqual(undefined);
+    expect(isError ? writeErrorMessageLog(message) : writeMessageLog(message)).toEqual(undefined);
+  });
+});
 
 describe('words()', () => {
   let words: Words;

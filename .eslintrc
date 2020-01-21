@@ -12,9 +12,17 @@
     "jest": true
   },
   "rules": {
+    "complexity": ["error", { "max": 8 }],
+    "max-depth": ["error", 2],
     "max-lines": ["error", 160],
+    "no-nested-ternary": "error",
+    "no-magic-numbers": [
+      "error",
+      { "detectObjects": true, "enforceConst": true, "ignore": [1], "ignoreArrayIndexes": true }
+    ],
     "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }],
-    "no-nested-ternary": "error"
+    "no-unused-vars": ["warn"],
+    "@typescript-eslint/no-use-before-define": "off"
   },
   "plugins": ["prettier"]
 }
