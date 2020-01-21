@@ -1,13 +1,4 @@
 // ✔️ Primes Ok
-
-function isDivisible(base: number, factor: number): boolean {
-  return base % factor === 0;
-}
-
-function getQuotient(dividend: number, divisor: number): number {
-  return dividend / divisor;
-}
-
 export function getPrimeFactors(number: number): number[] {
   const SMALLEST_PRIME = 2;
   const primeFactors = [];
@@ -24,4 +15,13 @@ export function getPrimeFactors(number: number): number[] {
   }
 
   return primeFactors;
+}
+
+function isDivisible(base: number, factor: number): boolean {
+  const NULL_REMAINDER = 0;
+  return base % factor === NULL_REMAINDER;
+}
+
+function getQuotient(dividend: number, divisor: number): number {
+  return dividend / divisor;
 }

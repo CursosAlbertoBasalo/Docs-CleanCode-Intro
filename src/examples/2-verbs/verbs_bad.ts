@@ -1,7 +1,8 @@
 // ❌ Bad verbs
 export class Client {
   pendingOrders: boolean;
-
+  lastOrderDate: Date;
+  deferPayment: boolean;
   //
   // Constructor
   //
@@ -20,11 +21,19 @@ export class Client {
   }
 
   credit(): boolean {
-    return true;
+    if (this.isVIP || this.deferPayment) return true;
   }
 
   selectLastOrder(): object {
     return {};
+  }
+
+  isActive(): string {
+    if (this.pendingOrders || this.isVIP) {
+      return 'ACTIVE';
+    } else {
+      return 'INACTIVE';
+    }
   }
 
   isVIP: boolean;

@@ -1,6 +1,14 @@
 {
-  "spellright.language": ["en", "es"],
-  "spellright.documentTypes": ["markdown", "latex", "plaintext"],
+  "spellright.language": [
+    "en",
+    "es"
+  ],
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext",
+    "typescript"
+  ],
   "workbench.colorCustomizations": {
     "activityBar.background": "#6de2c8",
     "activityBar.activeBorder": "#c35fdf",

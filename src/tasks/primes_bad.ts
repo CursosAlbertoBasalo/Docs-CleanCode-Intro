@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 // ❌
 export function primes(nmbr: number): number[] {
   const result = [];
