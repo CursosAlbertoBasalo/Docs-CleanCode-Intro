@@ -1,4 +1,8 @@
-//✔️ Nouns ok
+//✔️ meaningful and pronounceable
+//✔️ no magic numbers
+//✔️ no added context
+//✔️ business dictionary
+//✔️ no mental mapping
 const ACTIVE = 2;
 export class Client {
   registeredOn: Date;

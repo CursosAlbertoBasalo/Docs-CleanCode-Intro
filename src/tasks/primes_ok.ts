@@ -1,4 +1,4 @@
-// ✔️ Primes Ok
+// ✔️ Primes Ok ... to sandbox?
 export function getPrimeFactors(number: number): number[] {
   const SMALLEST_PRIME = 2;
   const primeFactors = [];

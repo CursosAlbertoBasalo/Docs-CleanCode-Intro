@@ -1,4 +1,8 @@
-//✔️ Verbs ok
+//✔️ vertical declaration order
+//✔️ return what is expected
+//✔️ good names require no comment
+//✔️ boolean verbs on flag variables
+//✔️ boolean verbs for boolean functions
 export class Client {
   hasPendingOrders: boolean;
   isVIP: boolean;
