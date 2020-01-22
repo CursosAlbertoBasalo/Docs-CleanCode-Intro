@@ -4,3 +4,4 @@ esbenp.prettier-vscode
 ban.spellright
 eslint
 boolean
+dbaeumer.vscode-eslint

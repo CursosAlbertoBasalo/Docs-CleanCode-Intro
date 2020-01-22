@@ -1,6 +1,14 @@
 # 📏 Size
 
-## Settings
+Configurations for a minimal set of code metrics.
+
+Feel free to change it and adapt it to your liking.
+
+## VS Code Extensions
+
+- **ESLint** dbaeumer.vscode-eslint
+
+## VS Code Settings
 
 `.vscode\settings.json`
 
@@ -34,7 +42,7 @@ indent_size = 2
 }
 ```
 
-## ESLint - TypeScript
+## ESLint - TypeScript - Prettier
 
 ```bash
 # npm
@@ -44,6 +52,8 @@ npm i typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
 yarn add eslint eslint-config-prettier eslint-plugin-prettier -D
 yarn add typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
 ```
+
+`.eslintrc`
 
 ```json
 {
@@ -60,7 +70,12 @@ yarn add typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin -
   },
   "rules": {
     "max-lines": ["error", 160],
-    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }]
+    "no-magic-numbers": [
+      "error",
+      { "detectObjects": true, "enforceConst": true, "ignoreArrayIndexes": true }
+    ],
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }],
+    "@typescript-eslint/no-use-before-define": "off"
   },
   "plugins": ["prettier"]
 }
@@ -68,10 +83,12 @@ yarn add typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin -
 
 ## Package Json scripts
 
+`package.json`
+
 ```json
 {
   "scripts": {
-    "format": "prettier --write",
+    "format": "prettier --write \"./**/*.{js,ts,json}\"",
     "lint": "eslint . --ext .ts"
   }
 }

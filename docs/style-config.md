@@ -1,6 +1,22 @@
 # ✨ Style
 
-## Settings
+Configurations for an opinionated style.
+
+Feel free to change it and adapt it to your liking.
+
+## VS Code Extensions
+
+- **Material Icon Theme** pkief.material-icon-theme
+
+- **Night Owl** sdras.night-owl
+
+- **Prettier** - Code formatter esbenp.prettier-vscode
+
+- **Spell Right** ban.spellright
+
+---
+
+## VS Code Settings
 
 `.vscode\settings.json`
 
@@ -77,13 +93,3 @@ yarn add prettier -D
   "proseWrap": "preserve"
 }
 ```
-
-## VS Code Extensions
-
-- **Material Icon Theme** pkief.material-icon-theme
-
-- **Night Owl** sdras.night-owl
-
-- **Prettier** - Code formatter esbenp.prettier-vscode
-
-- **Spell Right** ban.spellright
