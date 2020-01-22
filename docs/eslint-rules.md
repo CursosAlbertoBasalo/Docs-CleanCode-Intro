@@ -1,4 +1,4 @@
-# 👉 ESlint rules
+# 🚨 ESlint rules
 
 ## Settings
 
