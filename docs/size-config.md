@@ -69,12 +69,12 @@ yarn add typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin -
     "node": true
   },
   "rules": {
-    "max-lines": ["error", 160],
+    "max-lines": ["warn", 160],
     "no-magic-numbers": [
-      "error",
+      "warn",
       { "detectObjects": true, "enforceConst": true, "ignoreArrayIndexes": true }
     ],
-    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }],
+    "no-multiple-empty-lines": ["warn", { "max": 2, "maxEOF": 1 }],
     "@typescript-eslint/no-use-before-define": "off"
   },
   "plugins": ["prettier"]

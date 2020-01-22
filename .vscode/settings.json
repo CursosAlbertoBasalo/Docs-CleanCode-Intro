@@ -1,14 +1,6 @@
 {
-  "spellright.language": [
-    "en",
-    "es"
-  ],
-  "spellright.documentTypes": [
-    "markdown",
-    "latex",
-    "plaintext",
-    "typescript"
-  ],
+  "spellright.language": ["en", "es"],
+  "spellright.documentTypes": ["markdown", "latex", "plaintext", "typescript"],
   "workbench.colorCustomizations": {
     "activityBar.background": "#6de2c8",
     "activityBar.activeBorder": "#c35fdf",
@@ -22,7 +14,9 @@
     "titleBar.inactiveForeground": "#15202b99",
     "statusBar.background": "#43d9b8",
     "statusBarItem.hoverBackground": "#27c2a0",
-    "statusBar.foreground": "#15202b"
+    "statusBar.foreground": "#15202b",
+    "editorError.foreground": "#708090",
+    "editorWarning.foreground": "#A9A9A9"
   },
   "peacock.color": "#43d9b8",
   "workbench.iconTheme": "material-icon-theme",
