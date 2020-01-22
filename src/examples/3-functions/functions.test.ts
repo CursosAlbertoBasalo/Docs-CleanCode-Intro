@@ -1,3 +1,5 @@
+/* eslint-disable max-lines-per-function */
+/* eslint-disable max-nested-callbacks */
 /* eslint-disable no-magic-numbers */
 // import { getErrorMessage, Words, writeMessageLog } from './functions_bad';
 import { getErrorMessage, Words, writeErrorMessageLog, writeMessageLog } from './functions_ok';

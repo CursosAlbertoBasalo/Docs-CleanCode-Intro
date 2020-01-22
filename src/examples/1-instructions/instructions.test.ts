@@ -1,3 +1,6 @@
+/* eslint-disable no-magic-numbers */
+/* eslint-disable max-lines-per-function */
+/* eslint-disable max-nested-callbacks */
 import * as year from './instructions_ok';
 import { getDateStructure, getMinutesBetweenDates } from './instructions_ok';
 

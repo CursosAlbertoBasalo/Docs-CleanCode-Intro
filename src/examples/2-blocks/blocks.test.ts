@@ -1,3 +1,6 @@
+/* eslint-disable no-magic-numbers */
+/* eslint-disable max-nested-callbacks */
+/* eslint-disable max-lines-per-function */
 import { getPrimes } from './blocks_ok';
 
 describe('sieve of Eratosthenes', () => {

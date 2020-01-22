@@ -1,3 +1,5 @@
+/* eslint-disable max-nested-callbacks */
+/* eslint-disable max-lines-per-function */
 import { HammingCalculator } from './hamming_bad';
 
 /*
