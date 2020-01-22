@@ -38,7 +38,7 @@ indent_size = 2
 
 ```json
 {
-  "printWidth": 80
+  "printWidth": 100
 }
 ```
 
