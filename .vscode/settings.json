@@ -16,8 +16,8 @@
     "statusBar.background": "#43d9b8",
     "statusBarItem.hoverBackground": "#27c2a0",
     "statusBar.foreground": "#15202b",
-    "editorError.foreground": "#c35fdf",
-    "editorWarning.foreground": "#27c2a0"
+    "editorError.foreground": "#708090",
+    "editorWarning.foreground": "#A9A9A9"
   },
   "peacock.color": "#43d9b8",
   "workbench.iconTheme": "material-icon-theme",
