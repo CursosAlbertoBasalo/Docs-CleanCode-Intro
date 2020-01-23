@@ -6,8 +6,11 @@ export function calculateInterest(): number {
   return amount;
 }
 // ✔️ single parameter
-function getSimpleInterest(conditions: object): number {
+function getSimpleInterest(conditions: BankCondition): number {
   const PER_CENT = 100;
   const amount = (conditions.principal * conditions.rate * conditions.years) / PER_CENT;
   return amount;
 }
+
+// ✔️ in typescript
+type BankCondition = { principal: number; rate: number; years: number };
