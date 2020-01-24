@@ -1,10 +1,13 @@
 // ❌ refactor and change the tests accordingly
 
 export class BankService {
-  private readonly INITIAL_BALANCE: number = 0;
-  private accounts = new Map<string, Account>();
+  private readonly INITIAL_BALANCE: number;
+  private accounts: Map<string, Account>;
 
-  constructor() {}
+  constructor() {
+    this.INITIAL_BALANCE = 0;
+    this.accounts = new Map<string, Account>();
+  }
 
   getAccount(client: Client): Account {
     return this.accounts.get(client.name);
@@ -27,7 +30,6 @@ export class BankService {
     }
     return account;
   }
-
   getBalance(client: Client): number {
     let balance = this.INITIAL_BALANCE;
     const account = this.getAccount(client);
@@ -61,7 +63,6 @@ export class BankService {
         return accumulator;
     }
   }
-
   private isValidTransaction(transaction: Transaction): boolean {
     // ❌ reduce conditionals
     if (
@@ -85,22 +86,19 @@ export class BankService {
 }
 
 // ❌ Compose structures
-// ❌ Use constructors when appropiated
+// ❌ Use constructors when appropriated
 
 export class Client {
   name: string;
-  constructor() {}
 }
 
 export class Account {
   name: string;
   account: number;
   transactions: Transaction[] = [];
-  constructor() {}
 }
 
 export class Transaction {
   type: string;
   amount: number;
-  constructor() {}
 }
