@@ -8,8 +8,8 @@
   ],
   "env": {
     "es6": true,
-    "node": true,
-    "jest": true
+    "jest": true,
+    "shared-node-browser": true
   },
   "rules": {
     "complexity": ["error", { "max": 8 }],

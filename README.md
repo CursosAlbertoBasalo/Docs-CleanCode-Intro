@@ -6,7 +6,7 @@ Lesson [2 - Function](https://github.com/BitAdemy/CleanCode/tree/FUNCTION)
 
 ## Examples
 
-### [👉 1 - Structures](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA/src/examples/1-structures)
+### [👉 1 - Srp](https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT/src/examples/1-S_rp)
 
 ### [📜 2 - Algorithms](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA/src/examples/2-algorithms)
 
