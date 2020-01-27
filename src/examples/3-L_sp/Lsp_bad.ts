@@ -1,18 +1,18 @@
 import { Animal } from '../1-S_rp/Srp_ok';
 
 export abstract class Mamal extends Animal {
-  abstract giveBirth(): Mamal;
+  abstract giveBirth(name: string): Mamal;
   abstract breastFeed(child: Mamal): void;
 }
 
 export abstract class Oviparous extends Animal {
-  abstract layEggs(): Oviparous;
+  abstract layEggs(name: string): Oviparous;
 }
 
 // ✔️ extend an implement abstract methods
 export class Whale extends Mamal {
-  giveBirth(): Mamal {
-    return new Whale('Moby Dick');
+  giveBirth(name: string): Mamal {
+    return new Whale(name);
   }
   breastFeed(child: Whale): void {
     console.log('Feeding my little baby', child);
@@ -21,8 +21,8 @@ export class Whale extends Mamal {
 
 // ✔️ extend an implement abstract methods
 export class ClownFish extends Oviparous {
-  layEggs(): Oviparous {
-    return new ClownFish('Nemo');
+  layEggs(name: string): Oviparous {
+    return new ClownFish(name);
   }
 }
 
@@ -42,8 +42,8 @@ export class PlatypusMamal extends Mamal {
 
 // ❌ I still can't feed my little one :-(
 export class PlatypusOviparous extends Oviparous {
-  layEggs(): PlatypusOviparous {
-    return new PlatypusOviparous('Perry');
+  layEggs(name: string): PlatypusOviparous {
+    return new PlatypusOviparous(name);
   }
   breastFeed(child: PlatypusOviparous): void {
     console.error('I can not get a platypus to feed');

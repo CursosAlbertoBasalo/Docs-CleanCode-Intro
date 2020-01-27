@@ -2,15 +2,15 @@
 export class Animal {
   constructor(public name: string) {}
   getAnimalName(): string {
-    return 'Lassie';
+    return this.name;
   }
 }
 // ✔️ persistence
-export class AnimalDB {
-  selectAnimal(name: string): Animal {
+export abstract class AnimalDB {
+  static selectAnimal(name: string): Animal {
     return new Animal(name);
   }
-  saveAnimal(animal: Animal): void {
+  static saveAnimal(animal: Animal): void {
     console.log('Saving' + JSON.stringify(animal));
   }
 }

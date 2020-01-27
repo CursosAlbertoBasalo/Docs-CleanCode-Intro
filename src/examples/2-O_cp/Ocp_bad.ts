@@ -1,12 +1,16 @@
 import { Animal } from '../1-S_rp/Srp_ok';
 
-export const animals: Array<Animal> = [new Animal('Simba'), new Animal('King Kong')];
+class TalkingAnimal extends Animal {
+  constructor(name, public kind: string) {
+    super(name);
+  }
+}
 
 export function makeAnimalsSound(animals: Array<Animal>): void {
   animals.forEach(makeAnimalSound);
 }
-// ❌ the way goes down to a switch hell
-function makeAnimalSound(animal: Animal): void {
-  if (animal.name === 'Simba') console.log('roar');
-  if (animal.name === 'King Kong') console.log('grunt');
+// ❌ this way goes down to a switch hell
+function makeAnimalSound(animal: TalkingAnimal): void {
+  if (animal.kind === 'Lion') console.log('roar');
+  if (animal.kind === 'Gorilla') console.log('grunt');
 }

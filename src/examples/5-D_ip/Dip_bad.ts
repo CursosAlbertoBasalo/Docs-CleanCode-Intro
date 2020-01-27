@@ -1,9 +1,9 @@
 import { Hen } from '../4-I_sp/Isp_ok';
 
 // ❌ only works with Turuleca
-export class OldEggsFarmer {
-  private hen = new Hen('Turuleca');
+export class Farm {
+  private hen = new Hen('Camilla');
   produceEggs(): Hen {
-    return this.hen.layEggs();
+    return this.hen.layEggs('Ginger');
   }
 }
