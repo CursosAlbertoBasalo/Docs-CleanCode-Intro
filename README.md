@@ -2,7 +2,7 @@
 
 Laboratories for [Clean Code course](https://github.com/BitAdemy/CleanCode)
 
-Lesson [2 - Function](https://github.com/BitAdemy/CleanCode/tree/FUNCTION)
+Lesson [3 - Data](https://github.com/BitAdemy/CleanCode/tree/DATA)
 
 ## Examples
 
