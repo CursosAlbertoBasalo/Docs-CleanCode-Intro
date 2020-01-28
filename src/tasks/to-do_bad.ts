@@ -2,22 +2,37 @@
 
 export class BankService {
   private readonly INITIAL_BALANCE: number;
-  private accounts: Map<string, Account>;
+  private clients: Map<string, Client>;
 
   constructor() {
     this.INITIAL_BALANCE = 0;
-    this.accounts = new Map<string, Account>();
+    this.clients = new Map<string, Client>();
   }
 
-  getAccount(client: Client): Account {
-    return this.accounts.get(client.name);
+  createClient(taxId: string, name: string): void {
+    const newClient: Client = { taxId, name, accounts: new Map<string, Account>() };
+    this.clients.set(taxId, newClient);
   }
-  createAccount(client: Client): Account {
+
+  getAccount(clientTaxId: string, accountIBAN?: string): Account {
+    const client = this.clients.get(clientTaxId);
+    if (client && client.accounts) {
+      if (accountIBAN) {
+        return client.accounts.get(accountIBAN);
+      } else {
+        return client.accounts[0];
+      }
+    } else {
+      return undefined;
+    }
+  }
+  createAccount(clientTaxId: string, accountCategory = 'Current'): string {
+    const client = this.clients.get(clientTaxId);
     const newAccount = new Account();
-    newAccount.name = client.name;
-    newAccount.account = 123456789;
-    this.accounts.set(client.name, newAccount);
-    return newAccount;
+    newAccount.iban = 'ES00 1234 5678 9012 3456 7890';
+    newAccount.category = accountCategory;
+    client.accounts.set(newAccount.iban, newAccount);
+    return newAccount.iban;
   }
   addTransaction(client: Client, transaction: Transaction): Account {
     const account = this.getAccount(client);
@@ -85,17 +100,17 @@ export class BankService {
   }
 }
 
-// ❌ Compose structures
-// ❌ Use constructors when appropriated
-
+// ❌
 export class Client {
+  taxId: string;
   name: string;
+  accounts?: Map<string, Account>;
 }
 
 export class Account {
-  name: string;
-  account: number;
-  transactions: Transaction[] = [];
+  category: string;
+  iban: string;
+  transactions?: Transaction[] = [];
 }
 
 export class Transaction {
