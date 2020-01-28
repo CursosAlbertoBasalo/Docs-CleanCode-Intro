@@ -8,6 +8,6 @@ Lesson [4 - Object](https://github.com/BitAdemy/CleanCode/tree/OBJECT)
 
 ### [⚒️ SOLID](https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT/src/examples/)
 
-## [💻 Tasks](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA/src/tasks)
+## [💻 Tasks](https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT/src/tasks)
 
 > by [bitAdemy](https://bitademy.com)
