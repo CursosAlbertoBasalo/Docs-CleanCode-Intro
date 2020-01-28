@@ -3,10 +3,12 @@
 export class BankService {
   private readonly INITIAL_BALANCE: number;
   private clients: Map<string, Client>;
+  private transactions: Map<string, Transaction>;
 
   constructor() {
     this.INITIAL_BALANCE = 0;
     this.clients = new Map<string, Client>();
+    this.transactions = new Map<string, Transaction>();
   }
 
   createClient(taxId: string, name: string): void {
@@ -20,7 +22,7 @@ export class BankService {
       if (accountIBAN) {
         return client.accounts.get(accountIBAN);
       } else {
-        return client.accounts[0];
+        return client.accounts.values().next().value;
       }
     } else {
       return undefined;
@@ -34,50 +36,46 @@ export class BankService {
     client.accounts.set(newAccount.iban, newAccount);
     return newAccount.iban;
   }
-  addTransaction(client: Client, transaction: Transaction): Account {
-    const account = this.getAccount(client);
-    // ❌ not related to data but... can you reduce nesting?
-    if (account) {
-      if (this.isValidTransaction(transaction)) {
-        this.roundTransaction(transaction);
-        this.saveTransaction(account, transaction);
-      }
+  addTransaction(transaction: Transaction): string {
+    if (this.isValidTransaction(transaction)) {
+      this.roundTransaction(transaction);
+      return this.saveTransaction(transaction);
     }
-    return account;
+    return undefined;
   }
-  getBalance(client: Client): number {
-    let balance = this.INITIAL_BALANCE;
-    const account = this.getAccount(client);
-    if (account) {
-      balance = this.executeTransactions(account);
-    }
-    return balance;
-  }
-  getUserFriendlyBalanceMessage(balance: number): string {
-    // ❌ reduce conditionals
-    if (balance < this.INITIAL_BALANCE) {
-      return 'Be careful with your debts.';
-    } else if (balance == this.INITIAL_BALANCE) {
-      return 'Bad luck you have no money.';
-    } else {
-      return 'Good! you have a lot of money.';
-    }
-  }
+  // getBalance(client: Client): number {
+  //   let balance = this.INITIAL_BALANCE;
+  //   const account = this.getAccount(client);
+  //   if (account) {
+  //     balance = this.executeTransactions(account);
+  //   }
+  //   return balance;
+  // }
+  // getUserFriendlyBalanceMessage(balance: number): string {
+  //   // ❌ reduce conditionals
+  //   if (balance < this.INITIAL_BALANCE) {
+  //     return 'Be careful with your debts.';
+  //   } else if (balance == this.INITIAL_BALANCE) {
+  //     return 'Bad luck you have no money.';
+  //   } else {
+  //     return 'Good! you have a lot of money.';
+  //   }
+  // }
 
-  private executeTransactions(account: Account): number {
-    return account.transactions.reduce(this.executeTransaction, this.INITIAL_BALANCE);
-  }
-  private executeTransaction(accumulator: number, transaction: Transaction): number {
-    // ❌ replace switches
-    switch (transaction.type) {
-      case 'DEPOSIT':
-        return accumulator + transaction.amount;
-      case 'WITHDRAW':
-        return accumulator - transaction.amount;
-      default:
-        return accumulator;
-    }
-  }
+  // private executeTransactions(account: Account): number {
+  //   return account.transactions.reduce(this.executeTransaction, this.INITIAL_BALANCE);
+  // }
+  // private executeTransaction(accumulator: number, transaction: Transaction): number {
+  //   // ❌ replace switches
+  //   switch (transaction.type) {
+  //     case 'DEPOSIT':
+  //       return accumulator + transaction.amount;
+  //     case 'WITHDRAW':
+  //       return accumulator - transaction.amount;
+  //     default:
+  //       return accumulator;
+  //   }
+  // }
   private isValidTransaction(transaction: Transaction): boolean {
     // ❌ reduce conditionals
     if (
@@ -95,8 +93,10 @@ export class BankService {
     const CENTS = 100;
     transaction.amount = Math.round(transaction.amount * CENTS) / CENTS;
   }
-  private saveTransaction(account: Account, transaction: Transaction): void {
-    account.transactions.push(transaction);
+  private saveTransaction(transaction: Transaction): string {
+    transaction.id = '789456123';
+    this.transactions.set(transaction.id, transaction);
+    return transaction.id;
   }
 }
 
@@ -110,10 +110,12 @@ export class Client {
 export class Account {
   category: string;
   iban: string;
-  transactions?: Transaction[] = [];
 }
 
 export class Transaction {
+  id?: string;
+  taxId: string;
+  iban: string;
   type: string;
   amount: number;
 }

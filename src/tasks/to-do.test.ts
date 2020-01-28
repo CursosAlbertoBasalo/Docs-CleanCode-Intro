@@ -1,6 +1,6 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable max-nested-callbacks */
-import { Account, BankService } from './to-do_bad';
+import { Account, BankService, Transaction } from './to-do_bad';
 
 /*
 FEATURE:    Simulate a bank account system.
@@ -20,84 +20,108 @@ I want to:  have multiples accounts,
 So:         I can differentiate my activities.
 */
 
-// Scenario: I do not have an account
+const inputClientTaxId = '123456789A';
+const inputClientName = 'John Smith';
 
-describe('GIVEN: client of a Bank Service', () => {
+describe('GIVEN: a client of a Bank Service without accounts', () => {
   // Arrange
-  const inputClientTaxId = '123456789A';
-  const inputClientName = 'John Smith';
-  describe('WHEN: I do not have an account', () => {
-    let sut: BankService;
+  let sut: BankService;
+  beforeEach(() => {
+    sut = new BankService();
+    sut.createClient(inputClientTaxId, inputClientName);
+  });
+  describe('WHEN: the client asks for his account', () => {
+    let actual: Account;
     beforeEach(() => {
-      // Arrange
-      sut = new BankService();
-      sut.createClient(inputClientTaxId, inputClientName);
+      //Act
+      actual = sut.getAccount(inputClientTaxId);
     });
     test('THEN: should get an undefined account', () => {
-      //Act
-      const actual: Account = sut.getAccount(inputClientTaxId);
-      const expected = undefined;
       // assert
+      const expected = undefined;
       expect(actual).toEqual(expected);
     });
-    test('THEN: should allow me to create one', () => {
+  });
+  describe('WHEN: I ask to create an account', () => {
+    let actual: string;
+    beforeEach(() => {
       //Act
-      const actual: string = sut.createAccount(inputClientTaxId);
+      actual = sut.createAccount(inputClientTaxId);
+    });
+    test('THEN: should give the iban number', () => {
       // assert
       const expected = 29;
       expect(actual.length).toEqual(expected);
     });
   });
-  // describe('WHEN: I have an account', () => {
-  //   let sut: BankService;
-  //   beforeEach(() => {
-  //     // Arrange
-  //     sut = new BankService();
-  //     sut.createAccount(inputClient);
-  //   });
-  //   test('THEN: should get my account', () => {
-  //     //Act
-  //     const actual: string = sut.getAccount(inputClient).name;
-  //     const expected = inputClient.name;
-  //     // assert
-  //     expect(actual).toEqual(expected);
-  //   });
-  //   test('THEN: should allow me to add a transaction', () => {
-  //     //Act
-  //     const transactionInput: Transaction = { type: 'DEPOSIT', amount: 100 };
-  //     const account: Account = sut.addTransaction(inputClient, transactionInput);
-  //     const actual = account.transactions.includes(transactionInput);
-  //     const expected = true;
-  //     // assert
-  //     expect(actual).toEqual(expected);
-  //   });
-  // });
-  // describe('WHEN: I have made a deposit', () => {
-  //   let sut: BankService;
-  //   beforeAll(() => {
-  //     // Arrange
-  //     sut = new BankService();
-  //     sut.createAccount(inputClient);
-  //     const transactionInput: Transaction = { type: 'DEPOSIT', amount: 100 };
-  //     sut.addTransaction(inputClient, transactionInput);
-  //   });
-  //   test('THEN: should allow me to get my balance', () => {
-  //     //Act
-  //     const actual: number = sut.getBalance(inputClient);
-  //     const expected = 100;
-  //     // assert
-  //     expect(actual).toEqual(expected);
-  //   });
-  //   test('THEN: should allow me to get an user friendly balance message', () => {
-  //     //Act
-  //     const inputBalance = sut.getBalance(inputClient);
-  //     const actual: string = sut.getUserFriendlyBalanceMessage(inputBalance);
-  //     const expected = 'Good! you have a lot of money.';
-  //     // assert
-  //     expect(actual).toEqual(expected);
-  //   });
-  // });
 });
+
+describe('GIVEN: a client of a Bank Service with an account', () => {
+  let sut: BankService;
+  let accountNumber;
+  beforeEach(() => {
+    // Arrange
+    sut = new BankService();
+    sut.createClient(inputClientTaxId, inputClientName);
+    accountNumber = sut.createAccount(inputClientTaxId);
+  });
+  describe('WHEN: the client ask for his account', () => {
+    let actual: Account;
+    beforeEach(() => {
+      //Act
+      actual = sut.getAccount(inputClientTaxId);
+    });
+    test('THEN: should get the first one', () => {
+      // assert
+      const expected = accountNumber;
+      expect(actual.iban).toEqual(expected);
+    });
+  });
+  describe('WHEN: the client makes a deposit', () => {
+    let actual: string;
+    beforeEach(() => {
+      const transactionInput: Transaction = {
+        taxId: inputClientTaxId,
+        iban: accountNumber,
+        type: 'DEPOSIT',
+        amount: 100,
+      };
+      //Act
+      actual = sut.addTransaction(transactionInput);
+    });
+    test('THEN: should return a transaction id', () => {
+      // assert
+      expect(actual).toBeDefined();
+    });
+  });
+});
+
+// describe('WHEN: I have made a deposit', () => {
+//   let sut: BankService;
+//   beforeAll(() => {
+//     // Arrange
+//     sut = new BankService();
+//     sut.createAccount(inputClient);
+//     const transactionInput: Transaction = { type: 'DEPOSIT', amount: 100 };
+//     sut.addTransaction(inputClient, transactionInput);
+//   });
+//   test('THEN: should allow me to get my balance', () => {
+//     //Act
+//     const actual: number = sut.getBalance(inputClient);
+//     const expected = 100;
+//     // assert
+//     expect(actual).toEqual(expected);
+//   });
+//   test('THEN: should allow me to get an user friendly balance message', () => {
+//     //Act
+//     const inputBalance = sut.getBalance(inputClient);
+//     const actual: string = sut.getUserFriendlyBalanceMessage(inputBalance);
+//     const expected = 'Good! you have a lot of money.';
+//     // assert
+//     expect(actual).toEqual(expected);
+//   });
+// });
+// });
 
 // describe('GIVEN: a client with an account', () => {
 //   const inputClient: Client = { name: 'john' };
