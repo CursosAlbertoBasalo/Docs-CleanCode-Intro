@@ -50,7 +50,7 @@ describe('GIVEN: a client of a Bank Service without accounts', () => {
     });
     test('THEN: should give the iban number', () => {
       // assert
-      const expected = 29;
+      const expected = 24;
       expect(actual.length).toEqual(expected);
     });
   });
@@ -77,21 +77,15 @@ describe('GIVEN: a client of a Bank Service with an account', () => {
       expect(actual.iban).toEqual(expected);
     });
   });
-  describe('WHEN: the client makes a deposit', () => {
+  describe('WHEN: the client creates an account', () => {
     let actual: string;
     beforeEach(() => {
-      const transactionInput: Transaction = {
-        taxId: inputClientTaxId,
-        iban: accountNumber,
-        type: 'DEPOSIT',
-        amount: 100,
-      };
       //Act
-      actual = sut.addTransaction(transactionInput);
+      actual = sut.createAccount(inputClientTaxId);
     });
-    test('THEN: should return a transaction id', () => {
+    test('THEN: should get another one', () => {
       // assert
-      expect(actual).toBeDefined();
+      expect(actual).not.toEqual(accountNumber);
     });
   });
 });

@@ -31,7 +31,7 @@ export class BankService {
   createAccount(clientTaxId: string, accountCategory = 'Current'): string {
     const client = this.clients.get(clientTaxId);
     const newAccount = new Account();
-    newAccount.iban = 'ES00 1234 5678 9012 3456 7890';
+    newAccount.iban = 'ES' + (Math.random() * new Date().getTime()).toString().padStart(22, '0');
     newAccount.category = accountCategory;
     client.accounts.set(newAccount.iban, newAccount);
     return newAccount.iban;
@@ -102,7 +102,7 @@ export class BankService {
     transaction.amount = Math.round(transaction.amount * CENTS) / CENTS;
   }
   private saveTransaction(transaction: Transaction): string {
-    transaction.id = new Date().getTime().toString();
+    transaction.id = (Math.random() * new Date().getTime()).toString().padStart(20, '0');
     this.transactions.set(transaction.id, transaction);
     return transaction.id;
   }
