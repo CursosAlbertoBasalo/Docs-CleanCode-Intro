@@ -43,39 +43,47 @@ export class BankService {
     }
     return undefined;
   }
-  // getBalance(client: Client): number {
-  //   let balance = this.INITIAL_BALANCE;
-  //   const account = this.getAccount(client);
-  //   if (account) {
-  //     balance = this.executeTransactions(account);
-  //   }
-  //   return balance;
-  // }
-  // getUserFriendlyBalanceMessage(balance: number): string {
-  //   // ❌ reduce conditionals
-  //   if (balance < this.INITIAL_BALANCE) {
-  //     return 'Be careful with your debts.';
-  //   } else if (balance == this.INITIAL_BALANCE) {
-  //     return 'Bad luck you have no money.';
-  //   } else {
-  //     return 'Good! you have a lot of money.';
-  //   }
-  // }
+  getBalance(accountIBAN: string): number {
+    let balance = this.INITIAL_BALANCE;
+    const accountTransactions = this.getAccountTransactions(accountIBAN);
+    balance = this.executeTransactions(accountTransactions);
+    return balance;
+  }
 
-  // private executeTransactions(account: Account): number {
-  //   return account.transactions.reduce(this.executeTransaction, this.INITIAL_BALANCE);
-  // }
-  // private executeTransaction(accumulator: number, transaction: Transaction): number {
-  //   // ❌ replace switches
-  //   switch (transaction.type) {
-  //     case 'DEPOSIT':
-  //       return accumulator + transaction.amount;
-  //     case 'WITHDRAW':
-  //       return accumulator - transaction.amount;
-  //     default:
-  //       return accumulator;
-  //   }
-  // }
+  getUserFriendlyBalanceMessage(balance: number): string {
+    // ❌ reduce conditionals
+    if (balance < this.INITIAL_BALANCE) {
+      return 'Be careful with your debts.';
+    } else if (balance == this.INITIAL_BALANCE) {
+      return 'Bad luck you have no money.';
+    } else {
+      return 'Good! you have a lot of money.';
+    }
+  }
+  export(accountIBAN: string): string {
+    const accountTransactions = this.getAccountTransactions(accountIBAN);
+    return JSON.stringify(accountTransactions);
+  }
+
+  private getAccountTransactions(accountIBAN: string): Transaction[] {
+    const allTransactions = Array.from(this.transactions.values());
+    const accountTransactions = allTransactions.filter(t => t.iban === accountIBAN);
+    return accountTransactions;
+  }
+  private executeTransactions(transactions: Transaction[]): number {
+    return transactions.reduce(this.executeTransaction, this.INITIAL_BALANCE);
+  }
+  private executeTransaction(accumulator: number, transaction: Transaction): number {
+    // ❌ replace switches
+    switch (transaction.type) {
+      case 'DEPOSIT':
+        return accumulator + transaction.amount;
+      case 'WITHDRAW':
+        return accumulator - transaction.amount;
+      default:
+        return accumulator;
+    }
+  }
   private isValidTransaction(transaction: Transaction): boolean {
     // ❌ reduce conditionals
     if (
@@ -94,7 +102,7 @@ export class BankService {
     transaction.amount = Math.round(transaction.amount * CENTS) / CENTS;
   }
   private saveTransaction(transaction: Transaction): string {
-    transaction.id = '789456123';
+    transaction.id = new Date().getTime().toString();
     this.transactions.set(transaction.id, transaction);
     return transaction.id;
   }
