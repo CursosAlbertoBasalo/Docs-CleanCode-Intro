@@ -54,7 +54,7 @@ export class BankService {
     // ❌ reduce conditionals
     if (balance < this.INITIAL_BALANCE) {
       return 'Be careful with your debts.';
-    } else if (balance == this.INITIAL_BALANCE) {
+    } else if (balance === this.INITIAL_BALANCE) {
       return 'Bad luck you have no money.';
     } else {
       return 'Good! you have a lot of money.';
