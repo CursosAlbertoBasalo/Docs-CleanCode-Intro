@@ -31,140 +31,139 @@ describe('GIVEN: a client of a Bank Service without accounts', () => {
     sut.createClient(inputClientTaxId, inputClientName);
   });
   describe('WHEN: the client asks for his account', () => {
-    let actual: Account;
+    let actualAccount: Account;
     beforeEach(() => {
       //Act
-      actual = sut.getAccount(inputClientTaxId);
+      actualAccount = sut.getAccount(inputClientTaxId);
     });
     test('THEN: should get an undefined account', () => {
       // assert
-      const expected = undefined;
-      expect(actual).toEqual(expected);
+      expect(actualAccount).toBeUndefined();
     });
   });
   describe('WHEN: I ask to create an account', () => {
-    let actual: string;
+    let actualIban: string;
     beforeEach(() => {
       //Act
-      actual = sut.createAccount(inputClientTaxId);
+      actualIban = sut.createAccount(inputClientTaxId);
     });
     test('THEN: should give the iban number', () => {
       // assert
-      const expected = 24;
-      expect(actual.length).toEqual(expected);
+      const expectedIbanLength = 24;
+      expect(actualIban.length).toEqual(expectedIbanLength);
     });
   });
 });
 
 describe('GIVEN: a client of a Bank Service with an account', () => {
   let sut: BankService;
-  let accountNumber: string;
+  let inputAccountIban: string;
   beforeEach(() => {
     // Arrange
     sut = new BankService();
     sut.createClient(inputClientTaxId, inputClientName);
-    accountNumber = sut.createAccount(inputClientTaxId);
+    inputAccountIban = sut.createAccount(inputClientTaxId);
   });
   describe('WHEN: the client ask for his account', () => {
-    let actual: Account;
+    let actualIban: Account;
     beforeEach(() => {
       //Act
-      actual = sut.getAccount(inputClientTaxId);
+      actualIban = sut.getAccount(inputClientTaxId);
     });
     test('THEN: should get the first one', () => {
       // assert
-      const expected = accountNumber;
-      expect(actual.iban).toEqual(expected);
+      const expectediban = inputAccountIban;
+      expect(actualIban.iban).toEqual(expectediban);
     });
   });
   describe('WHEN: the client creates an account', () => {
-    let actual: string;
+    let actualIban: string;
     beforeEach(() => {
       //Act
-      actual = sut.createAccount(inputClientTaxId);
+      actualIban = sut.createAccount(inputClientTaxId);
     });
     test('THEN: should get another one', () => {
       // assert
-      expect(actual).not.toEqual(accountNumber);
+      expect(actualIban).not.toEqual(inputAccountIban);
     });
   });
 });
 
 describe('GIVEN: a client of a Bank Service with an account and transactions', () => {
   let sut: BankService;
-  let accountNumber: string;
+  let inputAccountIban: string;
   beforeEach(() => {
     // Arrange
     sut = new BankService();
     sut.createClient(inputClientTaxId, inputClientName);
-    accountNumber = sut.createAccount(inputClientTaxId);
+    inputAccountIban = sut.createAccount(inputClientTaxId);
     const transactionInput: Transaction = {
       taxId: inputClientTaxId,
-      iban: accountNumber,
+      iban: inputAccountIban,
       type: 'DEPOSIT',
       amount: 100,
     };
     sut.addTransaction(transactionInput);
   });
   describe('WHEN: the client ask for his balance', () => {
-    let actual: number;
+    let actualBalance: number;
     beforeEach(() => {
       //Act
-      actual = sut.getBalance(accountNumber);
+      actualBalance = sut.getBalance(inputAccountIban);
     });
     test('THEN: should get the correct balance', () => {
       // assert
-      const expected = 100;
-      expect(actual).toEqual(expected);
+      const expectedBalance = 100;
+      expect(actualBalance).toEqual(expectedBalance);
     });
   });
   describe('WHEN: the client ask for his balance in user friendly format', () => {
-    let actual: string;
+    let actualFriendlyBalance: string;
     beforeEach(() => {
       //Act
-      const inputBalance = sut.getBalance(accountNumber);
-      actual = sut.getUserFriendlyBalanceMessage(inputBalance);
+      const inputBalance = sut.getBalance(inputAccountIban);
+      actualFriendlyBalance = sut.getUserFriendlyBalanceMessage(inputBalance);
     });
     test('THEN: should get a friendly message', () => {
       // assert
-      const expected = 'Good! you have a lot of money.';
-      expect(actual).toEqual(expected);
+      const expectedFriendlyBalance = 'Good! you have a lot of money.';
+      expect(actualFriendlyBalance).toEqual(expectedFriendlyBalance);
     });
   });
 });
 
 describe('GIVEN: a client with an account and transactions', () => {
   let sut: BankService;
-  let accountNumber: string;
+  let inputAccountIban: string;
   beforeEach(() => {
     // Arrange
     sut = new BankService();
     sut.createClient(inputClientTaxId, inputClientName);
-    accountNumber = sut.createAccount(inputClientTaxId);
-    const transactionDepositInput: Transaction = {
+    inputAccountIban = sut.createAccount(inputClientTaxId);
+    const inputTransactionDeposit: Transaction = {
       taxId: inputClientTaxId,
-      iban: accountNumber,
+      iban: inputAccountIban,
       type: 'DEPOSIT',
       amount: 100,
     };
-    sut.addTransaction(transactionDepositInput);
-    const transactionWithdrawInput: Transaction = {
+    sut.addTransaction(inputTransactionDeposit);
+    const inputTransactionWithdraw: Transaction = {
       taxId: inputClientTaxId,
-      iban: accountNumber,
+      iban: inputAccountIban,
       type: 'WITHDRAW',
       amount: 20,
     };
-    sut.addTransaction(transactionWithdrawInput);
+    sut.addTransaction(inputTransactionWithdraw);
   });
   describe('WHEN: I want to export my transactions', () => {
-    let actual: string;
+    let actualExportedTransactions: string;
     beforeEach(() => {
       //Act
-      actual = sut.export(accountNumber);
+      actualExportedTransactions = sut.export(inputAccountIban);
     });
     test('THEN: should write my transactions in a file', () => {
       // assert
-      expect(JSON.parse(actual)).toBeInstanceOf(Array);
+      expect(JSON.parse(actualExportedTransactions)).toBeInstanceOf(Array);
     });
   });
 });
