@@ -1,6 +1,6 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable max-nested-callbacks */
-import { Account, BankService, Transaction } from './to-do_bad';
+import { Account, BankService, Transaction } from './bank-service_bad';
 
 /*
 FEATURE:    Simulate a bank account system.
