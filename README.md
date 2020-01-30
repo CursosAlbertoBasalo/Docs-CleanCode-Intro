@@ -4,6 +4,10 @@ Laboratories for [Clean Code course](https://github.com/BitAdemy/CleanCode)
 
 Lesson [3 - Data](https://github.com/BitAdemy/CleanCode/tree/DATA)
 
+## On CodeSandbox
+
+https://codesandbox.io/s/github/LabsAdemy/CleanCodeLab/tree/DATA
+
 ## Examples
 
 ### [👉 1 - Structures](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA/src/examples/1-structures)
