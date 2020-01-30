@@ -4,7 +4,11 @@ Laboratories for [Clean Code course](https://github.com/BitAdemy/CleanCode)
 
 Lesson [1- Name](https://github.com/BitAdemy/CleanCode/tree/NAME)
 
-## Configuration
+### On CodeSandbox
+
+https://codesandbox.io/s/github/LabsAdemy/CleanCodeLab/tree/NAME
+
+## Local Configuration
 
 ### [✨ 1 - Style](./docs/style-config.md)
 
