@@ -4,7 +4,11 @@ Laboratories for [Clean Code course](https://github.com/BitAdemy/CleanCode)
 
 Lesson [2 - Function](https://github.com/BitAdemy/CleanCode/tree/FUNCTION)
 
-## Configuration
+## On CodeSandbox
+
+https://codesandbox.io/s/github/LabsAdemy/CleanCodeLab/tree/FUNCTION
+
+## Local Configuration
 
 ### [🚨 ESlint rules](./docs/eslint-rules.md)
 
