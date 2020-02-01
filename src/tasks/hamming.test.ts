@@ -1,6 +1,7 @@
 /* eslint-disable max-nested-callbacks */
 /* eslint-disable max-lines-per-function */
-import { HammingCalculator } from './hamming_bad';
+//import { HammingCalculator } from './hamming_bad';
+import { HammingCalculator } from './hamming_ok';
 
 /*
 FEATURE:    Calculate the Hamming Distance between two DNA strands.
@@ -18,7 +19,7 @@ describe('GIVEN: a Hamming Calculator that receives two valid strings', () => {
   describe('WHEN: I compare two empty strands', () => {
     const input = ['', ''];
     // Act
-    const actual = sut.compare(input[0], input[1]);
+    const actual = sut.getDistance(input[0], input[1]);
     test('THEN: should return cero', () => {
       const expected = 0;
       // assert
@@ -28,7 +29,7 @@ describe('GIVEN: a Hamming Calculator that receives two valid strings', () => {
   describe('WHEN: I compare two single letter identical strands', () => {
     const input = ['A', 'A'];
     // Act
-    const actual = sut.compare(input[0], input[1]);
+    const actual = sut.getDistance(input[0], input[1]);
     test('THEN: should return cero', () => {
       const expected = 0;
       // assert
@@ -38,7 +39,7 @@ describe('GIVEN: a Hamming Calculator that receives two valid strings', () => {
   describe('WHEN: I compare two single letter different strands', () => {
     const input = ['G', 'T'];
     // Act
-    const actual = sut.compare(input[0], input[1]);
+    const actual = sut.getDistance(input[0], input[1]);
     test('THEN: should return one', () => {
       const expected = 1;
       // assert
@@ -48,7 +49,7 @@ describe('GIVEN: a Hamming Calculator that receives two valid strings', () => {
   describe('WHEN: I compare two long identical strands', () => {
     const input = ['ACGT', 'ACGT'];
     // Act
-    const actual = sut.compare(input[0], input[1]);
+    const actual = sut.getDistance(input[0], input[1]);
     test('THEN: should return cero', () => {
       const expected = 0;
       // assert
@@ -58,7 +59,7 @@ describe('GIVEN: a Hamming Calculator that receives two valid strings', () => {
   describe('WHEN: I compare two long different strands', () => {
     const input = ['ACGT', 'TGCA'];
     // Act
-    const actual = sut.compare(input[0], input[1]);
+    const actual = sut.getDistance(input[0], input[1]);
     test('THEN: should return more than cero', () => {
       const expected = 0;
       // assert
