@@ -28,5 +28,5 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "html.format.wrapAttributes": "force-aligned",
   "html.format.enable": true,
-  "html.format.wrapLineLength": 80
+  "html.format.wrapLineLength": 100
 }
