@@ -1,6 +1,6 @@
 //✔️ meaningful and pronounceable
 //✔️ no magic numbers
-//✔️ no added context
+//✔️ no redundant context
 //✔️ business dictionary
 //✔️ no mental mapping
 const ACTIVE = 2;
