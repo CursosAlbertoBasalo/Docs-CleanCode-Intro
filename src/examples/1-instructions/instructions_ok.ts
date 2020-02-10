@@ -1,6 +1,7 @@
-// ✔️ one declaration per line
 export function getDateStructure(date: Date): object {
-  const MONTHS_BASE = 1;
+  const MONTHS_BASE = 1; // ✔️ start with constants
+  // ✔️ one declaration per line
+  // ✔️ assign data during declaration
   const year = date.getFullYear();
   const month = date.getMonth() + MONTHS_BASE;
   const day = date.getDate();
@@ -18,12 +19,13 @@ export function getMinutesBetweenDates(first: Date, second: Date): number {
   return minutes;
 }
 
+// ✔️ avoid nested ternaries
+// ✔️ avoid complex conditionals
 const THIRD_LEVEL_CORRECTOR = 400;
 const SECOND_LEVEL_CORRECTOR = 100;
 const FIRST_LEVEL_CORRECTOR = 4;
 const NULL_REMAINDER = 0;
 
-// ✔️ avoid nested ternaries
 export function isLeapBlocks(year: number): boolean {
   let isLeap = false;
 
@@ -38,7 +40,7 @@ export function isLeapBlocks(year: number): boolean {
   return isLeap;
 }
 
-// ✔️ avoid complex conditionals
+// ✔️ Simplify with early returns
 export function isLeapEarly(year: number): boolean {
   if (year % THIRD_LEVEL_CORRECTOR === NULL_REMAINDER) {
     return true;
