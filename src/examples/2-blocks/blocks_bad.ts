@@ -34,6 +34,7 @@ export function getSquaredPrimes(): number[] {
     const MAX_PRIME = Math.floor(Math.sqrt(n));
     let isPrime = n !== 1;
     for (let i = FIRST_PRIME; i < MAX_PRIME + 1; i++) {
+      // ❌ avoid complex conditionals
       if (n % i === NULL_REMAINDER) {
         isPrime = false;
         break;
