@@ -4,16 +4,17 @@ export function getErrorMessage(error: object, isTouched: boolean): string {
   if (mustShowError(error, isTouched)) {
     return getErrorString(error);
   } else {
-    return '';
+    return getEmptyErrorString();
   }
 }
-
 function mustShowError(error: object, isTouched: boolean): boolean {
   return error !== null && isTouched;
 }
-
 function getErrorString(error: object): string {
   return JSON.stringify(error);
+}
+function getEmptyErrorString(): string {
+  return '';
 }
 
 // ✅ Avoid flags
@@ -26,47 +27,51 @@ export function writeErrorMessageLog(message: string): void {
 }
 
 // ✅ one responsibility per function
-// ✅ limit number of arguments
+// ✅ one level of abstraction
+// ✅ no duplication
+// ✅ no nested blocks
+// ✅ guards and return early
 export class Words {
-  splitedArray: string[];
-  occurrences: object;
-  input: string;
-
-  constructor() {
-    this.splitedArray = [];
-    this.occurrences = {};
-    this.input = '';
-  }
-
   count(input: string): object {
-    this.input = input;
-    this.splitedArray = this.getSplitedArray();
-    this.countWordOcurrencesInArray();
-    return this.occurrences;
-  }
-
-  getSplitedArray(): string[] {
-    return this.input
-      .toLowerCase()
-      .trim()
-      .split(/\s+|\n|\t/);
-  }
-
-  countWordOcurrencesInArray(): void {
-    this.splitedArray.forEach((word: string) => {
-      this.occurrences = getAcumulatedWordOcurrences(word, this.occurrences);
+    if (this.isInvalid(input)) {
+      throw 'We need a string as input';
+    }
+    const occurrences = {};
+    const cleanInput = this.cleanString(input);
+    if (this.isEmpty(cleanInput)) {
+      return occurrences;
+    }
+    const splitedArray = this.splitString(cleanInput);
+    splitedArray.forEach(word => {
+      if (this.isANewOcurrece(word, occurrences)) {
+        this.createOcurrence(occurrences, word);
+      } else {
+        this.accumulateOccurrence(occurrences, word);
+      }
     });
+    return occurrences;
   }
-}
 
-// ✅ mix object an functional when appropriated
-// ✅ avoid side effects
-function getAcumulatedWordOcurrences(word: string, occurrences: object): object {
-  const result = { ...occurrences };
-  if (result[word] === undefined) {
-    result[word] = 1;
-  } else {
-    result[word]++;
+  private isInvalid(input: string): boolean {
+    return input === null || input === undefined;
   }
-  return result;
+  private cleanString(input: string): string {
+    return input.toLowerCase().trim();
+  }
+  private isEmpty(input: string): boolean {
+    return input.length <= 0;
+  }
+  private splitString(input: string): string[] {
+    const delimiters = /\s+|\n|\t/;
+    return input.split(delimiters);
+  }
+  private isANewOcurrece(word: string, occurrences: object): boolean {
+    return occurrences[word] === undefined;
+  }
+  private createOcurrence(occurrences: {}, word: string): void {
+    occurrences[word] = 1;
+  }
+  private accumulateOccurrence(occurrences: {}, word: string): void {
+    occurrences[word]++;
+  }
 }

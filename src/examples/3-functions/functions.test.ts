@@ -46,6 +46,17 @@ describe('words()', () => {
     words = new Words();
   });
 
+  test('throw error on null or undefined', () => {
+    expect(() => {
+      words.count(null);
+    }).toThrow();
+  });
+
+  test('counts empty', () => {
+    const expectedCounts = {};
+    expect(words.count('  ')).toEqual(expectedCounts);
+  });
+
   test('counts one word', () => {
     const expectedCounts = { word: 1 };
     expect(words.count('word')).toEqual(expectedCounts);
