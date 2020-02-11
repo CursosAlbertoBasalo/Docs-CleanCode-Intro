@@ -27,12 +27,6 @@ describe('sieve of Eratosthenes', () => {
   });
 });
 
-// describe('printing prime seconds', () => {
-//   test('printing something useful', () => {
-//     expect(printSomethingEveryPrimeSecond()).toEqual(undefined);
-//   });
-// });
-
 describe('getting squared primes', () => {
   test('get an array of the first 4 primes squared', () => {
     expect(getSquaredPrimes()).toEqual([4, 9, 25, 49]);
