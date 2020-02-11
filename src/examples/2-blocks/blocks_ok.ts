@@ -2,11 +2,11 @@
 // ✔️ reduce cyclomatic complexity
 export function getPrimes(limit: number): number[] {
   const FIRST_PRIME = 2;
-  const totalNumbers = limit + 1;
-  const composites: boolean[] = createAllNumbersAsNoComposites(totalNumbers);
+  const TOTAL_NUMBERS = limit + 1;
+  const composites: boolean[] = createAllNumbersAsNoComposites(TOTAL_NUMBERS);
   const primes: number[] = [];
 
-  for (let number = FIRST_PRIME; number < totalNumbers; number++) {
+  for (let number = FIRST_PRIME; number < TOTAL_NUMBERS; number++) {
     if (isPrime(number, composites)) {
       primes.push(number);
       markItsMultiplesAsComposites(number, composites);
@@ -31,50 +31,14 @@ function markItsMultiplesAsComposites(prime: number, composites: boolean[]): voi
   }
 }
 
-// ❌ nested callbacks
-// ❌ FAT arrow
-export function printSomethingEveryPrimeSecond(): void {
-  const MILISECONDS = 1000;
-  const MAX_SECONDS = 20;
-  // eslint-disable-next-line no-magic-numbers
-  const currentSecond = 0;
-  const intervalTrigger = setInterval(function processAndStop() {
-    processEverySecond(currentSecond);
-    if (currentSecond > MAX_SECONDS) clearInterval(intervalTrigger);
-  }, MILISECONDS);
-}
-
-function processEverySecond(currentSecond: number): void {
-  const FIRST_PRIME = 2;
-  const NULL_REMAINDER = 0;
-  const MAX_PRIME = Math.floor(Math.sqrt(currentSecond));
-  const DELAY = 1000;
-  let isPrime = currentSecond !== 1;
-  for (let i = FIRST_PRIME; i < MAX_PRIME + 1; i++) {
-    if (currentSecond % i === NULL_REMAINDER) {
-      isPrime = false;
-      break;
-    }
-  }
-  if (isPrime) {
-    console.log(`${currentSecond}: hi there`);
-    setTimeout(printPrimeSecond, DELAY, currentSecond);
-  }
-  currentSecond++;
-}
-
-function printPrimeSecond(second: number): void {
-  console.log(`The second ${second} is Prime`);
-}
-
-// ❌ three arrows
+// ✔️ no complex arrows
 export function getSquaredPrimes(): number[] {
   // eslint-disable-next-line no-magic-numbers
   const NATURAL_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const squaredPrimes = [];
   NATURAL_NUMBERS.filter(isPrimeNumber)
     .map(prime => prime * prime)
-    .forEach(squaredPrime => {
+    .forEach(function processSquaredPrime(squaredPrime) {
       squaredPrimes.push(squaredPrime);
       console.log(`There are ${squaredPrimes.length} primes in the basket`);
     });

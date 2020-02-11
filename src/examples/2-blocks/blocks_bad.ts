@@ -6,52 +6,21 @@
 export function getPrimes(limit: number): number[] {
   const FIRST_PRIME = 2;
   const TOTAL_NUMBERS = limit + 1;
+  // ❌ avoid complex expressions
   const composites: boolean[] = [...Array(TOTAL_NUMBERS).fill(false)];
   const primes: number[] = [];
 
   for (let number = FIRST_PRIME; number < TOTAL_NUMBERS; number++) {
+    // ❌ avoid complex conditionals
     if (!composites[number]) {
       primes.push(number);
+      // ❌ avoid deep nesting
       for (let multiple = number * number; multiple < TOTAL_NUMBERS; multiple += number) {
         composites[multiple] = true;
       }
     }
   }
   return primes;
-}
-
-// ❌ nested callbacks
-// ❌ FAT arrow
-export function printSomethingEveryPrimeSecond(): void {
-  const MILISECONDS = 1000;
-  const MAX_SECONDS = 20;
-  const FIRST_PRIME = 2;
-  const NULL_REMAINDER = 0;
-  // eslint-disable-next-line no-magic-numbers
-  let currentSecond = 0;
-  const intervalTrigger = setInterval(() => {
-    const MAX_PRIME = Math.floor(Math.sqrt(currentSecond));
-    let isPrime = currentSecond !== 1;
-    for (let i = FIRST_PRIME; i < MAX_PRIME + 1; i++) {
-      if (currentSecond % i === NULL_REMAINDER) {
-        isPrime = false;
-        break;
-      }
-    }
-    if (isPrime) {
-      const DELAY = 1000;
-      console.log(`${currentSecond}: hi there`);
-      setTimeout(
-        number => {
-          console.log(`The second ${number} is Prime`);
-        },
-        DELAY,
-        currentSecond
-      );
-    }
-    currentSecond++;
-    if (currentSecond > MAX_SECONDS) clearInterval(intervalTrigger);
-  }, MILISECONDS);
 }
 
 // ❌ three arrows
