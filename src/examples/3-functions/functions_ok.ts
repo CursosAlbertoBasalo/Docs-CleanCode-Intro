@@ -37,11 +37,11 @@ export class Words {
       throw 'We need a string as input';
     }
     const occurrences = {};
-    const cleanInput = this.cleanString(input);
-    if (this.isEmpty(cleanInput)) {
+    const cleanedInput = this.cleanString(input);
+    if (this.isEmpty(cleanedInput)) {
       return occurrences;
     }
-    const splitedArray = this.splitString(cleanInput);
+    const splitedArray = this.splitString(cleanedInput);
     splitedArray.forEach(word => {
       if (this.isANewOcurrece(word, occurrences)) {
         this.createOcurrence(occurrences, word);
