@@ -1,6 +1,5 @@
 /* eslint-disable max-nested-callbacks */
 /* eslint-disable max-lines-per-function */
-//import { HammingCalculator } from './hamming_bad';
 import { HammingCalculator } from './hamming_ok';
 
 /*
@@ -79,25 +78,28 @@ describe('GIVEN: a Hamming Calculator that receives two valid strings', () => {
 });
 
 // Scenario: we have two invalid sequences of different lengths
-/*
-describe( 'GIVEN: a Hamming Calculator with a that receives two invalid strings', () => {
+describe('GIVEN: a Hamming Calculator that receives two invalid strings', () => {
   // Arrange
   const sut = new HammingCalculator();
+  describe('WHEN: the one strand is null', () => {
+    const input = [null, ''];
+    test('THEN: should throw an error', () => {
+      expect(() => sut.getDistance(input[0], input[1])) //Act
+        .toThrow('null not allowed'); // assert
+    });
+  });
   describe('WHEN: the first strand is longer', () => {
     const input = ['A', ''];
-    const actual = () => sut.compare(input[0], input[1]);
     test('THEN: should throw an error', () => {
-      expect(actual) //Act
-        .toThrow(); // assert
+      expect(() => sut.getDistance(input[0], input[1])) //Act
+        .toThrow('invalid strings'); // assert
     });
   });
   describe('WHEN: the second strand is longer', () => {
     const input = ['A', 'AC'];
-    const actual = () => sut.compare(input[0], input[1]);
     test('THEN: should throw an error', () => {
-      expect(actual) //Act
-        .toThrow(); // assert
+      expect(() => sut.getDistance(input[0], input[1])) //Act
+        .toThrow('invalid strings'); // assert
     });
   });
 });
-*/
