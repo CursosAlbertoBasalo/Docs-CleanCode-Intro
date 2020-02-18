@@ -28,9 +28,10 @@ export class BankService {
       throw '💥Account not found';
     }
     const newBalance = this.executeTransaction(transactionType, account.balance, amount);
+    account.balance = newBalance;
     return this.getUserFriendlyBalanceMessage(newBalance);
   }
-  private getAccount(accountID: string): object {
+  private getAccount(accountID: string): { accountID: string; balance: number } {
     return this.accounts.find(a => a.accountID === accountID);
   }
   private isInvalidTransaction(transactionType: string, amount: number): boolean {

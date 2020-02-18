@@ -13,3 +13,4 @@ eslint
 params
 cyclomatic
 naive
+vars
