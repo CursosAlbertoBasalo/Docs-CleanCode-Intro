@@ -2,9 +2,9 @@
 /* eslint-disable max-nested-callbacks */
 /* eslint-disable max-lines-per-function */
 // ❌
-import { getArea, getUnitNames, getUnitSymbol } from './areas_bad';
+import { getArea, getUnitNames, getUnitSymbol } from './algorithms_bad';
 // ✔️
-// import { getArea, getUnitNames, getUnitSymbol } from './areas_ok';
+//import { getArea, getUnitNames, getUnitSymbol } from './algorithms_ok';
 
 describe('Calculate Area', () => {
   test('Triangle', () => {
