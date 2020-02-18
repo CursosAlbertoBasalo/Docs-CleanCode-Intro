@@ -2,9 +2,9 @@
 /* eslint-disable max-nested-callbacks */
 /* eslint-disable max-lines-per-function */
 // ❌
-// import { getArea} from './areas_bad';
+import { getArea, getUnitNames, getUnitSymbol } from './areas_bad';
 // ✔️
-import { getArea } from './areas_ok';
+// import { getArea, getUnitNames, getUnitSymbol } from './areas_ok';
 
 describe('Calculate Area', () => {
   test('Triangle', () => {
@@ -28,5 +28,16 @@ describe('Calculate Area', () => {
     expect(() => {
       getArea(shape);
     }).toThrow();
+  });
+});
+
+describe('Get surface units', () => {
+  test('We are in the USA', () => {
+    expect(getUnitNames('US')).toEqual('square yards');
+    expect(getUnitSymbol('US')).toEqual('yd2');
+  });
+  test('We are out of the USA', () => {
+    expect(getUnitNames('SI')).toEqual('square metres');
+    expect(getUnitSymbol('SI')).toEqual('m2');
   });
 });
