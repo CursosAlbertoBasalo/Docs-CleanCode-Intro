@@ -1,104 +1,71 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable max-params */
+/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // ❌ refactor and change the tests accordingly
 
 export class BankService {
-  private readonly INITIAL_BALANCE: number;
-  private accounts: Map<string, Account>;
+  private accounts = [
+    {
+      accountID: 'ES99 8888 7777 66 5555555555',
+      balance: 0,
+    },
+  ];
 
-  constructor() {
-    this.INITIAL_BALANCE = 0;
-    this.accounts = new Map<string, Account>();
-  }
-
-  getAccount(client: Client): Account {
-    return this.accounts.get(client.name);
-  }
-  createAccount(client: Client): Account {
-    const newAccount = new Account();
-    newAccount.name = client.name;
-    newAccount.account = 123456789;
-    this.accounts.set(client.name, newAccount);
-    return newAccount;
-  }
-  addTransaction(client: Client, transaction: Transaction): Account {
-    const account = this.getAccount(client);
-    // ❌ not related to data but... can you reduce nesting?
-    if (account) {
-      if (this.isValidTransaction(transaction)) {
-        this.roundTransaction(transaction);
-        this.saveTransaction(account, transaction);
-      }
+  // ❌ multiple primitive parameters
+  // ❌ no cohesion of currency
+  addTransaction(
+    accountdId: string,
+    transactionType: string,
+    amount: number,
+    currency?: 'EURO'
+  ): string {
+    if (this.isInvalidTransaction(transactionType, amount)) {
+      throw '💥Invalid transaction';
     }
-    return account;
-  }
-  getBalance(client: Client): number {
-    let balance = this.INITIAL_BALANCE;
-    const account = this.getAccount(client);
-    if (account) {
-      balance = this.executeTransactions(account);
+    const account = this.getAccount(accountdId);
+    if (account === undefined) {
+      throw '💥Account not found';
     }
-    return balance;
+    const newBalance = this.executeTransaction(transactionType, account.balance, amount);
+    return this.getUserFriendlyBalanceMessage(newBalance);
   }
-  getUserFriendlyBalanceMessage(balance: number): string {
-    // ❌ reduce conditionals
-    if (balance < this.INITIAL_BALANCE) {
-      return 'Be careful with your debts.';
-    } else if (balance == this.INITIAL_BALANCE) {
-      return 'Bad luck you have no money.';
-    } else {
-      return 'Good! you have a lot of money.';
-    }
+  private getAccount(accountID: string): object {
+    return this.accounts.find(a => a.accountID === accountID);
   }
-
-  private executeTransactions(account: Account): number {
-    return account.transactions.reduce(this.executeTransaction, this.INITIAL_BALANCE);
-  }
-  private executeTransaction(accumulator: number, transaction: Transaction): number {
-    // ❌ replace switches
-    switch (transaction.type) {
-      case 'DEPOSIT':
-        return accumulator + transaction.amount;
-      case 'WITHDRAW':
-        return accumulator - transaction.amount;
-      default:
-        return accumulator;
-    }
-  }
-  private isValidTransaction(transaction: Transaction): boolean {
+  private isInvalidTransaction(transactionType: string, amount: number): boolean {
     // ❌ reduce conditionals
     if (
-      transaction.type === 'DEPOSIT' ||
-      transaction.type === 'WITHDRAW' ||
-      transaction.type === 'CANCEL'
+      transactionType === 'DEPOSIT' ||
+      transactionType === 'WITHDRAW' ||
+      transactionType === 'CANCEL'
     ) {
       const MINIMAL_AMOUNT = 0;
-      return transaction.amount >= MINIMAL_AMOUNT;
+      return amount < MINIMAL_AMOUNT;
     } else {
-      return false;
+      return true;
     }
   }
-  private roundTransaction(transaction: Transaction): void {
-    const CENTS = 100;
-    transaction.amount = Math.round(transaction.amount * CENTS) / CENTS;
+  private executeTransaction(transactionType: string, currentBalance: number, amount: number) {
+    switch (transactionType) {
+      case 'DEPOSIT':
+        return currentBalance + amount;
+      case 'WITHDRAW':
+        return currentBalance - amount;
+      default:
+        return currentBalance;
+    }
   }
-  private saveTransaction(account: Account, transaction: Transaction): void {
-    account.transactions.push(transaction);
+
+  private getUserFriendlyBalanceMessage(balance: number): string {
+    const CRITICAL_BALANCE = 100;
+    // ❌ reduce conditionals
+    if (balance < CRITICAL_BALANCE) {
+      return '💸 Bad luck you have no enough money.';
+    } else if (balance === CRITICAL_BALANCE) {
+      return '💰 Be careful with your spends.';
+    } else {
+      return '🤑 Good! you have a lot of money.';
+    }
   }
-}
-
-// ❌ Compose structures
-// ❌ Use constructors when appropriated
-
-export class Client {
-  name: string;
-}
-
-export class Account {
-  name: string;
-  account: number;
-  transactions: Transaction[] = [];
-}
-
-export class Transaction {
-  type: string;
-  amount: number;
 }
