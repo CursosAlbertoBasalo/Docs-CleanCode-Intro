@@ -1,10 +1,5 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable max-params */
-/* eslint-disable no-unused-vars */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// ❌ refactor and change the tests accordingly
-
 export class Transaction {
+  // eslint-disable-next-line max-params
   constructor(
     public readonly accountdId: string,
     public readonly transactionType: string,
@@ -31,9 +26,9 @@ export type Money = { amount: number; currency?: string };
 export const TRANSACTION_TYPES = ['DEPOSIT', 'WITHDRAW', 'CANCEL'];
 
 export const TRANSACTION_CALCULATOR = {
-  DEPOSIT: (value, balance) => balance + value,
-  WITHDRAW: (value, balance) => balance - value,
-  CANCEL: (value, balance) => 0,
+  DEPOSIT: (value: number, balance: number): number => balance + value,
+  WITHDRAW: (value: number, balance: number): number => balance - value,
+  CANCEL: (value: number, balance: number): number => balance - value,
 };
 
 export class BankService {
@@ -55,7 +50,7 @@ export class BankService {
   private getAccount(accountID: string): { accountID: string; balance: number } {
     return this.accounts.find(a => a.accountID === accountID);
   }
-  private executeTransaction(transaction: Transaction, currentBalance: number) {
+  private executeTransaction(transaction: Transaction, currentBalance: number): number {
     return TRANSACTION_CALCULATOR[transaction.transactionType](
       transaction.value.amount,
       currentBalance
