@@ -34,6 +34,21 @@ export const TRANSACTION_CALCULATOR = {
     account.balance.amount - transaction.value.amount,
 };
 
+export const BALANCE_MESSAGES = [
+  {
+    topValue: 0,
+    message: `💸 Bad luck you have no enough `,
+  },
+  {
+    topValue: 100,
+    message: `💰 Be careful with your spends of `,
+  },
+  {
+    topValue: Number.MAX_SAFE_INTEGER,
+    message: `🤑 Good! you have a lot of `,
+  },
+];
+
 export type Account = {
   accountID: string;
   balance: Money;
@@ -63,14 +78,6 @@ export class BankService {
   }
 
   private getUserFriendlyBalanceMessage(balance: Money): string {
-    const CRITICAL_BALANCE = 100;
-    // ❌ reduce conditionals
-    if (balance.amount < CRITICAL_BALANCE) {
-      return '💸 Bad luck you have no enough ' + balance.currency;
-    } else if (balance.amount === CRITICAL_BALANCE) {
-      return '💰 Be careful with your spends of ' + balance.currency;
-    } else {
-      return '🤑 Good! you have a lot of ' + balance.currency;
-    }
+    return BALANCE_MESSAGES.find(m => m.topValue >= balance.amount).message + balance.currency;
   }
 }
