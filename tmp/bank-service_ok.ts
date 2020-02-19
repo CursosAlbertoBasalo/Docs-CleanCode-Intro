@@ -16,12 +16,8 @@ export class Transaction {
     this.value.currency = this.value.currency || 'EURO';
   }
   private isInvalidTransaction(): boolean {
-    // ❌ reduce conditionals
-    if (
-      this.transactionType === 'DEPOSIT' ||
-      this.transactionType === 'WITHDRAW' ||
-      this.transactionType === 'CANCEL'
-    ) {
+    // ✔ reduce conditionals
+    if (TRANSACTION_TYPES.includes(this.transactionType)) {
       const MINIMAL_AMOUNT = 0;
       return this.value.amount < MINIMAL_AMOUNT;
     } else {
@@ -32,6 +28,8 @@ export class Transaction {
 
 export type Money = { amount: number; currency?: string };
 
+export const TRANSACTION_TYPES = ['DEPOSIT', 'WITHDRAW', 'CANCEL'];
+
 export class BankService {
   private accounts = [
     {
@@ -40,30 +38,26 @@ export class BankService {
     },
   ];
 
-  // ❌ multiple primitive parameters
-  // ❌ no cohesion of currency
+  // ✔ no primitive parameters
+  // ✔ cohesion of currency
   addTransaction(transaction: Transaction): string {
     const account = this.getAccount(transaction.accountdId);
     if (account === undefined) {
       throw '💥Account not found';
     }
-    const newBalance = this.executeTransaction(
-      transaction.transactionType,
-      account.balance,
-      transaction.value.amount
-    );
+    const newBalance = this.executeTransaction(transaction, account.balance);
     account.balance = newBalance;
     return this.getUserFriendlyBalanceMessage(newBalance);
   }
   private getAccount(accountID: string): { accountID: string; balance: number } {
     return this.accounts.find(a => a.accountID === accountID);
   }
-  private executeTransaction(transactionType: string, currentBalance: number, amount: number) {
-    switch (transactionType) {
+  private executeTransaction(transaction: Transaction, currentBalance: number) {
+    switch (transaction.transactionType) {
       case 'DEPOSIT':
-        return currentBalance + amount;
+        return currentBalance + transaction.value.amount;
       case 'WITHDRAW':
-        return currentBalance - amount;
+        return currentBalance - transaction.value.amount;
       default:
         return currentBalance;
     }
