@@ -54,24 +54,33 @@ export type Account = {
   balance: Money;
 };
 
-export class BankService {
-  private accounts: Account[] = [
-    {
-      accountID: 'ES99 8888 7777 66 5555555555',
-      balance: { amount: 0, currency: 'EUR' },
-    },
-  ];
-
-  addTransaction(transaction: Transaction): string {
-    const account = this.getAccount(transaction.accountdId);
+export class Accounts {
+  private readonly accounts: Account[] = [];
+  add(account: Account): void {
+    this.accounts.push(account);
+  }
+  getById(accountID: string): Account {
+    const account = this.accounts.find(a => a.accountID === accountID);
     if (account === undefined) {
       throw '💥Account not found';
     }
+    return account;
+  }
+}
+
+export class BankService {
+  private readonly accounts: Accounts = new Accounts();
+  constructor() {
+    this.accounts.add({
+      accountID: 'ES99 8888 7777 66 5555555555',
+      balance: { amount: 0, currency: 'EUR' },
+    });
+  }
+
+  addTransaction(transaction: Transaction): string {
+    const account = this.accounts.getById(transaction.accountdId);
     account.balance.amount = this.executeTransaction(transaction, account);
     return this.getUserFriendlyBalanceMessage(account.balance);
-  }
-  private getAccount(accountID: string): Account {
-    return this.accounts.find(a => a.accountID === accountID);
   }
   private executeTransaction(transaction: Transaction, account: Account): number {
     return TRANSACTION_CALCULATOR[transaction.transactionType](transaction, account);
