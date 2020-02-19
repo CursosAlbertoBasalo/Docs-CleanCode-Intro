@@ -30,6 +30,12 @@ export type Money = { amount: number; currency?: string };
 
 export const TRANSACTION_TYPES = ['DEPOSIT', 'WITHDRAW', 'CANCEL'];
 
+export const TRANSACTION_CALCULATOR = {
+  DEPOSIT: (value, balance) => balance + value,
+  WITHDRAW: (value, balance) => balance - value,
+  CANCEL: (value, balance) => 0,
+};
+
 export class BankService {
   private accounts = [
     {
@@ -38,29 +44,22 @@ export class BankService {
     },
   ];
 
-  // ✔ no primitive parameters
-  // ✔ cohesion of currency
   addTransaction(transaction: Transaction): string {
     const account = this.getAccount(transaction.accountdId);
     if (account === undefined) {
       throw '💥Account not found';
     }
-    const newBalance = this.executeTransaction(transaction, account.balance);
-    account.balance = newBalance;
-    return this.getUserFriendlyBalanceMessage(newBalance);
+    account.balance = this.executeTransaction(transaction, account.balance);
+    return this.getUserFriendlyBalanceMessage(account.balance);
   }
   private getAccount(accountID: string): { accountID: string; balance: number } {
     return this.accounts.find(a => a.accountID === accountID);
   }
   private executeTransaction(transaction: Transaction, currentBalance: number) {
-    switch (transaction.transactionType) {
-      case 'DEPOSIT':
-        return currentBalance + transaction.value.amount;
-      case 'WITHDRAW':
-        return currentBalance - transaction.value.amount;
-      default:
-        return currentBalance;
-    }
+    return TRANSACTION_CALCULATOR[transaction.transactionType](
+      transaction.value.amount,
+      currentBalance
+    );
   }
 
   private getUserFriendlyBalanceMessage(balance: number): string {
