@@ -20,7 +20,7 @@ export class BankService {
     amount: number,
     currency?: 'EURO'
   ): string {
-    // ❌ check input and permorf logic
+    // ❌ check input and perform logic
     if (this.isInvalidTransaction(transactionType, amount)) {
       throw '💥Invalid transaction';
     }
