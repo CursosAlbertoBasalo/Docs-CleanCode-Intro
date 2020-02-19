@@ -24,6 +24,8 @@ export const BALANCE_MESSAGES = [
   },
 ];
 
+const DEAFULT_CURRENCY = 'EUR';
+
 export type Money = { amount: number; currency?: string };
 
 export class Transaction {
@@ -33,25 +35,26 @@ export class Transaction {
     public readonly transactionType: string,
     public readonly value: Money
   ) {
-    if (this.isInvalidTransaction()) {
-      throw '💥Invalid transaction';
-    }
-    this.value.currency = this.value.currency || 'EURO';
+    this.guardInvalidTransaction();
+    this.value.currency = this.value.currency || DEAFULT_CURRENCY;
   }
-  private isInvalidTransaction(): boolean {
+  private guardInvalidTransaction(): void {
     if (TRANSACTION_TYPES.includes(this.transactionType)) {
       const MINIMAL_AMOUNT = 0;
-      return this.value.amount < MINIMAL_AMOUNT;
-    } else {
-      return true;
+      if (this.value.amount >= MINIMAL_AMOUNT) {
+        return;
+      }
     }
+    throw '💥Invalid transaction';
   }
 }
 
-export type Account = {
-  accountID: string;
-  balance: Money;
-};
+export class Account {
+  constructor(
+    public readonly accountID: string,
+    public readonly balance: Money = { amount: 0, currency: DEAFULT_CURRENCY }
+  ) {}
+}
 
 export class Accounts {
   private readonly accounts: Account[] = [];
@@ -70,10 +73,8 @@ export class Accounts {
 export class BankService {
   private readonly accounts: Accounts = new Accounts();
   constructor() {
-    this.accounts.add({
-      accountID: 'ES99 8888 7777 66 5555555555',
-      balance: { amount: 0, currency: 'EUR' },
-    });
+    const defaultAccount = new Account('ES99 8888 7777 66 5555555555');
+    this.accounts.add(defaultAccount);
   }
 
   addTransaction(transaction: Transaction): string {
@@ -86,6 +87,7 @@ export class BankService {
   }
 
   private getUserFriendlyBalanceMessage(balance: Money): string {
-    return BALANCE_MESSAGES.find(m => m.topValue >= balance.amount).message + balance.currency;
+    const userFriendly = BALANCE_MESSAGES.find(m => m.topValue >= balance.amount);
+    return userFriendly.message + balance.currency;
   }
 }
