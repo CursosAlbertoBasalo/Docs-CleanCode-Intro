@@ -20,7 +20,7 @@
     "max-params": ["warn", 2],
     "no-magic-numbers": [
       "warn",
-      { "detectObjects": false, "enforceConst": true, "ignore": [1], "ignoreArrayIndexes": true }
+      { "detectObjects": false, "enforceConst": true, "ignore": [0, 1], "ignoreArrayIndexes": true }
     ],
     "no-multiple-empty-lines": ["warn", { "max": 2, "maxEOF": 1 }],
     "no-nested-ternary": "error",

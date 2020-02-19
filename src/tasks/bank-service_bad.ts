@@ -47,6 +47,7 @@ export class BankService {
       return true;
     }
   }
+  // ❌ order error prone
   private executeTransaction(transactionType: string, currentBalance: number, amount: number) {
     switch (transactionType) {
       case 'DEPOSIT':

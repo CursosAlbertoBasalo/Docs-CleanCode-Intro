@@ -26,16 +26,24 @@ export type Money = { amount: number; currency?: string };
 export const TRANSACTION_TYPES = ['DEPOSIT', 'WITHDRAW', 'CANCEL'];
 
 export const TRANSACTION_CALCULATOR = {
-  DEPOSIT: (value: number, balance: number): number => balance + value,
-  WITHDRAW: (value: number, balance: number): number => balance - value,
-  CANCEL: (value: number, balance: number): number => balance - value,
+  DEPOSIT: (transaction: Transaction, account: Account): number =>
+    account.balance.amount + transaction.value.amount,
+  WITHDRAW: (transaction: Transaction, account: Account): number =>
+    account.balance.amount - transaction.value.amount,
+  CANCEL: (transaction: Transaction, account: Account): number =>
+    account.balance.amount - transaction.value.amount,
+};
+
+export type Account = {
+  accountID: string;
+  balance: Money;
 };
 
 export class BankService {
-  private accounts = [
+  private accounts: Account[] = [
     {
       accountID: 'ES99 8888 7777 66 5555555555',
-      balance: 0,
+      balance: { amount: 0, currency: 'EUR' },
     },
   ];
 
@@ -44,28 +52,25 @@ export class BankService {
     if (account === undefined) {
       throw '💥Account not found';
     }
-    account.balance = this.executeTransaction(transaction, account.balance);
+    account.balance.amount = this.executeTransaction(transaction, account);
     return this.getUserFriendlyBalanceMessage(account.balance);
   }
-  private getAccount(accountID: string): { accountID: string; balance: number } {
+  private getAccount(accountID: string): Account {
     return this.accounts.find(a => a.accountID === accountID);
   }
-  private executeTransaction(transaction: Transaction, currentBalance: number): number {
-    return TRANSACTION_CALCULATOR[transaction.transactionType](
-      transaction.value.amount,
-      currentBalance
-    );
+  private executeTransaction(transaction: Transaction, account: Account): number {
+    return TRANSACTION_CALCULATOR[transaction.transactionType](transaction, account);
   }
 
-  private getUserFriendlyBalanceMessage(balance: number): string {
+  private getUserFriendlyBalanceMessage(balance: Money): string {
     const CRITICAL_BALANCE = 100;
     // ❌ reduce conditionals
-    if (balance < CRITICAL_BALANCE) {
-      return '💸 Bad luck you have no enough money.';
-    } else if (balance === CRITICAL_BALANCE) {
-      return '💰 Be careful with your spends.';
+    if (balance.amount < CRITICAL_BALANCE) {
+      return '💸 Bad luck you have no enough ' + balance.currency;
+    } else if (balance.amount === CRITICAL_BALANCE) {
+      return '💰 Be careful with your spends of ' + balance.currency;
     } else {
-      return '🤑 Good! you have a lot of money.';
+      return '🤑 Good! you have a lot of ' + balance.currency;
     }
   }
 }

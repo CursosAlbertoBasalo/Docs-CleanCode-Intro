@@ -58,7 +58,7 @@ describe('GIVEN: I have an account in a bank', () => {
         actualBalanceMessage = sut.addTransaction(inputTransaction);
       });
       test('THEN: I should get a balance message', () => {
-        const expectedBalanceMessage = '💰 Be careful with your spends.';
+        const expectedBalanceMessage = '💰 Be careful with your spends of EUR';
         // assert
         expect(actualBalanceMessage).toEqual(expectedBalanceMessage);
       });
