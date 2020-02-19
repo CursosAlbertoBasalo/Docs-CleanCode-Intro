@@ -41,22 +41,22 @@ describe('GIVEN: I have an account in a bank', () => {
         sut.addTransaction('ES99 8888 7777 66 5555555555', 'TRANFER', 100, 'EURO');
       }).toThrowError(expectedErrorMessage);
     });
-    describe('WHEN: I make a transaction ', () => {
-      let actualBalanceMessage: string;
-      beforeEach(() => {
-        // Act
-        actualBalanceMessage = sut.addTransaction(
-          'ES99 8888 7777 66 5555555555',
-          'DEPOSIT',
-          100,
-          'EURO'
-        );
-      });
-      test('THEN: I should get a balance message', () => {
-        const expectedBalanceMessage = '💰 Be careful with your spends.';
-        // assert
-        expect(actualBalanceMessage).toEqual(expectedBalanceMessage);
-      });
+  });
+  describe('WHEN: I make a transaction ', () => {
+    let actualBalanceMessage: string;
+    beforeEach(() => {
+      // Act
+      actualBalanceMessage = sut.addTransaction(
+        'ES99 8888 7777 66 5555555555',
+        'DEPOSIT',
+        100,
+        'EURO'
+      );
+    });
+    test('THEN: I should get a balance message', () => {
+      const expectedBalanceMessage = '💰 Be careful with your spends of EURO';
+      // assert
+      expect(actualBalanceMessage).toEqual(expectedBalanceMessage);
     });
   });
 });

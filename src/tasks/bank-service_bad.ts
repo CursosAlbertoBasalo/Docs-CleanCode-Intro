@@ -20,6 +20,7 @@ export class BankService {
     amount: number,
     currency?: 'EURO'
   ): string {
+    // ❌ check input and permorf logic
     if (this.isInvalidTransaction(transactionType, amount)) {
       throw '💥Invalid transaction';
     }
@@ -27,9 +28,8 @@ export class BankService {
     if (account === undefined) {
       throw '💥Account not found';
     }
-    const newBalance = this.executeTransaction(transactionType, account.balance, amount);
-    account.balance = newBalance;
-    return this.getUserFriendlyBalanceMessage(newBalance);
+    account.balance = this.executeTransaction(transactionType, account.balance, amount);
+    return this.getUserFriendlyBalanceMessage(account.balance, currency);
   }
   private getAccount(accountID: string): { accountID: string; balance: number } {
     return this.accounts.find(a => a.accountID === accountID);
@@ -49,6 +49,7 @@ export class BankService {
   }
   // ❌ order error prone
   private executeTransaction(transactionType: string, currentBalance: number, amount: number) {
+    // ❌ reduce conditionals
     switch (transactionType) {
       case 'DEPOSIT':
         return currentBalance + amount;
@@ -59,15 +60,15 @@ export class BankService {
     }
   }
 
-  private getUserFriendlyBalanceMessage(balance: number): string {
+  private getUserFriendlyBalanceMessage(balance: number, currency: string): string {
     const CRITICAL_BALANCE = 100;
     // ❌ reduce conditionals
     if (balance < CRITICAL_BALANCE) {
-      return '💸 Bad luck you have no enough money.';
+      return '💸 Bad luck you have no enough ' + currency;
     } else if (balance === CRITICAL_BALANCE) {
-      return '💰 Be careful with your spends.';
+      return '💰 Be careful with your spends of ' + currency;
     } else {
-      return '🤑 Good! you have a lot of money.';
+      return '🤑 Good! you have a lot of ' + currency;
     }
   }
 }

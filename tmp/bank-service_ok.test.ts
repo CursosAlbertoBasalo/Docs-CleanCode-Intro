@@ -48,20 +48,20 @@ describe('GIVEN: I have an account in a bank', () => {
         );
       }).toThrowError(expectedErrorMessage);
     });
-    describe('WHEN: I make a transaction ', () => {
-      let actualBalanceMessage: string;
-      beforeEach(() => {
-        const inputTransaction = new Transaction('ES99 8888 7777 66 5555555555', 'DEPOSIT', {
-          amount: 100,
-        });
-        // Act
-        actualBalanceMessage = sut.addTransaction(inputTransaction);
+  });
+  describe('WHEN: I make a transaction ', () => {
+    let actualBalanceMessage: string;
+    beforeEach(() => {
+      const inputTransaction = new Transaction('ES99 8888 7777 66 5555555555', 'DEPOSIT', {
+        amount: 100,
       });
-      test('THEN: I should get a balance message', () => {
-        const expectedBalanceMessage = '💰 Be careful with your spends of EUR';
-        // assert
-        expect(actualBalanceMessage).toEqual(expectedBalanceMessage);
-      });
+      // Act
+      actualBalanceMessage = sut.addTransaction(inputTransaction);
+    });
+    test('THEN: I should get a balance message', () => {
+      const expectedBalanceMessage = '💰 Be careful with your spends of EUR';
+      // assert
+      expect(actualBalanceMessage).toEqual(expectedBalanceMessage);
     });
   });
 });
