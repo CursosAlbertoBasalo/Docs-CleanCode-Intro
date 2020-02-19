@@ -1,28 +1,3 @@
-export class Transaction {
-  // eslint-disable-next-line max-params
-  constructor(
-    public readonly accountdId: string,
-    public readonly transactionType: string,
-    public readonly value: Money
-  ) {
-    if (this.isInvalidTransaction()) {
-      throw '💥Invalid transaction';
-    }
-    this.value.currency = this.value.currency || 'EURO';
-  }
-  private isInvalidTransaction(): boolean {
-    // ✔ reduce conditionals
-    if (TRANSACTION_TYPES.includes(this.transactionType)) {
-      const MINIMAL_AMOUNT = 0;
-      return this.value.amount < MINIMAL_AMOUNT;
-    } else {
-      return true;
-    }
-  }
-}
-
-export type Money = { amount: number; currency?: string };
-
 export const TRANSACTION_TYPES = ['DEPOSIT', 'WITHDRAW', 'CANCEL'];
 
 export const TRANSACTION_CALCULATOR = {
@@ -48,6 +23,30 @@ export const BALANCE_MESSAGES = [
     message: `🤑 Good! you have a lot of `,
   },
 ];
+
+export type Money = { amount: number; currency?: string };
+
+export class Transaction {
+  // eslint-disable-next-line max-params
+  constructor(
+    public readonly accountdId: string,
+    public readonly transactionType: string,
+    public readonly value: Money
+  ) {
+    if (this.isInvalidTransaction()) {
+      throw '💥Invalid transaction';
+    }
+    this.value.currency = this.value.currency || 'EURO';
+  }
+  private isInvalidTransaction(): boolean {
+    if (TRANSACTION_TYPES.includes(this.transactionType)) {
+      const MINIMAL_AMOUNT = 0;
+      return this.value.amount < MINIMAL_AMOUNT;
+    } else {
+      return true;
+    }
+  }
+}
 
 export type Account = {
   accountID: string;
