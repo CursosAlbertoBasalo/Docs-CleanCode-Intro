@@ -14,7 +14,7 @@ export abstract class Monotrema extends Animal {
   abstract breastFeed(child: Monotrema): void;
 }
 
-// ✔️ extend an implement abstract methods
+// ✔️ extend and implement abstract methods
 export class Whale extends Mamal {
   giveBirth(name: string): Mamal {
     return new Whale(name);
@@ -24,7 +24,7 @@ export class Whale extends Mamal {
   }
 }
 
-// ✔️ extend an implement abstract methods
+// ✔️ extend and implement abstract methods
 export class ClownFish extends Oviparous {
   layEggs(name: string): Oviparous {
     return new ClownFish(name);

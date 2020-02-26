@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Animal } from '../1-S_rp/Srp_ok';
 
 export abstract class Mamal extends Animal {
@@ -9,7 +11,7 @@ export abstract class Oviparous extends Animal {
   abstract layEggs(name: string): Oviparous;
 }
 
-// ✔️ extend an implement abstract methods
+// ✔️ extend and implement abstract methods
 export class Whale extends Mamal {
   giveBirth(name: string): Mamal {
     return new Whale(name);
@@ -19,7 +21,7 @@ export class Whale extends Mamal {
   }
 }
 
-// ✔️ extend an implement abstract methods
+// ✔️ extend and implement abstract methods
 export class ClownFish extends Oviparous {
   layEggs(name: string): Oviparous {
     return new ClownFish(name);

@@ -1,7 +1,7 @@
 import { Animal } from '../1-S_rp/Srp_ok';
 
 class TalkingAnimal extends Animal {
-  constructor(name, public kind: string) {
+  constructor(name: string, public kind: string) {
     super(name);
   }
 }
