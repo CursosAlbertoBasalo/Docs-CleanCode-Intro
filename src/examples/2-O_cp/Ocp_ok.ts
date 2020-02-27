@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
+// ✔️ common ancestor for shapes
 class Shape {
   constructor(public readonly kind: string) {}
 }
 export class Triangle extends Shape {
   constructor(public readonly base: number, public readonly height: number) {
-    super('Triangle');
+    super('TRIANGLE');
     this.validate();
   }
   private validate(): void {
@@ -16,7 +18,7 @@ export class Triangle extends Shape {
 
 export class Square extends Shape {
   constructor(public readonly side: number) {
-    super('Square');
+    super('SQUARE');
     this.validate();
   }
   private validate(): void {
@@ -34,7 +36,6 @@ export class Calculator {
   }
 }
 
-const PI = 3.14;
 const HALVE = 0.5;
 
 // ✔️ a data object could be loaded or modified at run time
