@@ -13,7 +13,7 @@ export class Triangle extends Shape {
     }
   }
 }
-
+// ❌ a subtype with very particular characteristics
 export class RightTriangle extends Triangle {
   constructor(public readonly base: number, public readonly height: number) {
     super(base, height);
@@ -37,7 +37,7 @@ export abstract class Calculator {
   abstract getArea(shape: Shape): number;
   abstract getPerimeter(shape: Shape): number;
 }
-// ❌ What's happens with a non right triangle?
+// ❌ What happens with a non right triangle?
 export class TriangleCalculator extends Calculator {
   getArea(triangle: Triangle): number {
     const HALVE = 0.5;

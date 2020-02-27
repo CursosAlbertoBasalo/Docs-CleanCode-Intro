@@ -1,32 +1,39 @@
-/* eslint-disable max-lines-per-function */
-import { ClownFish, Platypus, Whale } from './Lsp_ok';
-
+/* eslint-disable no-magic-numbers */
 /* eslint-disable max-nested-callbacks */
+// import { Triangle } from './Lsp_bad';
+import {
+  RightTriangleCalculator,
+  Square,
+  SquareCalculator,
+  Triangle,
+  TriangleCalculator,
+} from './Lsp_ok';
 
-describe('Caring animals and their offspring', () => {
-  test('Given a female whale I hope her to give birth ', () => {
-    const aFemale = new Whale('Ms. Dick');
-    const actual = aFemale.giveBirth('Moby Dick').name;
-    const expected = 'Moby Dick';
+describe('work with triangles', () => {
+  test('Given a triangle get its area', () => {
+    const input = new Triangle(15, 20);
+    const actual = new TriangleCalculator().getArea(input);
+    const expected = 150;
     expect(actual).toEqual(expected);
   });
-  test('Given a female whale I hope her feed her child ', () => {
-    const aFemale = new Whale('Ms. Dick');
-    const herChild = aFemale.giveBirth('Moby Dick');
-    const actual = aFemale.breastFeed(herChild);
-    const expected = undefined;
+  test('Given a triangle get its Perimeter', () => {
+    const input = new Triangle(15, 20);
+    const actual = new RightTriangleCalculator().getPerimeter(input);
+    const expected = 60;
     expect(actual).toEqual(expected);
   });
-  test('Given a female clown fish I hope her to lay eggs ', () => {
-    const aFemale = new ClownFish('Ms. Reef');
-    const actual = aFemale.layEggs('Nemo').name;
-    const expected = 'Nemo';
+});
+describe('work with squares', () => {
+  test('Given a square get its area', () => {
+    const input = new Square(15);
+    const actual = new SquareCalculator().getArea(input);
+    const expected = 225;
     expect(actual).toEqual(expected);
   });
-  test('Given a female platypus I hope her to lay eggs ', () => {
-    const aFemale = new Platypus('Ms. Oldie');
-    const actual = aFemale.layEggs('Perry').name;
-    const expected = 'Perry';
+  test('Given a square get its Perimeter', () => {
+    const input = new Square(15);
+    const actual = new SquareCalculator().getPerimeter(input);
+    const expected = 60;
     expect(actual).toEqual(expected);
   });
 });

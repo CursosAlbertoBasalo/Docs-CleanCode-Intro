@@ -36,6 +36,7 @@ export abstract class Calculator {
   abstract getArea(shape: Shape): number;
   abstract getPerimeter(shape: Shape): number;
 }
+
 // ✔️ at least we are covered
 export class TriangleCalculator extends Calculator {
   getArea(triangle: Triangle): number {
