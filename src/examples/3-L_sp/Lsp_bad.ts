@@ -1,53 +1,72 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { Animal } from '../1-S_rp/Srp_ok';
-
-export abstract class Mamal extends Animal {
-  abstract giveBirth(name: string): Mamal;
-  abstract breastFeed(child: Mamal): void;
+/* eslint-disable @typescript-eslint/no-explicit-any */
+class Shape {
+  constructor(public readonly kind: string) {}
 }
-
-export abstract class Oviparous extends Animal {
-  abstract layEggs(name: string): Oviparous;
-}
-
-// ✔️ extend and implement abstract methods
-export class Whale extends Mamal {
-  giveBirth(name: string): Mamal {
-    return new Whale(name);
+export class Triangle extends Shape {
+  constructor(public readonly base: number, public readonly height: number) {
+    super('Triangle');
+    this.validate();
   }
-  breastFeed(child: Whale): void {
-    console.log('Feeding my little baby', child);
+  private validate(): void {
+    if (this.base <= 0 || this.height <= 0) {
+      throw 'Both measures must be positive.';
+    }
   }
 }
 
-// ✔️ extend and implement abstract methods
-export class ClownFish extends Oviparous {
-  layEggs(name: string): Oviparous {
-    return new ClownFish(name);
+export class RightTriangle extends Triangle {
+  constructor(public readonly base: number, public readonly height: number) {
+    super(base, height);
   }
 }
 
-// ❌ what about giveBirth???
-// ❌ how can I feed may little child???
-export class PlatypusMamal extends Mamal {
-  layEggs(): PlatypusMamal {
-    return new PlatypusMamal('Perry');
+export class Square extends Shape {
+  constructor(public readonly side: number) {
+    super('Square');
+    this.validate();
   }
-  giveBirth(): Mamal {
-    throw new Error('Method not implemented.');
-  }
-  breastFeed(child: PlatypusMamal): void {
-    console.error('I can not get a platypus to feed');
+  private validate(): void {
+    if (this.side <= 0) {
+      throw 'Side must be positive.';
+    }
   }
 }
 
-// ❌ I still can't feed my little one :-(
-export class PlatypusOviparous extends Oviparous {
-  layEggs(name: string): PlatypusOviparous {
-    return new PlatypusOviparous(name);
+// ❌ inheritance may hide problems
+export abstract class Calculator {
+  abstract getArea(shape: Shape): number;
+  abstract getPerimeter(shape: Shape): number;
+}
+// ❌ What's happens with a non right triangle?
+export class TriangleCalculator extends Calculator {
+  getArea(triangle: Triangle): number {
+    const HALVE = 0.5;
+    return HALVE * triangle.base * triangle.height;
   }
-  breastFeed(child: PlatypusOviparous): void {
-    console.error('I can not get a platypus to feed');
+  getPerimeter(triangle: Triangle): number {
+    const hypotenuse = Math.sqrt(triangle.base * triangle.base + triangle.height * triangle.height);
+    return triangle.base + triangle.height + hypotenuse;
+  }
+}
+
+export class SquareCalculator extends Calculator {
+  getArea(square: Square): number {
+    return square.side * square.side;
+  }
+  getPerimeter(square: Square): number {
+    const sides = 4;
+    return sides * square.side;
+  }
+}
+
+export class TrianglesRepository {
+  save(triangle: Triangle): void {
+    console.log(`Triangle with base ${triangle.base} and height ${triangle.height}`);
+  }
+}
+
+export class SquaresRepository {
+  save(square: Square): void {
+    console.log(`Square with side ${square.side}`);
   }
 }

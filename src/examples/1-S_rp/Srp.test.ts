@@ -1,15 +1,13 @@
+/* eslint-disable no-magic-numbers */
 /* eslint-disable max-nested-callbacks */
-import { Animal, AnimalDB } from './Srp_ok';
+//import { Triangle } from './Srp_bad';
+import { Calculator, Triangle } from './Srp_ok';
 
-describe('Managing animals', () => {
-  test('Given an animal get its name', () => {
-    const actual = new Animal('Lassie').getAnimalName();
-    const expected = 'Lassie';
-    expect(actual).toEqual(expected);
-  });
-  test('Given an animal save it', () => {
-    const actual = AnimalDB.saveAnimal(new Animal('Lassie'));
-    const expected = undefined;
+describe('work with triangles', () => {
+  test('Given a triangle get its area', () => {
+    const input = new Triangle(15, 20);
+    const actual = new Calculator().getArea(input);
+    const expected = 150;
     expect(actual).toEqual(expected);
   });
 });

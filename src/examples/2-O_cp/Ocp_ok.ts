@@ -1,21 +1,58 @@
-import { Animal } from '../1-S_rp/Srp_ok';
-
-// ✔️ closed for modification
-abstract class AnimalSoundMaker extends Animal {
-  abstract makeSound(): string;
+/* eslint-disable @typescript-eslint/no-explicit-any */
+class Shape {
+  constructor(public readonly kind: string) {}
 }
-
-// ✔️ Open for extension
-export class Lion extends AnimalSoundMaker {
-  makeSound(): string {
-    return 'roar';
+export class Triangle extends Shape {
+  constructor(public readonly base: number, public readonly height: number) {
+    super('Triangle');
+    this.validate();
+  }
+  private validate(): void {
+    if (this.base <= 0 || this.height <= 0) {
+      throw 'Both measures must be positive.';
+    }
   }
 }
-export class Gorilla extends AnimalSoundMaker {
-  makeSound(): string {
-    return 'grunt';
+
+export class Square extends Shape {
+  constructor(public readonly side: number) {
+    super('Square');
+    this.validate();
+  }
+  private validate(): void {
+    if (this.side <= 0) {
+      throw 'Side must be positive.';
+    }
   }
 }
-export function makeAnimalsSounds(animals: Array<AnimalSoundMaker>): void {
-  animals.forEach(animal => animal.makeSound());
+
+// ✔️ using a data object to get the function
+export class Calculator {
+  getArea(shape: Shape): number {
+    const calulator = areaCalculator[shape.kind];
+    return calulator(shape);
+  }
+}
+
+const PI = 3.14;
+const HALVE = 0.5;
+
+// ✔️ a data object could be loaded or modified at run time
+export const areaCalculator = {
+  TRIANGLE: (shape: any): number => HALVE * shape.base * shape.height,
+  SQUARE: (shape: any): number => shape.side * shape.side,
+};
+
+// ✔️ an specialized object
+export class TrianglesRepository {
+  save(triangle: Triangle): void {
+    console.log(`Triangle with base ${triangle.base} and height ${triangle.height}`);
+  }
+}
+
+// ✔️  a new specialized object without touching the above
+export class SquaresRepository {
+  save(square: Square): void {
+    console.log(`Square with side ${square.side}`);
+  }
 }
