@@ -112,7 +112,11 @@ export class SpheresRepository {
 }
 
 export class SurfaceMetrics {
-  constructor(private shape: Shape, private areaCalculator: AreaCalculator) {}
+  private areaCalculator: AreaCalculator;
+
+  constructor(private shape: Shape, areaCalculator: AreaCalculator) {
+    this.areaCalculator = areaCalculator;
+  }
 
   getArea(): number {
     return this.areaCalculator.getArea(this.shape);
