@@ -1,169 +1,137 @@
+/* eslint-disable no-magic-numbers */
 /* eslint-disable max-lines-per-function */
 /* eslint-disable max-nested-callbacks */
-import { Account, BankService, Transaction } from './bank-service_bad';
+import { BankService, Transaction } from './bank-service_bad';
 
 /*
 FEATURE:    Simulate a bank account system.
-
 As a:       customer
-I want to:  have an account,
-and:        make a deposit or withdraw money,
-and:        and get my balance user friendly.
+I want to:  have a valid account with valid IBAN ids,
+and:        make a deposit, a transfer or withdraw money,
+and:        and get my financial balance or a user friendly one
 So:         I can control my finances.
-
-As a:       customer
-I want to:  export transactions to a file,
-So:         I can study them in detail at any time.
-
-As a:       customer
-I want to:  have multiples accounts,
-So:         I can differentiate my activities.
 */
 
-const inputClientTaxId = '123456789A';
-const inputClientName = 'John Smith';
-
-describe('GIVEN: a client of a Bank Service without accounts', () => {
-  // Arrange
+describe('GIVEN: I do not have an account in a bank', () => {
   let sut: BankService;
   beforeEach(() => {
+    // Arrange
     sut = new BankService();
-    sut.createClient(inputClientTaxId, inputClientName);
   });
-  describe('WHEN: the client asks for his account', () => {
-    let actualAccount: Account;
-    beforeEach(() => {
-      //Act
-      actualAccount = sut.getAccount(inputClientTaxId);
-    });
-    test('THEN: should get an undefined account', () => {
-      // assert
-      expect(actualAccount).toBeUndefined();
+  describe('WHEN: I make any transaction ', () => {
+    test('THEN: I should get an error', () => {
+      const inputTransaction = new Transaction('ES00 1111 2222 33 5555555555', 'DEPOSIT', {
+        amount: 100,
+      });
+      const expectedErrorMessage = '💥Account not found';
+      expect(() => {
+        sut.addTransaction(inputTransaction);
+      }).toThrowError(expectedErrorMessage);
     });
   });
-  describe('WHEN: I ask to create an account', () => {
-    let actualIban: string;
-    beforeEach(() => {
-      //Act
-      actualIban = sut.createAccount(inputClientTaxId);
-    });
-    test('THEN: should give the iban number', () => {
+  describe('WHEN: I ask the bank to create an account ', () => {
+    test('THEN: I should get a new AccountId', () => {
+      const actualBalanceMessage = sut.createAccount();
+      const expectedAccountID = 'ES99 8888 7777 66 5555555555';
       // assert
-      const expectedIbanLength = 24;
-      expect(actualIban.length).toEqual(expectedIbanLength);
+      expect(actualBalanceMessage).toEqual(expectedAccountID);
+    });
+  });
+  describe('WHEN: I ask the bank to create an account with an invalid ID ', () => {
+    test('THEN: I should get a new AccountId', () => {
+      // assert
+      const expectedErrorMessage = '💥Invalid account';
+      expect(() => {
+        sut.createAccount('ES9988887777665555555555');
+      }).toThrowError(expectedErrorMessage);
     });
   });
 });
 
-describe('GIVEN: a client of a Bank Service with an account', () => {
+describe('GIVEN: I have an account in a bank', () => {
   let sut: BankService;
-  let inputAccountIban: string;
   beforeEach(() => {
     // Arrange
     sut = new BankService();
-    sut.createClient(inputClientTaxId, inputClientName);
-    inputAccountIban = sut.createAccount(inputClientTaxId);
+    sut.createAccount();
   });
-  describe('WHEN: the client ask for his account', () => {
-    let actualIban: Account;
+  describe('WHEN: I make a transaction of an invalid type', () => {
+    test('THEN: I should get an error', () => {
+      const expectedErrorMessage = '💥Invalid transaction';
+      expect(() => {
+        sut.addTransaction(
+          new Transaction('ES99 8888 7777 66 5555555555', 'INVALID', {
+            amount: 100,
+          })
+        );
+      }).toThrowError(expectedErrorMessage);
+    });
+  });
+  describe('WHEN: I make an TRANSFER transaction without target account', () => {
+    test('THEN: I should get an error', () => {
+      const expectedErrorMessage = '💥Invalid transaction';
+      expect(() => {
+        sut.addTransaction(
+          new Transaction('ES99 8888 7777 66 5555555555', 'TRANSFER', {
+            amount: 100,
+          })
+        );
+      }).toThrowError(expectedErrorMessage);
+    });
+  });
+  describe('WHEN: I make a transaction ', () => {
+    let actualTransactionID: string;
     beforeEach(() => {
-      //Act
-      actualIban = sut.getAccount(inputClientTaxId);
+      // Arrange
+      sut = new BankService();
+      sut.createAccount();
+      const inputTransaction = new Transaction('ES99 8888 7777 66 5555555555', 'DEPOSIT', {
+        amount: 100,
+      });
+      // Act
+      actualTransactionID = sut.addTransaction(inputTransaction);
     });
-    test('THEN: should get the first one', () => {
+    test('THEN: I should get a the transaction confirmed and saved', () => {
       // assert
-      const expectediban = inputAccountIban;
-      expect(actualIban.iban).toEqual(expectediban);
+      expect(actualTransactionID).toBeDefined();
     });
   });
-  describe('WHEN: the client creates an account', () => {
-    let actualIban: string;
+  describe('WHEN: I ask for an account Balance ', () => {
+    let actualBalanceMessage: string;
     beforeEach(() => {
-      //Act
-      actualIban = sut.createAccount(inputClientTaxId);
+      // Arrange
+      sut = new BankService();
+      sut.createAccount();
+      const inputTransaction = new Transaction('ES99 8888 7777 66 5555555555', 'DEPOSIT', {
+        amount: 100,
+      });
+      sut.addTransaction(inputTransaction);
+      // Act
+      actualBalanceMessage = sut.getAccountBalance('ES99 8888 7777 66 5555555555');
     });
-    test('THEN: should get another one', () => {
+    test('THEN: I should get a balance message', () => {
+      const expectedBalanceMessage = '💰 Be careful with your spends of EUR';
       // assert
-      expect(actualIban).not.toEqual(inputAccountIban);
+      expect(actualBalanceMessage).toEqual(expectedBalanceMessage);
     });
   });
-});
-
-describe('GIVEN: a client of a Bank Service with an account and transactions', () => {
-  let sut: BankService;
-  let inputAccountIban: string;
-  beforeEach(() => {
-    // Arrange
-    sut = new BankService();
-    sut.createClient(inputClientTaxId, inputClientName);
-    inputAccountIban = sut.createAccount(inputClientTaxId);
-    const transactionInput: Transaction = {
-      taxId: inputClientTaxId,
-      iban: inputAccountIban,
-      type: 'DEPOSIT',
-      amount: 100,
-    };
-    sut.addTransaction(transactionInput);
-  });
-  describe('WHEN: the client ask for his balance', () => {
-    let actualBalance: number;
+  describe('WHEN: I ask for an account financial Balance ', () => {
+    let actualBalanceMessage: string;
     beforeEach(() => {
-      //Act
-      actualBalance = sut.getBalance(inputAccountIban);
+      // Arrange
+      sut = new BankService();
+      sut.createAccount();
+      const inputTransaction = new Transaction('ES99 8888 7777 66 5555555555', 'DEPOSIT', {
+        amount: 100,
+      });
+      sut.addTransaction(inputTransaction);
+      // Act
+      actualBalanceMessage = sut.getAccountBalance('ES99 8888 7777 66 5555555555', false);
     });
-    test('THEN: should get the correct balance', () => {
+    test('THEN: I should get a balance message', () => {
+      const expectedBalanceMessage = '100 EUR';
       // assert
-      const expectedBalance = 100;
-      expect(actualBalance).toEqual(expectedBalance);
-    });
-  });
-  describe('WHEN: the client ask for his balance in user friendly format', () => {
-    let actualFriendlyBalance: string;
-    beforeEach(() => {
-      //Act
-      const inputBalance = sut.getBalance(inputAccountIban);
-      actualFriendlyBalance = sut.getUserFriendlyBalanceMessage(inputBalance);
-    });
-    test('THEN: should get a friendly message', () => {
-      // assert
-      const expectedFriendlyBalance = 'Good! you have a lot of money.';
-      expect(actualFriendlyBalance).toEqual(expectedFriendlyBalance);
-    });
-  });
-});
-
-describe('GIVEN: a client with an account and transactions', () => {
-  let sut: BankService;
-  let inputAccountIban: string;
-  beforeEach(() => {
-    // Arrange
-    sut = new BankService();
-    sut.createClient(inputClientTaxId, inputClientName);
-    inputAccountIban = sut.createAccount(inputClientTaxId);
-    const inputTransactionDeposit: Transaction = {
-      taxId: inputClientTaxId,
-      iban: inputAccountIban,
-      type: 'DEPOSIT',
-      amount: 100,
-    };
-    sut.addTransaction(inputTransactionDeposit);
-    const inputTransactionWithdraw: Transaction = {
-      taxId: inputClientTaxId,
-      iban: inputAccountIban,
-      type: 'WITHDRAW',
-      amount: 20,
-    };
-    sut.addTransaction(inputTransactionWithdraw);
-  });
-  describe('WHEN: I want to export my transactions', () => {
-    let actualExportedTransactions: string;
-    beforeEach(() => {
-      //Act
-      actualExportedTransactions = sut.export(inputAccountIban);
-    });
-    test('THEN: should write my transactions in a file', () => {
-      // assert
-      expect(JSON.parse(actualExportedTransactions)).toBeInstanceOf(Array);
+      expect(actualBalanceMessage).toEqual(expectedBalanceMessage);
     });
   });
 });

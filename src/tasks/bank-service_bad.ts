@@ -1,129 +1,144 @@
-// ❌ refactor and change the tests accordingly
+/* eslint-disable max-params */
+/* eslint-disable max-depth */
+export const TRANSACTION_TYPES = ['DEPOSIT', 'WITHDRAW', 'CANCEL', 'TRANSFER'];
 
-export class BankService {
-  private readonly INITIAL_BALANCE: number;
-  private clients: Map<string, Client>;
-  private transactions: Map<string, Transaction>;
+// ❌ this is not an optimal solution
+export const TRANSACTION_CALCULATOR = {
+  DEPOSIT: (transaction: Transaction, account: Account): number =>
+    account.balance.amount + transaction.value.amount,
+  WITHDRAW: (transaction: Transaction, account: Account): number =>
+    account.balance.amount - transaction.value.amount,
+  CANCEL: (transaction: Transaction, account: Account): number =>
+    account.balance.amount - transaction.value.amount,
+  TRANSFER: (transaction: Transaction, account: Account): number =>
+    account.balance.amount - transaction.value.amount,
+};
 
-  constructor() {
-    this.INITIAL_BALANCE = 0;
-    this.clients = new Map<string, Client>();
-    this.transactions = new Map<string, Transaction>();
-  }
+export const BALANCE_MESSAGES = [
+  {
+    topValue: 0,
+    message: `💸 Bad luck you have no enough `,
+  },
+  {
+    topValue: 100,
+    message: `💰 Be careful with your spends of `,
+  },
+  {
+    topValue: Number.MAX_SAFE_INTEGER,
+    message: `🤑 Good! you have a lot of `,
+  },
+];
 
-  createClient(taxId: string, name: string): void {
-    const newClient: Client = { taxId, name, accounts: new Map<string, Account>() };
-    this.clients.set(taxId, newClient);
-  }
+const DEAFULT_CURRENCY = 'EUR';
 
-  getAccount(clientTaxId: string, accountIBAN?: string): Account {
-    const client = this.clients.get(clientTaxId);
-    if (client && client.accounts) {
-      if (accountIBAN) {
-        return client.accounts.get(accountIBAN);
-      } else {
-        return client.accounts.values().next().value;
-      }
-    } else {
-      return undefined;
-    }
-  }
-  createAccount(clientTaxId: string, accountCategory = 'Current'): string {
-    const client = this.clients.get(clientTaxId);
-    const newAccount = new Account();
-    newAccount.iban = 'ES' + (Math.random() * new Date().getTime()).toString().padStart(22, '0');
-    newAccount.category = accountCategory;
-    client.accounts.set(newAccount.iban, newAccount);
-    return newAccount.iban;
-  }
-  addTransaction(transaction: Transaction): string {
-    if (this.isValidTransaction(transaction)) {
-      this.roundTransaction(transaction);
-      return this.saveTransaction(transaction);
-    }
-    return undefined;
-  }
-  getBalance(accountIBAN: string): number {
-    let balance = this.INITIAL_BALANCE;
-    const accountTransactions = this.getAccountTransactions(accountIBAN);
-    balance = this.executeTransactions(accountTransactions);
-    return balance;
-  }
+export type Money = { amount: number; currency?: string };
 
-  getUserFriendlyBalanceMessage(balance: number): string {
-    // ❌ reduce conditionals
-    if (balance < this.INITIAL_BALANCE) {
-      return 'Be careful with your debts.';
-    } else if (balance === this.INITIAL_BALANCE) {
-      return 'Bad luck you have no money.';
-    } else {
-      return 'Good! you have a lot of money.';
-    }
+export class Transaction {
+  public readonly transactionId: string;
+  constructor(
+    public readonly accountdId: string,
+    public readonly transactionType: string,
+    public readonly value: Money,
+    public readonly targetAccountdId?: string
+  ) {
+    this.guardInvalidTransaction();
+    this.value.currency = this.value.currency || DEAFULT_CURRENCY;
+    this.transactionId = new Date().getUTCDate().toLocaleString();
   }
-  export(accountIBAN: string): string {
-    const accountTransactions = this.getAccountTransactions(accountIBAN);
-    return JSON.stringify(accountTransactions);
-  }
-
-  private getAccountTransactions(accountIBAN: string): Transaction[] {
-    const allTransactions = Array.from(this.transactions.values());
-    const accountTransactions = allTransactions.filter(t => t.iban === accountIBAN);
-    return accountTransactions;
-  }
-  private executeTransactions(transactions: Transaction[]): number {
-    return transactions.reduce(this.executeTransaction, this.INITIAL_BALANCE);
-  }
-  private executeTransaction(accumulator: number, transaction: Transaction): number {
-    // ❌ replace switches
-    switch (transaction.type) {
-      case 'DEPOSIT':
-        return accumulator + transaction.amount;
-      case 'WITHDRAW':
-        return accumulator - transaction.amount;
-      default:
-        return accumulator;
-    }
-  }
-  private isValidTransaction(transaction: Transaction): boolean {
-    // ❌ reduce conditionals
-    if (
-      transaction.type === 'DEPOSIT' ||
-      transaction.type === 'WITHDRAW' ||
-      transaction.type === 'CANCEL'
-    ) {
+  private guardInvalidTransaction(): void {
+    if (TRANSACTION_TYPES.includes(this.transactionType)) {
       const MINIMAL_AMOUNT = 0;
-      return transaction.amount >= MINIMAL_AMOUNT;
-    } else {
-      return false;
+      if (this.value.amount >= MINIMAL_AMOUNT) {
+        // ❌ transaction types involved in validations and calculations
+        if (this.transactionType === 'TRANSFER') {
+          if (this.targetAccountdId != undefined) {
+            return;
+          }
+        } else {
+          return;
+        }
+      }
     }
+    throw '💥Invalid transaction';
   }
-  private roundTransaction(transaction: Transaction): void {
-    const CENTS = 100;
-    transaction.amount = Math.round(transaction.amount * CENTS) / CENTS;
-  }
-  private saveTransaction(transaction: Transaction): string {
-    transaction.id = (Math.random() * new Date().getTime()).toString().padStart(20, '0');
-    this.transactions.set(transaction.id, transaction);
-    return transaction.id;
-  }
-}
-
-// ❌
-export class Client {
-  taxId: string;
-  name: string;
-  accounts?: Map<string, Account>;
 }
 
 export class Account {
-  category: string;
-  iban: string;
+  constructor(
+    public readonly accountId: string,
+    public readonly countryId: string = 'ES',
+    public readonly balance: Money = { amount: 0, currency: DEAFULT_CURRENCY }
+  ) {
+    this.guardInvalidAccount();
+  }
+  private guardInvalidAccount(): void {
+    // ❌ validation logic can be way too complex
+    switch (this.countryId) {
+      case 'ES':
+        if (this.accountId.startsWith('ES') && this.accountId.length === 28) return;
+        break;
+      case 'PT':
+        if (this.accountId.startsWith('PT') && this.accountId.length === 29) return;
+        break;
+    }
+    throw '💥Invalid account';
+  }
 }
 
-export class Transaction {
-  id?: string;
-  taxId: string;
-  iban: string;
-  type: string;
-  amount: number;
+export class Accounts {
+  private readonly accounts: Account[] = [];
+  add(account: Account): void {
+    this.accounts.push(account);
+  }
+  getById(accountId: string): Account {
+    const account = this.accounts.find(a => a.accountId === accountId);
+    if (account === undefined) {
+      throw '💥Account not found';
+    }
+    return account;
+  }
+}
+
+// ❌ manage accounts, transactions and balance is too much responsibility
+
+export class BankService {
+  private readonly accounts: Accounts = new Accounts();
+  private readonly transactions: Transaction[] = [];
+  constructor() {}
+
+  createAccount(accountId = 'ES99 8888 7777 66 5555555555'): string {
+    const defaultAccount = new Account(accountId);
+    this.accounts.add(defaultAccount);
+    return accountId;
+  }
+
+  addTransaction(transaction: Transaction): string {
+    const account = this.accounts.getById(transaction.accountdId);
+    account.balance.amount = this.executeTransaction(transaction, account);
+    this.transactions.push(transaction);
+    return transaction.transactionId;
+  }
+
+  // ❌ flags in methods is a bad smell
+  getAccountBalance(accountId: string, friendlyBalance = true): string {
+    const account = this.accounts.getById(accountId);
+    if (friendlyBalance) {
+      return this.getUserFriendlyBalanceMessage(account.balance);
+    } else {
+      return this.getFinancialBalanceMessage(account.balance);
+    }
+  }
+
+  private executeTransaction(transaction: Transaction, account: Account): number {
+    return TRANSACTION_CALCULATOR[transaction.transactionType](transaction, account);
+  }
+
+  private getUserFriendlyBalanceMessage(balance: Money): string {
+    const userFriendly = BALANCE_MESSAGES.find(m => m.topValue >= balance.amount);
+    return userFriendly.message + balance.currency;
+  }
+  private getFinancialBalanceMessage(balance: Money): string {
+    const finantial = `${balance.amount} ${balance.currency}`;
+    return finantial;
+  }
 }
