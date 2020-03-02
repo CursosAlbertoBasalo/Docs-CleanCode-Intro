@@ -4,7 +4,7 @@
   "description": "Clean Code course laboratories",
   "main": "",
   "scripts": {
-    "test": "jest --watch -o",
+    "test": "jest --watch -o --verbose",
     "format": "prettier --write \"./**/*.{js,ts,json}\"",
     "lint": "eslint . --ext .ts",
     "jest": "jest"
