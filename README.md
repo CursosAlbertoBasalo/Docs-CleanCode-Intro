@@ -2,10 +2,15 @@
 
 Laboratories for [Clean Code course](https://github.com/BitAdemy/CleanCode)
 
+<<<<<<< HEAD
 Lesson [1- Name](https://github.com/BitAdemy/CleanCode/tree/NAME)
+=======
+## Branch lessons
+>>>>>>> master
 
 ### On CodeSandbox
 
+<<<<<<< HEAD
 https://codesandbox.io/s/github/LabsAdemy/CleanCodeLab/tree/NAME
 
 ## Local Configuration
@@ -25,3 +30,12 @@ https://codesandbox.io/s/github/LabsAdemy/CleanCodeLab/tree/NAME
 ## [💻 Tasks](./src/tasks)
 
 > by [bitAdemy](https://bitademy.com)
+=======
+### [FUNCTION](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION)
+
+### [DATA](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA)
+
+### [OBJECT](https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT)
+
+[![bit_ademy](./assets/bit_ademy.png)](https://bitademy.com)
+>>>>>>> master
