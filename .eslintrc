@@ -18,7 +18,8 @@
       { "detectObjects": true, "enforceConst": true, "ignoreArrayIndexes": true }
     ],
     "no-multiple-empty-lines": ["warn", { "max": 2, "maxEOF": 1 }],
-    "@typescript-eslint/no-use-before-define": "off"
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/ban-types": "off"
   },
   "plugins": ["prettier"]
 }
