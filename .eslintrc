@@ -25,7 +25,8 @@
     "no-multiple-empty-lines": ["warn", { "max": 2, "maxEOF": 1 }],
     "no-nested-ternary": "error",
     "no-unused-vars": ["warn"],
-    "@typescript-eslint/no-use-before-define": "off"
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/ban-types": "off"
   },
   "plugins": ["prettier"]
 }
