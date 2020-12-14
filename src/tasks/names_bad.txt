@@ -1,0 +1,6 @@
+getArticles();
+fetchUsers();
+retrievePages();
+getArticleById(id);
+fetchSingleUser(id);
+useIdToRetrievePage(id);
