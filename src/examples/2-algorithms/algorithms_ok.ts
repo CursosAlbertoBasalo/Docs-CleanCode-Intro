@@ -1,4 +1,12 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
+type Shape = { name: string; base?: number; height?: number; width?: number; radius?: number };
+type MeasureSystem = { measureSystem: string; unitName: string; unitSymbol: string };
+// ✔️ all the business knowledge is on the same place
+const measureSystems: MeasureSystem[] = [
+  { measureSystem: 'US', unitName: 'square yards', unitSymbol: 'yd2' },
+  { measureSystem: 'SI', unitName: 'square metres', unitSymbol: 'm2' },
+];
+
 const PI = 3.14;
 const HALVE = 0.5;
 
@@ -16,17 +24,8 @@ export function getArea(shape: Shape): number {
   return calulator(shape);
 }
 
-type Shape = { name: string; base?: number; height?: number; width?: number; radius?: number };
-
 // 💉 inject another shape without modifying
 // areaCalculator['SPHERE'] = shape => 4 * 3.14 * shape.radius * shape.radius;
-
-type MeasureSystem = { measureSystem: string; unitName: string; unitSymbol: string };
-// ✔️ all the business knowledge is on the same place
-const measureSystems: MeasureSystem[] = [
-  { measureSystem: 'US', unitName: 'square yards', unitSymbol: 'yd2' },
-  { measureSystem: 'SI', unitName: 'square metres', unitSymbol: 'm2' },
-];
 
 // ✔️ with no need for conditions we can use very simple arrow functions
 export const getUnitNames = (measureSystem: string): string =>
@@ -37,3 +36,13 @@ export const getUnitSymbol = (measureSystem: string): string =>
 
 const getMeasureSystem = (measureSystem: string): MeasureSystem =>
   measureSystems.find(ms => ms.measureSystem === measureSystem);
+
+// Alternative: use a class for MeasureSystem instead of simple structure
+
+const myCircle: Shape = { name: 'CIRCLE', radius: 5 };
+const myArea = getArea(myCircle);
+const areaTitle: string = myArea + getUnitSymbol('EU');
+console.log(areaTitle);
+const areaDescription: string =
+  'My ' + myCircle.name + ' occupies an area of ' + myArea + getUnitNames('EU');
+console.log(areaDescription);

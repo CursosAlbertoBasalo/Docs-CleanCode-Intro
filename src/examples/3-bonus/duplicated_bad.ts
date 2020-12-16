@@ -22,26 +22,29 @@ export const employee: Employee = {
   accountBank: 'Rabbits Bank',
 };
 
-// ❌ avoid inheritance temptation
-// more complexity same duplicity
+// ❌ duplicated data today
+// may future duplicated logic tomorrow
 
-class BasicData {
+export class Customer {
   name: string;
   addressCity: string;
   addressState: string;
-}
-
-export class Customer extends BasicData {
   taxIdNumber: number;
 }
 
-export class Suplier extends BasicData {
+export class Suplier {
+  name: string;
+  addressCity: string;
+  addressState: string;
   taxIdNumber: number;
   accountNumber: string;
   accountBank: string;
 }
 
-export class Employee extends BasicData {
+export class Employee {
+  name: string;
+  addressCity: string;
+  addressState: string;
   accountNumber: string;
   accountBank: string;
 }

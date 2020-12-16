@@ -27,7 +27,7 @@ export function getArea(shape: Shape): number {
 
 type Shape = { name: string; base?: number; height?: number; width?: number; radius?: number };
 
-// ⚠ it seems a naive if, but...
+// ⚠ it seems a naive if condition, but...
 export function getUnitNames(measureSystem: string): string {
   if (measureSystem === 'US') {
     return 'square yards';
@@ -44,3 +44,11 @@ export function getUnitSymbol(measureSystem: string): string {
     return 'm2';
   }
 }
+
+const myCircle: Shape = { name: 'CIRCLE', radius: 5 };
+const myArea = getArea(myCircle);
+const areaTitle: string = myArea + getUnitSymbol('EU');
+console.log(areaTitle);
+const areaDescription: string =
+  'My ' + myCircle.name + ' occupies an area of ' + myArea + getUnitNames('EU');
+console.log(areaDescription);
