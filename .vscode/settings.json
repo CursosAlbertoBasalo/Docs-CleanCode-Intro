@@ -21,6 +21,7 @@
   },
   "peacock.color": "#f9e64f",
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "SynthWave '84",
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "prettier.useEditorConfig": true,
