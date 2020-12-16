@@ -9,12 +9,10 @@ string printOnlyOddNumbers(int[] numbers)
 			n.Add(number);
 		}
 	}
-
 	for (int i = n.Count - 1; i >= 0; i--)
 	{
 		rev.Add(n.ElementAt(i));
 	}
-
 	StringBuilder sb = new StringBuilder();
 	for (int i = 0; i < rev.Count; i++)
 	{

@@ -1,54 +1,40 @@
 string storeOddNumbersInAReversedString(int[] numbers)
 {
 	List<int> oddNumbers = new List<int>() { };
-	List<int> reversedNumbers = new List<int>() { };
-	oddNumbers = getOnlyOddNumbers(numbers);
-	reversedNumbers = reverseNumbers(oddNumbers);
+	List<int> reversedList = new List<int>() { };
+  String reversedNumbers = "";
 
-	return storeNumbersInString(reversedNumbers);
+  oddNumbers = getOnlyOddNumbers(numbers);
+	reversedList = reverseNumbers(oddNumbers);
+  reversedNumbers = storeListInString(reversedList);
+
+	return reversedNumbers;
 }
 
 List<int> getOnlyOddNumbers(int[] numbers)
 {
-	return numbers.Where(n => n % 2 == 1).ToList();
-}string storeOddNumbersInAReversedString(int[] numbers)
-{
-	List<int> oddNumbers = new List<int>() { };
-	List<int> reversedNumbers = new List<int>() { };
-	oddNumbers = getOnlyOddNumbers(numbers);
-	reversedNumbers = reverseNumbers(oddNumbers);
-
-	return storeNumbersInString(reversedNumbers);
-}
-
-List<int> getOnlyOddNumbers(int[] numbers)
-{
-	return numbers.Where(n => n % 2 == 1).ToList();
-}
-
-List<int> reverseNumbers(List<int> numbers)
-{
-	 numbers.Reverse();
-	 return numbers;
-}
-
-string storeNumbersInString(List<int> numbers)
-{
-	StringBuilder sb = new StringBuilder();
-	for (int i = 0; i < numbers.Count; i++)
+  List<int> oddNumbers = new List<int>() { };
+	foreach (var number in numbers)
 	{
-		sb.Append(numbers.ElementAt(i));
+		if (number % 2 == 1)
+		{
+			oddNumbers.Add(number);
+		}
 	}
-	return sb.ToString();
+  return oddNumbers;
 }
 
 List<int> reverseNumbers(List<int> numbers)
 {
-	 numbers.Reverse();
-	 return numbers;
+  List<int> reversedList = new List<int>() { };
+	for (int i = numbers.Count - 1; i >= 0; i--)
+	{
+		reversedList.Add(n.ElementAt(i));
+	}
+  return reversedList;
 }
 
-string storeNumbersInString(List<int> numbers)
+string storeListInString(List<int> numbers)
 {
 	StringBuilder sb = new StringBuilder();
 	for (int i = 0; i < numbers.Count; i++)
