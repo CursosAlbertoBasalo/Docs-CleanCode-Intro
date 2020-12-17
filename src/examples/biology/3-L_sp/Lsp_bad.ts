@@ -31,14 +31,11 @@ export class ClownFish extends Oviparous {
 // ❌ what about giveBirth???
 // ❌ how can I feed may little child???
 export class PlatypusMamal extends Mamal {
-  layEggs(): PlatypusMamal {
-    return new PlatypusMamal('Perry');
-  }
   giveBirth(): Mamal {
     throw new Error('Method not implemented.');
   }
   breastFeed(child: PlatypusMamal): void {
-    console.error('I can not get a platypus to feed');
+    console.error('I can not get a child to feed');
   }
 }
 
@@ -46,8 +43,5 @@ export class PlatypusMamal extends Mamal {
 export class PlatypusOviparous extends Oviparous {
   layEggs(name: string): PlatypusOviparous {
     return new PlatypusOviparous(name);
-  }
-  breastFeed(child: PlatypusOviparous): void {
-    console.error('I can not get a platypus to feed');
   }
 }
