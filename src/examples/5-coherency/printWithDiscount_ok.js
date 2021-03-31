@@ -1,4 +1,4 @@
-printWithDiscount({ prod.price = 100 });
+printWithDiscount({ price: 100 });
 
 // ✅ Same level of abstraction
 function printWithDiscount(prod) {

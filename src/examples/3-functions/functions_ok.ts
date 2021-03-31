@@ -17,6 +17,14 @@ function getEmptyErrorString(): string {
   return '';
 }
 
+// Alternative with arrow functions
+
+// const mustShowError = (error: object, isTouched: boolean): boolean => error !== null && isTouched;
+
+// const getErrorString = (error: object): string => JSON.stringify(error);
+
+// const getEmptyErrorString = (): string => '';
+
 // ✅ Avoid flags
 export function writeMessageLog(message: string): void {
   console.log(message);
@@ -75,3 +83,5 @@ export class Words {
     occurrences[word]++;
   }
 }
+
+// ToDo: Further improvement, use the class to store the word and the occurrences

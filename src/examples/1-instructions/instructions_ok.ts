@@ -1,4 +1,6 @@
 export function getDateStructure(date: Date): object {
+  // ✔️ guard invalid data
+  if (date === null || date === undefined) return null;
   const MONTHS_BASE = 1; // ✔️ start with constants
   // ✔️ one declaration per line
   // ✔️ assign data during declaration
@@ -9,14 +11,14 @@ export function getDateStructure(date: Date): object {
 }
 
 // ✔️ simple expressions
-export function getMinutesBetweenDates(first: Date, second: Date): number {
+export function getMinutesBetweenDates(initial: Date, final: Date): number {
   const MILLISECONDS_PER_SECOND = 1000;
   const SECONDS_PER_MINUTE = 60;
   const MILLISECONDS_PER_MINUTE = MILLISECONDS_PER_SECOND * SECONDS_PER_MINUTE;
-  const millisecondsDifference = second.getTime() - first.getTime();
-  const absoluteMilisecondsDifference = Math.abs(millisecondsDifference);
-  const absoluteMinutesDifference = absoluteMilisecondsDifference / MILLISECONDS_PER_MINUTE;
-  const minutes = Math.floor(absoluteMinutesDifference);
+  const milliseconds = final.getTime() - initial.getTime();
+  const absoluteMiliseconds = Math.abs(milliseconds);
+  const absoluteMinutes = absoluteMiliseconds / MILLISECONDS_PER_MINUTE;
+  const minutes = Math.floor(absoluteMinutes);
   return minutes;
 }
 
@@ -41,7 +43,7 @@ export function isLeapBlocks(year: number): boolean {
   return isLeap;
 }
 
-// ✔️ Simplify with early returns
+// ✔️✔️ Simplify with guards and early returns
 export function isLeapEarly(year: number): boolean {
   if (year % THIRD_LEVEL_CORRECTOR === NULL_REMAINDER) {
     return true;

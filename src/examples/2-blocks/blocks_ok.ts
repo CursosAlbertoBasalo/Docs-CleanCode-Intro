@@ -46,10 +46,10 @@ export function getSquaredPrimes(): number[] {
 }
 function isPrimeNumber(number: number): boolean {
   const FIRST_PRIME = 2;
-
-  const MAX_PRIME = Math.floor(Math.sqrt(number));
-  let isPrime = number !== 1;
-  for (let i = FIRST_PRIME; i < MAX_PRIME + 1; i++) {
+  if (number < FIRST_PRIME) return false;
+  const maxPrime = Math.floor(Math.sqrt(number));
+  let isPrime = true;
+  for (let i = FIRST_PRIME; i < maxPrime + 1; i++) {
     if (isEvenlyDivisible(number, i)) {
       isPrime = false;
       break;
