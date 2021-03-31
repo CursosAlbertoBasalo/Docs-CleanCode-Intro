@@ -81,15 +81,14 @@ export class SquareCalculator implements AreaCalculator, PerimeterCalculator {
 }
 
 export class SphereCalculator implements AreaCalculator, VolumeCalculator {
+  private readonly PI = 3.14;
   getArea(sphere: Sphere): number {
-    const PI = 3.14;
-    const coefficient = 4;
-    return coefficient * PI * sphere.radius * sphere.radius;
+    const COEFFICIENT = 4;
+    return COEFFICIENT * this.PI * sphere.radius * sphere.radius;
   }
   getVolume(sphere: Sphere): number {
-    const PI = 3.14;
-    const coefficient = 1.33;
-    return coefficient * PI * sphere.radius * sphere.radius * sphere.radius;
+    const COEFFICIENT = 1.33;
+    return COEFFICIENT * this.PI * sphere.radius * sphere.radius * sphere.radius;
   }
 }
 

@@ -114,6 +114,7 @@ export class SpheresRepository {
 export class SurfaceMetrics {
   private areaCalculator: AreaCalculator;
 
+  // ✔️ Depends on injected calculator
   constructor(private shape: Shape, areaCalculator: AreaCalculator) {
     this.areaCalculator = areaCalculator;
   }

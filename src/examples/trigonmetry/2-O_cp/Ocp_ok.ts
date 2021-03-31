@@ -31,15 +31,15 @@ export class Square extends Shape {
 // ✔️ using a data object to get the function
 export class Calculator {
   getArea(shape: Shape): number {
-    const calulator = areaCalculator[shape.kind];
-    return calulator(shape);
+    const calculateArea = areaCalculators[shape.kind];
+    return calculateArea(shape);
   }
 }
 
 const HALVE = 0.5;
 
 // ✔️ a data object could be loaded or modified at run time
-export const areaCalculator = {
+export const areaCalculators = {
   TRIANGLE: (shape: any): number => HALVE * shape.base * shape.height,
   SQUARE: (shape: any): number => shape.side * shape.side,
 };

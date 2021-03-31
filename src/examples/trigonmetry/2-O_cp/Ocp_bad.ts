@@ -31,12 +31,12 @@ export class Calculator {
   }
 }
 
-// ❌ a new shape requires modify the implementation
+// ❌ a new shape requires modification of the implementation
 export class Repository {
   save(shape: unknown): void {
-    if (shape.side === undefined) {
+    if (shape instanceof Triangle) {
       console.log(`Triangle with base ${shape.base} and height ${shape.height}`);
-    } else {
+    } else if (shape instanceof Square) {
       console.log(`Square with side ${shape.side}`);
     }
   }
