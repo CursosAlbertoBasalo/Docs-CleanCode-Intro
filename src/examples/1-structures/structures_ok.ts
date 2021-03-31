@@ -1,7 +1,6 @@
 // ✔️ object literal
 export function calculateInterest(): number {
   const capitalConditions = { principal: 1000, rate: 3.5, years: 1 };
-
   const amount = getSimpleInterest(capitalConditions);
   return amount;
 }

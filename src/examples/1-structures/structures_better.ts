@@ -1,7 +1,6 @@
 // ✔️ object value with validations
 export function calculateInterest(): number {
   const capitalConditions = new BankConditions({ principal: 1000, rate: 3.5, years: 1 });
-
   const amount = getSimpleInterest(capitalConditions);
   return amount;
 }
