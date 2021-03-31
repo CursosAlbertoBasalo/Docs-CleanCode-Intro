@@ -44,6 +44,7 @@ export function getUnitSymbol(measureSystem: string): string {
     return 'm2';
   }
 }
+// ❌ and can need another else or a switch if there is another case
 
 const myCircle: Shape = { name: 'CIRCLE', radius: 5 };
 const myArea = getArea(myCircle);

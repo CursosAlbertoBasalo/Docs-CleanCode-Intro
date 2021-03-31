@@ -11,7 +11,7 @@ const PI = 3.14;
 const HALVE = 0.5;
 
 // ✔️ a data object could be loaded or modified at run time
-export const areaCalculator = {
+export const areaCalculators = {
   TRIANGLE: (shape: Shape): number => HALVE * shape.base * shape.height,
   SQUARE: (shape: Shape): number => shape.height * shape.height,
   RECTANGLE: (shape: Shape): number => shape.height * shape.width,
@@ -20,12 +20,12 @@ export const areaCalculator = {
 
 // ✔️ this function never gets modified
 export function getArea(shape: Shape): number {
-  const calulator = areaCalculator[shape.name];
-  return calulator(shape);
+  const calulateArea = areaCalculators[shape.name];
+  return calulateArea(shape);
 }
 
 // 💉 inject another shape without modifying
-// areaCalculator['SPHERE'] = shape => 4 * 3.14 * shape.radius * shape.radius;
+// areaCalculators['SPHERE'] = shape => 4 * 3.14 * shape.radius * shape.radius;
 
 // ✔️ with no need for conditions we can use very simple arrow functions
 export const getUnitNames = (measureSystem: string): string =>
@@ -37,12 +37,11 @@ export const getUnitSymbol = (measureSystem: string): string =>
 const getMeasureSystem = (measureSystem: string): MeasureSystem =>
   measureSystems.find(ms => ms.measureSystem === measureSystem);
 
-// Alternative: use a class for MeasureSystem instead of simple structure
+// * Alternative: use a class for MeasureSystem instead of simple structure
 
 const myCircle: Shape = { name: 'CIRCLE', radius: 5 };
 const myArea = getArea(myCircle);
 const areaTitle: string = myArea + getUnitSymbol('EU');
 console.log(areaTitle);
-const areaDescription: string =
-  'My ' + myCircle.name + ' occupies an area of ' + myArea + getUnitNames('EU');
+const areaDescription = `My ${myCircle.name} occupies an area of ${myArea}${getUnitNames('EU')}`;
 console.log(areaDescription);

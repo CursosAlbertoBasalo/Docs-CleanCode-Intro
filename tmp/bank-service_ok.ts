@@ -1,6 +1,6 @@
 export const TRANSACTION_TYPES = ['DEPOSIT', 'WITHDRAW', 'CANCEL'];
 
-export const TRANSACTION_CALCULATOR = {
+export const TRANSACTION_CALCULATORS = {
   DEPOSIT: (transaction: Transaction, account: Account): number =>
     account.balance.amount + transaction.value.amount,
   WITHDRAW: (transaction: Transaction, account: Account): number =>
@@ -83,7 +83,7 @@ export class BankService {
     return this.getUserFriendlyBalanceMessage(account.balance);
   }
   private executeTransaction(transaction: Transaction, account: Account): number {
-    return TRANSACTION_CALCULATOR[transaction.transactionType](transaction, account);
+    return TRANSACTION_CALCULATORS[transaction.transactionType](transaction, account);
   }
 
   private getUserFriendlyBalanceMessage(balance: Money): string {
