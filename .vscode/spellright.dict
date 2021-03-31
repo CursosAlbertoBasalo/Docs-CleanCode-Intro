@@ -11,3 +11,6 @@ javascript
 sut
 eslint
 params
+cyclomatic
+naive
+vars

@@ -1,6 +1,4 @@
 /* eslint-disable max-params */
-/* eslint-disable no-nested-ternary */
-/* eslint-disable prefer-const */
 
 // ❌ primitive obsession
 export function calculateInterest(): number {

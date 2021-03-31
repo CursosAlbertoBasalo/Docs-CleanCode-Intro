@@ -1,4 +1,3 @@
-// ❌ avoid inheritance temptation
 export const customer: Customer = {
   name: 'Road Runner',
   addressCity: 'The Dessert',
@@ -23,23 +22,29 @@ export const employee: Employee = {
   accountBank: 'Rabbits Bank',
 };
 
-class BasicData {
+// ❌ duplicated data today
+// may future duplicated logic tomorrow
+
+export class Customer {
   name: string;
   addressCity: string;
   addressState: string;
-}
-
-export class Customer extends BasicData {
   taxIdNumber: number;
 }
 
-export class Suplier extends BasicData {
+export class Suplier {
+  name: string;
+  addressCity: string;
+  addressState: string;
   taxIdNumber: number;
   accountNumber: string;
   accountBank: string;
 }
 
-export class Employee extends BasicData {
+export class Employee {
+  name: string;
+  addressCity: string;
+  addressState: string;
   accountNumber: string;
   accountBank: string;
 }
