@@ -7,7 +7,8 @@
     "test": "jest --watch -o",
     "format": "prettier --write \"./**/*.{js,ts,json}\"",
     "lint": "eslint . --ext .ts",
-    "jest": "jest --verbose"
+    "jest": "jest --verbose",
+    "updates": "ncu -u"
   },
   "repository": {
     "type": "git",
