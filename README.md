@@ -1,6 +1,8 @@
 # CleanCodeLab
 
-## Ejemplos y prácticas para el curso con [Vitae Digital](http://www.vitaedigital.com/)
+## Ejemplos y prácticas para el curso con 
+
+# [Vitae Digital](http://www.vitaedigital.com/)
 
 
 ## Branch lessons
