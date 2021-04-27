@@ -22,6 +22,7 @@ export class Words {
   // ❌ long function
   count(input: string): object {
     // ❌ one responsibility per function
+    // ❌ no guards
     if (input !== null && input !== undefined) {
       const START = 0;
       const occurrences = {};

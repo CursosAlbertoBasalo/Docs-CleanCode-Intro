@@ -1,17 +1,17 @@
 printWithDiscount({ price: 100 });
 
 // ✅ Same level of abstraction
-function printWithDiscount(prod) {
-  const price = prod.price;
-  const finalPrice = calcFinalPrice(price);
-  print(finalPrice);
+function printWithDiscount(product) {
+  const price = product.price;
+  const finalPrice = calculateFinalPrice(price);
+  printText(finalPrice);
 }
 
-function calcFinalPrice(price) {
+function calculateFinalPrice(price) {
   const discount = 0.9;
   return price * discount;
 }
 
-function print(text) {
+function printText(text) {
   console.log(text);
 }

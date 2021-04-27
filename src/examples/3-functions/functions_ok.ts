@@ -26,10 +26,16 @@ function getEmptyErrorString(): string {
 // const getEmptyErrorString = (): string => '';
 
 // ✅ Avoid flags
-export function writeMessageLog(message: string): void {
+export function doSomething(): void {
+  try {
+    writeInformationMessageLog('Done');
+  } catch (error) {
+    writeErrorMessageLog(error.message);
+  }
+}
+export function writeInformationMessageLog(message: string): void {
   console.log(message);
 }
-
 export function writeErrorMessageLog(message: string): void {
   console.error('ERROR:' + message);
 }
@@ -39,7 +45,8 @@ export function writeErrorMessageLog(message: string): void {
 // ✅ no duplication
 // ✅ no nested blocks
 // ✅ guards and return early
-export class Words {
+// ✅ functional class name
+export class WordsCounter {
   count(input: string): object {
     if (this.isInvalid(input)) {
       throw 'We need a string as input';
