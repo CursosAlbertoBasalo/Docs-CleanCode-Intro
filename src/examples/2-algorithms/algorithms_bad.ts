@@ -50,6 +50,5 @@ const myCircle: Shape = { name: 'CIRCLE', radius: 5 };
 const myArea = getArea(myCircle);
 const areaTitle: string = myArea + getUnitSymbol('EU');
 console.log(areaTitle);
-const areaDescription: string =
-  'My ' + myCircle.name + ' occupies an area of ' + myArea + getUnitNames('EU');
+const areaDescription = `My ${myCircle.name} occupies an area of ${myArea} ${getUnitNames('EU')}`;
 console.log(areaDescription);

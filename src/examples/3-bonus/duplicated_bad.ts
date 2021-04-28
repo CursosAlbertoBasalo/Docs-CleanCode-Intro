@@ -22,8 +22,8 @@ export const employee: Employee = {
   accountBank: 'Rabbits Bank',
 };
 
-// ❌ duplicated data today
-// may future duplicated logic tomorrow
+// ❌ duplicated data today...
+// may be duplicated logic tomorrow
 
 export class Customer {
   name: string;

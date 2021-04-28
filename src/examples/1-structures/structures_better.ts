@@ -1,7 +1,7 @@
 // ✔️✔️ Rich data structure
 type Money = { amount: number; currency?: string };
 
-type MoneyConditionData = { principal: Money; rate: number; years: number };
+type MoneyCondition = { principal: Money; rate: number; years: number };
 
 // ✔️✔️ validated inmutable value object
 class BankConditions {
@@ -9,19 +9,23 @@ class BankConditions {
   public readonly rate: number;
   public readonly years: number;
 
-  constructor(data: MoneyConditionData) {
-    this.principal = data.principal;
-    this.rate = data.rate;
-    this.years = data.years;
-    this.validate();
-  }
-
-  getData(): MoneyConditionData {
+  public get condition(): MoneyCondition {
     return { principal: this.principal, rate: this.rate, years: this.years };
   }
 
-  toString(): string {
-    return `${this.principal.amount}${this.principal.currency} at ${this.rate}% for ${this.years} years`;
+  constructor(consitions: MoneyCondition) {
+    this.principal = consitions.principal;
+    this.rate = consitions.rate;
+    this.years = consitions.years;
+    this.validate();
+  }
+
+  toHuman(): string {
+    return `You have ${this.principal.amount}${this.principal.currency} at ${this.rate}% for ${this.years} years`;
+  }
+
+  toCSV(): string {
+    return `${this.principal.amount},${this.principal.currency},${this.rate}%,${this.years}`;
   }
 
   private validate(): void {
@@ -60,7 +64,11 @@ export function calculateInterest(): number {
   });
 
   const interest = getSimpleInterest(capitalConditions);
-
+  console.log(
+    `${capitalConditions.toHuman()} that produces ${interest} ${
+      capitalConditions.principal.currency
+    }`
+  );
   return interest;
 }
 // ✔️✔️ typed inmutable single parameter
@@ -71,3 +79,5 @@ function getSimpleInterest(conditions: BankConditions): number {
 
   return interest;
 }
+
+calculateInterest();

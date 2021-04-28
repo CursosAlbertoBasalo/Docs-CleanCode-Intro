@@ -23,7 +23,7 @@ export const employee: Employee = {
 };
 
 // ❌ avoid inheritance temptation
-// more complexity same duplicity
+// more complexity almost same duplicity
 
 class BasicData {
   name: string;
