@@ -24,7 +24,6 @@
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "prettier.useEditorConfig": true,
-  "prettier.disableLanguages": ["vue", "xlf", "xml", "html"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "html.format.wrapAttributes": "force-aligned",
   "html.format.enable": true,

@@ -1,5 +1,20 @@
 const DEAFULT_CURRENCY = 'EUR';
+const DEAFULT_COUNTRY = 'ES';
+const DEFAULT_BALANCE = { amount: 0, currency: DEAFULT_CURRENCY };
 export type Money = { amount: number; currency?: string };
+type AccountData = { accountId: string; balance: Money; countryId?: string };
+type TransactionType = 'DEPOSIT' | 'WITHDRAW' | 'TRANSFER' | 'CANCEL';
+type TransactionData = {
+  type: TransactionType;
+  accountId: string;
+  value?: Money;
+  targetId?: string;
+};
+interface ExecuteTransaction {
+  execute(account: Account): void;
+}
+type TransactionConstrutor = new (transactinData: TransactionData) => Transaction;
+
 export const BALANCE_MESSAGES = [
   {
     topValue: 0,
@@ -15,26 +30,53 @@ export const BALANCE_MESSAGES = [
   },
 ];
 
+const COUNTRIES_ACCOUNTS = [
+  {
+    countryId: 'ES',
+    prefix: 'ES',
+    ibanLength: 28,
+  },
+  {
+    countryId: 'ES',
+    prefix: 'POR',
+    ibanLength: 29,
+  },
+];
+
 export class Account {
-  // ✅ 1 - SRP : store the data
-  // eslint-disable-next-line max-params
-  constructor(
-    public readonly accountId: string,
-    public readonly countryId: string = 'ES',
-    public readonly balance: Money = { amount: 0, currency: DEAFULT_CURRENCY }
-  ) {}
+  public readonly accountId: string;
+  public readonly countryId: string;
+  public readonly balance: Money;
+  // ✅ 1 - SRP : store valid data
+  constructor(accountData: AccountData) {
+    this.guardInvalidAccount(accountData);
+    this.accountId = accountData.accountId;
+    this.balance = accountData.balance;
+    this.countryId = accountData.countryId || DEAFULT_COUNTRY;
+  }
+
+  // ❗ 1 - SRP Further improvements: Account validator
+  private guardInvalidAccount(accountData: AccountData): void {
+    const countryConfig = COUNTRIES_ACCOUNTS.find(
+      c => c.countryId === accountData.countryId || DEAFULT_COUNTRY
+    );
+    if (!countryConfig) {
+      throw '💥Invalid country for account';
+    }
+    const accountId = accountData.accountId;
+    if (
+      !accountId.startsWith(countryConfig.prefix) ||
+      accountId.length !== countryConfig.ibanLength
+    ) {
+      throw '💥Invalid accountID for account';
+    }
+  }
 }
 
-// ✅ 1 - SRP : manage accounts
+// ✅ 1 - SRP : store accounts
 export class Accounts {
   private readonly accounts: Account[] = [];
-  create(accountId: string): Account {
-    const newAccount = new Account(accountId);
-    this.guardInvalidAccount(newAccount);
-    return newAccount;
-  }
   add(account: Account): void {
-    this.guardInvalidAccount(account);
     this.accounts.push(account);
   }
   getById(accountId: string): Account {
@@ -44,43 +86,29 @@ export class Accounts {
     }
     return account;
   }
-  // ❗ 1 - SRP Further improvements: Account validator
-  private guardInvalidAccount(account: Account): void {
-    switch (account.countryId) {
-      case 'ES':
-        if (account.accountId.startsWith('ES') && account.accountId.length === 28) return;
-        break;
-      case 'PT':
-        if (account.accountId.startsWith('PT') && account.accountId.length === 29) return;
-        break;
-    }
-    throw '💥Invalid account';
-  }
-}
-
-interface ExecuteTransaction {
-  execute(account: Account): void;
 }
 
 // ✅ 3 - LSP : abstract class can be substituted by any concrete one
 export abstract class Transaction implements ExecuteTransaction {
-  // ✅ 1 - SRP : store the data
-  public readonly transactionId: string;
-  // eslint-disable-next-line max-params
-  constructor(
-    public readonly accountdId: string,
-    public readonly transactionType: string,
-    public readonly value: Money,
-    public readonly targetAccountdId?: string
-  ) {
-    this.guardInvalidTransaction();
-    this.value.currency = this.value.currency || DEAFULT_CURRENCY;
-    this.transactionId = new Date().getUTCDate().toLocaleString();
+  public readonly accountId: string;
+  public readonly type: TransactionType;
+  public readonly value?: Money;
+  public readonly targetId: string | null;
+
+  constructor(transactionData: TransactionData) {
+    this.guardInvalidTransaction(transactionData);
+    this.accountId = transactionData.accountId;
+    this.type = transactionData.type;
+    if (transactionData.value) {
+      this.value = transactionData.value;
+      this.value.currency = transactionData.value.currency || DEAFULT_CURRENCY;
+    }
+    if (transactionData.targetId) this.targetId = transactionData.targetId;
   }
-  protected guardInvalidTransaction(): void {
+  protected guardInvalidTransaction(transactionData: TransactionData): void {
     const MINIMAL_AMOUNT = 0;
-    if (this.value.amount < MINIMAL_AMOUNT) {
-      throw '💥Invalid transaction';
+    if (transactionData.value && transactionData.value.amount < MINIMAL_AMOUNT) {
+      throw '💥Invalid amount for transaction';
     }
   }
   public abstract execute(account: Account);
@@ -88,13 +116,13 @@ export abstract class Transaction implements ExecuteTransaction {
 
 export class Deposit extends Transaction {
   public execute(account: Account): void {
-    account.balance.amount += this.value.amount;
+    if (this.value) account.balance.amount += this.value.amount;
   }
 }
 
 export class Withdraw extends Transaction {
   public execute(account: Account): void {
-    account.balance.amount -= this.value.amount;
+    if (this.value) account.balance.amount -= this.value.amount;
   }
 }
 
@@ -103,12 +131,14 @@ export class Cancel extends Transaction {
     account.balance.amount = 0;
   }
 }
-
 export class Transfer extends Transaction {
-  protected guardInvalidTransaction(): void {
-    super.guardInvalidTransaction();
-    if (this.targetAccountdId === undefined) {
-      throw '💥Invalid transaction';
+  protected guardInvalidTransaction(transactionData: TransactionData): void {
+    super.guardInvalidTransaction(transactionData);
+    if (transactionData.value === undefined) {
+      throw '💥 Invalid value for transaction';
+    }
+    if (transactionData.targetId === undefined) {
+      throw '💥 Invalid targetId for transaction';
     }
   }
   public execute(account: Account): void {
@@ -116,7 +146,7 @@ export class Transfer extends Transaction {
   }
 }
 
-const TRANSACTION_FACTORY = {
+const TRANSACTIONS_FACTORY: Record<TransactionType, TransactionConstrutor> = {
   DEPOSIT: Deposit,
   WITHDRAW: Withdraw,
   CANCEL: Cancel,
@@ -126,23 +156,16 @@ const TRANSACTION_FACTORY = {
 // ✅ 1 - SRP : manage transactions
 export class Transactions {
   private readonly transactions: Transaction[] = [];
-  // eslint-disable-next-line max-params
-  create(
-    accountdId: string,
-    transactionType: string,
-    value: Money,
-    targetAccountdId?: string
-  ): Transaction {
-    const transactionFactory = TRANSACTION_FACTORY[transactionType];
-    if (transactionFactory === undefined) {
+  create(transactionData: TransactionData): Transaction {
+    const transactionConstrutor = TRANSACTIONS_FACTORY[transactionData.type];
+    if (transactionConstrutor === undefined) {
       throw '💥Invalid transaction';
     }
-    return new transactionFactory(accountdId, transactionType, value, targetAccountdId);
+    return new transactionConstrutor(transactionData);
   }
-  execute(transaction: Transaction, account: Account): string {
+  execute(transaction: Transaction, account: Account): void {
     transaction.execute(account);
     this.transactions.push(transaction);
-    return transaction.transactionId;
   }
 }
 
@@ -154,19 +177,24 @@ export class BankService {
     private readonly transactions: Transactions = new Transactions()
   ) {}
   // ✅ 1 - SRP : changes in implementations does not affect me
-  createAccount(accountId = 'ES99 8888 7777 66 5555555555'): string {
-    const account = this.accounts.create(accountId);
+  createAccount(accountId = 'ES99 8888 7777 66 5555555555'): Account {
+    const accountData: AccountData = {
+      accountId: accountId,
+      balance: DEFAULT_BALANCE,
+      countryId: DEAFULT_COUNTRY,
+    };
+    const account = new Account(accountData);
     this.accounts.add(account);
-    return accountId;
+    return account;
   }
   // ✅ 1 - SRP
-  executeTransaction(transaction: Transaction): string {
-    const account = this.accounts.getById(transaction.accountdId);
+  addTransaction(transactionData: TransactionData) {
+    const transaction = this.transactions.create(transactionData);
+    const account = this.accounts.getById(transaction.accountId);
     this.transactions.execute(transaction, account);
-    return transaction.transactionId;
   }
   // ✅ 2 - OCP : 5 - DIP similar to a flag, but open for extension / closed for modification
-  getAccountBalance(accountId: string, balanceGenerator: BalanceGenerator): string {
+  getReport(accountId: string, balanceGenerator: BalanceGenerator): string {
     const account = this.accounts.getById(accountId);
     return balanceGenerator.getMessage(account.balance);
   }
@@ -188,3 +216,63 @@ export class FinancialGenerator implements BalanceGenerator {
     return finantial;
   }
 }
+
+// TESTING PROGRAM
+
+const accounts = new Accounts();
+const transactions = new Transactions();
+const userFriendlyBalance = new UserFriendlyGenerator();
+const financialBalance = new FinancialGenerator();
+const myBank = new BankService(accounts, transactions);
+const accountId = 'ES99 8888 7777 66 5555555555';
+myBank.createAccount(accountId);
+
+myBank.addTransaction({
+  accountId: accountId,
+  type: 'DEPOSIT',
+  value: { amount: 89, currency: 'EURO' },
+});
+console.log(myBank.getReport(accountId, userFriendlyBalance));
+myBank.addTransaction({
+  accountId: accountId,
+  type: 'DEPOSIT',
+  value: { amount: 11, currency: 'EURO' },
+});
+console.log(myBank.getReport(accountId, userFriendlyBalance));
+myBank.addTransaction({
+  accountId: accountId,
+  type: 'DEPOSIT',
+  value: { amount: 26, currency: 'EURO' },
+});
+console.log(myBank.getReport(accountId, userFriendlyBalance));
+myBank.addTransaction({
+  accountId: accountId,
+  type: 'WITHDRAW',
+  value: { amount: 98, currency: 'EURO' },
+});
+console.log(myBank.getReport(accountId, userFriendlyBalance));
+// myBank.addTransaction({
+//   accountId: accountId,
+//   type: 'TRANSFER',
+//   value: { amount: 1, currency: 'EURO' },
+// });
+// console.log(myBank.getReport(accountId, userFriendlyBalance));
+myBank.addTransaction({
+  accountId: accountId,
+  type: 'TRANSFER',
+  value: { amount: 1, currency: 'EURO' },
+  targetId: 'haha invalid account',
+});
+console.log(myBank.getReport(accountId, userFriendlyBalance));
+myBank.addTransaction({
+  accountId: accountId,
+  type: 'WITHDRAW',
+  value: { amount: 314, currency: 'EURO' },
+});
+console.log(myBank.getReport(accountId, userFriendlyBalance));
+myBank.addTransaction({
+  accountId: accountId,
+  type: 'CANCEL',
+});
+console.log(myBank.getReport(accountId, userFriendlyBalance));
+console.log(myBank.getReport(accountId, financialBalance));
