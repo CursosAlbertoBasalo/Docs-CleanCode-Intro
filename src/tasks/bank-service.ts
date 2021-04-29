@@ -1,7 +1,8 @@
 const DEAFULT_CURRENCY = 'EUR';
 const DEAFULT_COUNTRY = 'ES';
 const DEFAULT_BALANCE = { amount: 0, currency: DEAFULT_CURRENCY };
-export type Money = { amount: number; currency?: string };
+
+type Money = { amount: number; currency?: string };
 type AccountData = { accountId: string; balance: Money; countryId?: string };
 type TransactionType = 'DEPOSIT' | 'WITHDRAW' | 'TRANSFER' | 'CANCEL';
 type TransactionData = {
@@ -55,7 +56,7 @@ export class Account {
     this.countryId = accountData.countryId || DEAFULT_COUNTRY;
   }
 
-  // ❗ 1 - SRP Further improvements: Account validator
+  // ! 🔧 1 - SRP Further improvements: Account validator
   private guardInvalidAccount(accountData: AccountData): void {
     const countryConfig = COUNTRIES_ACCOUNTS.find(
       c => c.countryId === accountData.countryId || DEAFULT_COUNTRY
@@ -155,17 +156,18 @@ const TRANSACTIONS_FACTORY: Record<TransactionType, TransactionConstrutor> = {
 
 // ✅ 1 - SRP : manage transactions
 export class Transactions {
-  private readonly transactions: Transaction[] = [];
+  private readonly executedTransactions: Transaction[] = [];
   create(transactionData: TransactionData): Transaction {
     const transactionConstrutor = TRANSACTIONS_FACTORY[transactionData.type];
     if (transactionConstrutor === undefined) {
       throw '💥Invalid transaction';
     }
-    return new transactionConstrutor(transactionData);
+    const newTransaction = new transactionConstrutor(transactionData);
+    return newTransaction;
   }
   execute(transaction: Transaction, account: Account): void {
     transaction.execute(account);
-    this.transactions.push(transaction);
+    this.executedTransactions.push(transaction);
   }
 }
 
