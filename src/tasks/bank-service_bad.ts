@@ -71,6 +71,7 @@ export class BankService {
   // ❌ atribute order error prone
   private executeTransaction(transactionType: string, currentBalance: number, amount: number) {
     // ❌ reduce conditionals
+    // ❌ reduce the risk of mistyping
     switch (transactionType) {
       case 'DEPOSIT':
         return currentBalance + amount;
