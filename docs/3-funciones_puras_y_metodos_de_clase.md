@@ -81,7 +81,7 @@
 
 ---
 
-![Don´t repeat Yourself](./assets/dry.jpg)
+![Don´t repeat Yourself](https://github.com/LabsAdemy/CleanCodeLab/blob/FUNCTION/assets/dry.jpg)
 
 ---
 
