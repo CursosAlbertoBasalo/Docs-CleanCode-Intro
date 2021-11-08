@@ -1,6 +1,8 @@
-# Name
+# CleanCode Lab
 
-Laboratories for [Clean Code course](https://github.com/BitAdemy/CleanCode)
+## Tips and examples
+
+
 
 
 Lesson [1- Name](https://github.com/BitAdemy/CleanCode/tree/NAME)
@@ -28,3 +30,7 @@ https://codesandbox.io/s/github/LabsAdemy/CleanCodeLab/tree/NAME
 
 > by [bitAdemy](https://bitademy.com)
 
+
+Laboratories for [Clean Code course](https://github.com/BitAdemy/CleanCode)
+
+[![bit_ademy](./assets/bit_ademy.png)](https://bitademy.com)
