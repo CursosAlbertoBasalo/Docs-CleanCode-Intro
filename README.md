@@ -2,7 +2,7 @@
 
 ## Tips and examples
 
-
+> See `docs` folder
 
 
 Lesson [1- Name](https://github.com/BitAdemy/CleanCode/tree/NAME)
