@@ -25,7 +25,7 @@
 
 ### Si funciona...
 
-![No siempre pruebo mi código... pero cuando lo hago, es en producción](https://academiabinaria.github.io/clean-code-TS/assets/test-production.jpeg)
+![No siempre pruebo mi código... pero cuando lo hago, es en producción](https://github.com/LabsAdemy/CleanCodeLab/blob/main/assets/test-production.jpeg)
 
 ---
 

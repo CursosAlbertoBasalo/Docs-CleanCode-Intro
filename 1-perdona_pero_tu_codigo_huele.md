@@ -14,7 +14,7 @@
 
 ---
 
-![Perdone pero... le huele el código](https://labsademy.github.io/cleancodelab/assets/your-code-smells.jpg)
+![Perdone pero... le huele el código](https://github.com/LabsAdemy/CleanCodeLab/blob/main/assets/your-code-smells.jpg)
 
 > Perdone, le huele el código.
 
