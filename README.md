@@ -10,7 +10,7 @@
 >
 > -- ✍️ **Robert C. Martin**
 
-> See [`docs`](https://github.com/LabsAdemy/CleanCodeLab/tree/FUCNTION/docs) folder
+> See [`docs`](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/docs) folder
 
 ## Local Configuration
 
