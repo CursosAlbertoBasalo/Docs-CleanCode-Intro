@@ -66,8 +66,8 @@ function isEvenlyDivisible(number: number, current: number): boolean {
   return number % current === NULL_REMAINDER;
 }
 function getMaxPossiblePrime(number) {
-  const sqareRoot = Math.sqrt(number);
-  const lowerInteger = Math.floor(sqareRoot);
+  const squareRoot = Math.sqrt(number);
+  const lowerInteger = Math.floor(squareRoot);
   return lowerInteger;
 }
 function printProcess(number) {

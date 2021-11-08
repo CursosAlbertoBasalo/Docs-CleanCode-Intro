@@ -1,12 +1,16 @@
-# Function
+# 🔀 FUNCTION: Organización de sentencias.
 
-Laboratories for [Clean Code course](https://github.com/BitAdemy/CleanCode)
+### Organización de sentencias.
 
-Lesson [2 - Function](https://github.com/BitAdemy/CleanCode/tree/FUNCTION)
+> "El buen código es su mejor documentación."
+>
+> -- ✍️ **Steve McConnell**
 
-## On CodeSandbox
+> "La verdad sólo se encuentra en un lugar: el código"
+>
+> -- ✍️ **Robert C. Martin**
 
-https://codesandbox.io/s/github/LabsAdemy/CleanCodeLab/tree/FUNCTION
+> See [`docs`](https://github.com/LabsAdemy/CleanCodeLab/tree/FUCNTION/docs) folder
 
 ## Local Configuration
 
@@ -22,4 +26,4 @@ https://codesandbox.io/s/github/LabsAdemy/CleanCodeLab/tree/FUNCTION
 
 ## [💻 Tasks](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/tasks)
 
-> by [bitAdemy](https://bitademy.com)
+> by [Alberto Basalo](https://twitter.com/albertobasalo)

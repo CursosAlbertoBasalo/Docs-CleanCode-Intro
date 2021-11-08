@@ -27,13 +27,13 @@ export class Words {
       const START = 0;
       const occurrences = {};
       if (input.trim().length > START) {
-        const splitedArray = input
+        const splittedArray = input
           .toLowerCase()
           .trim() // ❌ duplicated rule
           .split(/\s+|\n|\t/);
         // ❌ nested blocks
-        for (let index = START; index < splitedArray.length; index++) {
-          const word = splitedArray[index];
+        for (let index = START; index < splittedArray.length; index++) {
+          const word = splittedArray[index];
           // ❌ complex expressions
           occurrences[word] === undefined ? (occurrences[word] = 1) : occurrences[word]++;
         }

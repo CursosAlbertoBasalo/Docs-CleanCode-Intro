@@ -16,8 +16,8 @@ export function getMinutesBetweenDates(initial: Date, final: Date): number {
   const SECONDS_PER_MINUTE = 60;
   const MILLISECONDS_PER_MINUTE = MILLISECONDS_PER_SECOND * SECONDS_PER_MINUTE;
   const milliseconds = final.getTime() - initial.getTime();
-  const absoluteMiliseconds = Math.abs(milliseconds);
-  const absoluteMinutes = absoluteMiliseconds / MILLISECONDS_PER_MINUTE;
+  const absoluteMilliseconds = Math.abs(milliseconds);
+  const absoluteMinutes = absoluteMilliseconds / MILLISECONDS_PER_MINUTE;
   const minutes = Math.floor(absoluteMinutes);
   return minutes;
 }

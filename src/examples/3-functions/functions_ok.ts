@@ -56,10 +56,10 @@ export class WordsCounter {
     if (this.isEmpty(cleanedInput)) {
       return occurrences;
     }
-    const splitedArray = this.splitString(cleanedInput);
-    splitedArray.forEach(word => {
-      if (this.isANewOcurrece(word, occurrences)) {
-        this.createOcurrence(occurrences, word);
+    const splittedArray = this.splitString(cleanedInput);
+    splittedArray.forEach(word => {
+      if (this.isANewOccurrence(word, occurrences)) {
+        this.createOccurrence(occurrences, word);
       } else {
         this.accumulateOccurrence(occurrences, word);
       }
@@ -80,10 +80,10 @@ export class WordsCounter {
     const delimiters = /\s+|\n|\t/;
     return input.split(delimiters);
   }
-  private isANewOcurrece(word: string, occurrences: object): boolean {
+  private isANewOccurrence(word: string, occurrences: object): boolean {
     return occurrences[word] === undefined;
   }
-  private createOcurrence(occurrences: {}, word: string): void {
+  private createOccurrence(occurrences: {}, word: string): void {
     occurrences[word] = 1;
   }
   private accumulateOccurrence(occurrences: {}, word: string): void {
