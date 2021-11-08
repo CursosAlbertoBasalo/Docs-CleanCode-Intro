@@ -34,9 +34,5 @@
 
 ## [💻 Tasks](./src/tasks)
 
-> by [bitAdemy](https://bitademy.com)
+> by [Alberto Basalo](https://twitter.com/albertobasalo)
 
-
-Laboratories for [Clean Code course](https://github.com/BitAdemy/CleanCode)
-
-[![bit_ademy](./assets/bit_ademy.png)](https://bitademy.com)
