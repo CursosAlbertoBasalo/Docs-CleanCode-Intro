@@ -1,6 +1,6 @@
-# CleanCodeLab
+# CleanCode Lab
 
-## Ejemplos y prácticas
+## Tips and examples
 
 
 

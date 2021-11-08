@@ -2,5 +2,12 @@
   "workbench.iconTheme": "material-icon-theme",
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
-  "window.zoomLevel": 1.6
+  "window.zoomLevel": 1.6,
+  "cSpell.language": "en,es-ES",
+  "cSpell.words": [
+    "Addy",
+    "Dodds",
+    "Eagleson",
+    "Osmani"
+  ]
 }
