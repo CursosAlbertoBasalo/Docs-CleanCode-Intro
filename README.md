@@ -1,8 +1,7 @@
 # CleanCode Lab
 
-## Tips and examples
 
-> See `docs` folder
+
 
 ### Estilo y nombrado.
 
@@ -11,18 +10,13 @@
 > -- ✍️ **Phil Karlton**
 
 
-
-# Lesson 1 - Name : Reveal intention
-
 > "El tiempo dedicado a la lectura es muy superior al de escritura.
 > Leemos código antiguo para escribir código nuevo.
 > Facilitar la lectura facilita la escritura."
 >
 > -- ✍️ **Robert C. Martin**
 
-### On CodeSandbox
-
-https://codesandbox.io/s/github/LabsAdemy/CleanCodeLab/tree/NAME
+> See [`docs`](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME/docs) folder
 
 ## Local Configuration
 
