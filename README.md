@@ -1,12 +1,6 @@
 # CleanCode Lab
 
-## Tips and examples
-
-# Vitae Digital
-
 ## Código limpio y artesanía del software
-
-
 
 > "Cualquiera puede escribir código para que lo entienda una **máquina**. Pero los programadores profesionales escriben código para que los **humanos** lo entiendan."
 >
