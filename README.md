@@ -4,9 +4,21 @@
 
 > See `docs` folder
 
+### Estilo y nombrado.
 
-Lesson [1- Name](https://github.com/BitAdemy/CleanCode/tree/NAME)
+> "Solo hay dos cosas difíciles en Informática: invalidar la caché y nombrar las cosas"
+>
+> -- ✍️ **Phil Karlton**
 
+
+
+# Lesson 1 - Name : Reveal intention
+
+> "El tiempo dedicado a la lectura es muy superior al de escritura.
+> Leemos código antiguo para escribir código nuevo.
+> Facilitar la lectura facilita la escritura."
+>
+> -- ✍️ **Robert C. Martin**
 
 ### On CodeSandbox
 
