@@ -101,9 +101,10 @@ function processTrip(tripStatus) {
     case 'delayed':
       console.log('Inform passengers');
       break;
-    case 'delayed':
+    case 'cancelled':
       console.log('Refund money');
       break;
+
     default:
       throw new Error('Invalid status');
   }

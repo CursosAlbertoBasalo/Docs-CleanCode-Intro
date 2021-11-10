@@ -1,5 +1,5 @@
 const PRIME = true;
-const COMPOSITE =  false;
+const COMPOSITE = false;
 // ✔️ no nested blocks
 // ✔️ reduce cyclomatic complexity
 export function getPrimes(limit: number): number[] {
@@ -40,8 +40,8 @@ export function getSquaredOfPrimes(): number[] {
   // eslint-disable-next-line no-magic-numbers
   const NATURAL_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const squaredPrimes = [];
-  NATURAL_NUMBERS // use functional programming
-    .filter(isPrimeNumber) // using a pointer to a function declaration
+
+  NATURAL_NUMBERS.filter(isPrimeNumber) // use functional programming // using a pointer to a function declaration
     .map(prime => prime * prime) // using an arrow function expression
     .forEach(function processSquaredPrime(squaredPrime) {
       // using a function declaration
@@ -50,6 +50,7 @@ export function getSquaredOfPrimes(): number[] {
       printProcess(squaredPrime);
       printTotals(squaredPrimes);
     });
+
   return squaredPrimes;
 }
 // function declaration
@@ -60,7 +61,7 @@ function isPrimeNumber(number: number): boolean {
   // ✔️ no complex logic
   const maxPrime = getMaxPossiblePrime(number);
   let isPrime = true;
-  for (let i = FIRST_PRIME; i <= maxPrime ; i++) {
+  for (let i = FIRST_PRIME; i <= maxPrime; i++) {
     if (isEvenlyDivisible(number, i)) {
       isPrime = false;
       break;
@@ -68,6 +69,7 @@ function isPrimeNumber(number: number): boolean {
   }
   return isPrime;
 }
+
 function isEvenlyDivisible(number: number, current: number): boolean {
   const NULL_REMAINDER = 0;
   return number % current === NULL_REMAINDER;

@@ -1,15 +1,6 @@
 /* eslint-disable no-magic-numbers */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable prefer-const */
-export function getDateStructure(date: Date): object {
-  let year: number, month: number, day: number; // ❌ One variable or constant per line.
-  const MONTHS_BASE = 1; // ❌ Constants before variables.
-  // ❌ avoid null data
-  year = date.getFullYear();
-  month = date.getMonth() + MONTHS_BASE;
-  day = date.getDate();
-  return { year, month, day };
-}
 
 export function getMinutesBetweenDates(first: Date, second: Date): number {
   // ❌ No complex expressions.
