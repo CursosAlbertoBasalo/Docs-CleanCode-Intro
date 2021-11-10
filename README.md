@@ -18,7 +18,6 @@
 
 ### [🧩 3 - Funciones puras y metodos de clase](./docs/3-funciones_puras_y_metodos_de_clase.md)
 
-
 ## Local Configuration
 
 ### [🚨 ESlint rules](./docs/eslint-rules.md)
@@ -30,6 +29,12 @@
 ### [📜 2 - Blocks](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/examples/2-blocks)
 
 ### [🧩 3 - Functions](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/examples/3-functions)
+
+### [🧩 4 - Divide](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/examples/4-divide)
+
+### [🧩 5 - Coherency](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/examples/5-coherency)
+
+### [🔱 6 - Conditionals](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/examples/6-conditionals)
 
 ## [💻 Tasks](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/tasks)
 
