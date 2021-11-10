@@ -46,7 +46,7 @@ export function getSquaredOfPrimes(): number[] {
     .forEach(function processSquaredPrime(squaredPrime) {
       // using a function declaration
       // ✔️ same levels os abstraction
-      squaredPrimes.push(squaredPrime);
+      savePrime(squaredPrimes, squaredPrime);
       printProcess(squaredPrime);
       printTotals(squaredPrimes);
     });
@@ -78,6 +78,9 @@ function getMaxPossiblePrime(number) {
   const squareRoot = Math.sqrt(number);
   const lowerInteger = Math.floor(squareRoot);
   return lowerInteger;
+}
+function savePrime(squaredPrimes, squaredPrime) {
+  squaredPrimes.push(squaredPrime);
 }
 function printProcess(number) {
   console.log(`Added ${number} as the square of a prime number`);
