@@ -1,6 +1,6 @@
 # ➰ Estructuras repetitivas y condicionales
 
-### Bloques: Aquí vive la lógica.
+## Bloques: Aquí vive la lógica.
 
 > "Cada vez que escribas un comentario, debes sentirlo como un fallo de tu capacidad de expresión"
 >
