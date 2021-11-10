@@ -41,4 +41,5 @@
 
 ## [💻 Tasks](./src/tasks)
 
+> by [Alberto Basalo](https://twitter.com/albertobasalo)
 
