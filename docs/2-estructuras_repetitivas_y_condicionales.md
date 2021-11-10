@@ -32,8 +32,8 @@
 
 ## ⚠️ Límites
 
-- ✅1___2❌ _niveles de anidamiento_
-- ✅4___8❌ _instrucciones por bloque_
+- ✅1*\_\_2❌ \_niveles de anidamiento*
+- ✅4*\_\_8❌ \_instrucciones por bloque*
 
 > Te obliga a extraer código a funciones.
 
@@ -56,6 +56,6 @@ https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/examples/2-blocks
 
 ---
 
-- [⏭️ Next: 🧩 Funciones_puras_y_metodos_de_clase.](./3-funciones_puras_y_metodos_de_clase.md)
+- [⏭️ Next: 🧩 Funciones puras y metodos de clase.](./3-funciones_puras_y_metodos_de_clase.md)
 
 - [⏮️ Back: 🔀 FUNCTION: Organización de sentencias.](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION)
