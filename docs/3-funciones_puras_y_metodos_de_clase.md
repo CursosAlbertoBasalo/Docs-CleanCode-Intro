@@ -1,6 +1,6 @@
 # 🧩 Funciones puras y métodos de clase
 
-### Funciones: Pequeñas piezas para organizar programas.
+## Funciones: Pequeñas piezas para organizar programas.
 
 > "Una función debería hacer una sola cosa, hacerla bien, y hacerla sólo ella".
 >
@@ -14,6 +14,7 @@
 - 💪 Con **verbos** en su nombre que indiquen propósito
 - 🐫 _DRY_: Don´t Repeat yourself.
 - 🥚 con valores por defecto si el lenguaje los soporta.
+- 💂 con guardias para retornos tempranos de casos incorrectos o triviales.
 - 🧐 sin condiciones complejas.
 - 🚩 ...sin flags: crea dos variantes con nombre específico.
 - 💬 ...sin comentarios.
@@ -63,7 +64,7 @@
 
     - ## 🦄 un sólo propósito.
 
-    - ... o al menos un mismo nivel de abstracción.
+    - ... o al menos 1️⃣ mismo nivel de abstracción.
 
 - ❎ retornando datos; nunca errores.
 
@@ -72,6 +73,43 @@
 
 - 💬 Sin comentarios.
   - ¿Me repito?. MAL!!! 😈
+
+
+## Tipos de funciones en JavaScript
+
+### Declaraciones
+
+- Para ser usadas en un ambiente amplio
+- Con nombre para indicar propósito
+``` js
+function isEven(number){
+  return number % 2 === 0;
+}
+```
+
+### Expresiones complejas
+
+- Para ser usadas como argumentos
+- Mantienen sintaxis similar a las declaraciones
+- Deben ser nombradas para rastreo del callStack
+``` js
+[1,2,3].forEach(function isEven(number){
+  return number % 2 === 0;
+})
+
+```
+
+### Expresiones flecha
+
+- Para ser usadas como argumentos
+- Usan sintaxis concisa
+- Anónimas
+- Indicadas para expresiones de retorno sencillas de una línea
+``` js
+[1,2,3].forEach((number) => number % 2 === 0)
+
+```
+
 
 ---
 

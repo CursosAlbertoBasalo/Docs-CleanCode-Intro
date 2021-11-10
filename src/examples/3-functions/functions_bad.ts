@@ -10,6 +10,14 @@ export function getErrorMessage(error: object, isTouched: boolean): string {
 }
 
 // ❌ Avoid flags
+export function doSomething(): void {
+  try {
+    writeMessageLog('Done', false);
+  } catch (error) {
+    writeMessageLog(error.message, true);
+  }
+}
+
 export function writeMessageLog(message: string, isError: boolean): void {
   if (isError) {
     console.error('ERROR:' + message);
