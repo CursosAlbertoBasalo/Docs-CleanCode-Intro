@@ -53,5 +53,8 @@ https://github.com/LabsAdemy/CleanCodeLab/
 >
 > -- ✍️ **Robert C. Martin**
 
-[⏭️ Next: ✅ NAME](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
-[⏮️ Back: 🧼 CleanCode Lab](https://github.com/LabsAdemy/CleanCodeLab)
+---
+
+- [⏭️ Next: ✅ NAME](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
+
+- [⏮️ Back: 🧼 CleanCode Lab](https://github.com/LabsAdemy/CleanCodeLab)
