@@ -1,6 +1,6 @@
 # 💪 Acciones con verbos
 
-### Creamos un idioma para nuestro negocio.
+## Creamos un idioma para nuestro negocio.
 
 > "Expresa la lógica con verbos."
 >

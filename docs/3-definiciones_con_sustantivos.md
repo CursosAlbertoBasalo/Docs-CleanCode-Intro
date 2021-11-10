@@ -1,6 +1,6 @@
 # 📫 Definiciones con sustantivos
 
-### Expresa claramente una intención.
+## Expresa claramente una intención.
 
 > "Da sentido mediante los nombres."
 >

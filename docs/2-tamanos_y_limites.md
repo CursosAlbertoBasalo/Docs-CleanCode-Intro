@@ -1,6 +1,6 @@
 # 📏 Tamaños y límites
 
-### Homogéneo, sin sobresaltos.
+## Homogéneo, sin sobresaltos.
 
 > "No me gusta usar las barras de desplazamiento para leer tu código."
 >

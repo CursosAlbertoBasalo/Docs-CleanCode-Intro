@@ -1,6 +1,6 @@
 # ✨Estilo y orden
 
-### Código agradable, bonito, elegante.
+## Código agradable, bonito, elegante.
 
 > "Cada línea de código debe parecer escrita por la misma persona, sin importar el número de participantes."
 >
