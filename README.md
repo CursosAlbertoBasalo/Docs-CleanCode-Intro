@@ -1,6 +1,4 @@
-# CleanCode Lab
-
-
+# NAME lesson
 
 
 ### Estilo y nombrado.
@@ -16,7 +14,16 @@
 >
 > -- ✍️ **Robert C. Martin**
 
-> See [`docs`](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME/docs) folder
+## Documentación
+
+### [✨ 1 - Estilo y orden](./docs/1-estilo_y_orden.md)
+
+### [📏 2 - Tamaños y límites](./docs/2-tamanos_y_limites.md)
+
+### [📫 3 - Definiciones con sustantivos](./docs/3-definiciones_con_sustantivos.md)
+
+### [💪 4 - Acciones con verbos](./docs/4-acciones_con_verbos.md)
+
 
 ## Local Configuration
 
@@ -34,9 +41,4 @@
 
 ## [💻 Tasks](./src/tasks)
 
-> by [bitAdemy](https://bitademy.com)
 
-
-Laboratories for [Clean Code course](https://github.com/BitAdemy/CleanCode)
-
-[![bit_ademy](./assets/bit_ademy.png)](https://bitademy.com)

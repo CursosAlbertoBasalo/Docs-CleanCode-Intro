@@ -50,3 +50,9 @@ https://github.com/LabsAdemy/CleanCodeLab/tree/NAME/src/examples/2-verbs
 > "La verdad sólo se encuentra en un lugar: el código"
 >
 > -- ✍️ **Robert C. Martin**
+
+---
+
+- [⏭️ Next: 🧼 FUNCTION Lesson](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION)
+
+- [⏮️ Back: 🧼 NAME Lesson](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
