@@ -1,4 +1,4 @@
-# CleanCode Lab
+# 🧼 CleanCode Lab
 
 ## Código limpio y artesanía del software
 
@@ -46,13 +46,13 @@
 
 ## Branch lessons
 
-### [NAME](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
+### [1 - NAME](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
 
-### [FUNCTION](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION)
+### [2 - FUNCTION](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION)
 
-### [DATA](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA)
+### [3 - DATA](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA)
 
-### [OBJECT](https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT)
+### [4 - OBJECT](https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT)
 
 
 > "El código limpio parece escrito por alguien que se preocupa."
