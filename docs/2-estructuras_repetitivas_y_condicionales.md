@@ -53,3 +53,9 @@ https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/examples/2-blocks
 > "La verdad sólo se encuentra en un lugar: el código"
 >
 > -- ✍️ **Robert C. Martin**
+
+---
+
+- [⏭️ Next: 🧩 Funciones_puras_y_metodos_de_clase.](./3-funciones_puras_y_metodos_de_clase.md)
+
+- [⏮️ Back: 🔀 FUNCTION: Organización de sentencias.](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION)
