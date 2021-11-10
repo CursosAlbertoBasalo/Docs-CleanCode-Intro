@@ -1,6 +1,6 @@
 export function getDateStructure(date: Date): object {
   // ✔️ guard invalid data
-  if (date === null || date === undefined) return null;
+  if (date === null || date === undefined) throw new Error("Null or undefined date not allowed");
   const MONTHS_BASE = 1; // ✔️ start with constants
   // ✔️ one declaration per line
   // ✔️ assign data during declaration
@@ -29,7 +29,7 @@ const SECOND_LEVEL_CORRECTOR = 100;
 const FIRST_LEVEL_CORRECTOR = 4;
 const NULL_REMAINDER = 0;
 
-export function isLeapBlocks(year: number): boolean {
+export function isLeap_Blocks(year: number): boolean {
   let isLeap = false;
 
   if (year % THIRD_LEVEL_CORRECTOR === NULL_REMAINDER) {
@@ -44,7 +44,7 @@ export function isLeapBlocks(year: number): boolean {
 }
 
 // ✔️✔️ Simplify with guards and early returns
-export function isLeapEarly(year: number): boolean {
+export function isLeap_Early(year: number): boolean {
   if (year % THIRD_LEVEL_CORRECTOR === NULL_REMAINDER) {
     return true;
   }
@@ -58,4 +58,4 @@ export function isLeapEarly(year: number): boolean {
 }
 
 // 🧪 change export to test both functions
-export const isLeap = isLeapEarly;
+export const isLeap = isLeap_Early;

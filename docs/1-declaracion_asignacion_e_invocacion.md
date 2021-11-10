@@ -1,6 +1,6 @@
 # 👉 Declaración, asignación e invocación
 
-### Instrucciones: Claridad desde el interior.
+## Instrucciones: Claridad desde el interior.
 
 > "No soy un gran programador; Solo soy un buen programador con buenos hábitos"
 >
@@ -14,8 +14,7 @@
 
 - Primero las constantes.
 
-
-- Procurar inicializar siempre con un valor.
+- Inicializar siempre con un valor. ❌ AVOID NULL / UNDEFINED
 
 ## 📥 Asignación
 

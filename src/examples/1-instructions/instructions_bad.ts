@@ -18,12 +18,12 @@ export function getMinutesBetweenDates(first: Date, second: Date): number {
   return minutes;
 }
 
-export function isLeapConditionals(year: number): boolean {
+export function isLeap_Conditionals(year: number): boolean {
   // ❌ avoid complex conditionals
   return year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0);
 }
 
-export function isLeapTernaries(year: number): boolean {
+export function isLeap_Ternaries(year: number): boolean {
   // ❌ avoid nested ternaries
   return year % 400 === 0 ? true : year % 100 === 0 ? false : year % 4 === 0 ? true : false;
 }
