@@ -46,9 +46,9 @@
 
 ## Branch lessons
 
-### [1 - NAME](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
+### [📘 NAME: Escribir para leer](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
 
-### [2 - FUNCTION](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION)
+### [🔀 FUNCTION: Organización de sentencias](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION)
 
 ### [3 - DATA](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA)
 
