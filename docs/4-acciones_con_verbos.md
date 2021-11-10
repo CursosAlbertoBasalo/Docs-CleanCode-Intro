@@ -53,6 +53,6 @@ https://github.com/LabsAdemy/CleanCodeLab/tree/NAME/src/examples/2-verbs
 
 ---
 
-- [⏭️ Next: 🧼 FUNCTION Lesson](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION)
+- [⏭️ Next: 🔀 FUNCTION: Organización de sentencias.](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION)
 
-- [⏮️ Back: 🧼 NAME Lesson](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
+- [⏮️ Back: 📘 NAME: Escribir para leer](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)

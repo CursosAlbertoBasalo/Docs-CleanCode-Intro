@@ -56,4 +56,4 @@ https://github.com/LabsAdemy/CleanCodeLab/tree/NAME/src/examples/1-nouns
 
 - [⏭️ Next: 💪 4 - Acciones con verbos](./4-acciones_con_verbos.md)
 
-- [⏮️ Back: 🧼 NAME Lesson](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
+- [⏮️ Back: 📘 NAME: Escribir para leer](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)

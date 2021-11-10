@@ -69,4 +69,4 @@ https://github.com/LabsAdemy/CleanCodeLab/blob/NAME/docs/style-config.md
 
 - [⏭️ Next: 📏 2 - Tamaños y límites](./2-tamanos_y_limites.md)
 
-- [⏮️ Back: 🧼 NAME Lesson](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
+- [⏮️ Back: 📘 NAME: Escribir para leer](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
