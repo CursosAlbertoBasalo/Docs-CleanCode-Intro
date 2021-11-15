@@ -13,20 +13,20 @@
 - ♻️ Cuanto más pequeñas más reutilizables.
 - 💪 Con **verbos** en su nombre que indiquen propósito
 - 🐫 _DRY_: Don´t Repeat yourself.
-- 🥚 con valores por defecto si el lenguaje los soporta.
-- 💂 con guardias para retornos tempranos de casos incorrectos o triviales.
-- 🧐 sin condiciones complejas.
-- 🚩 ...sin flags: crea dos variantes con nombre específico.
+- 🥚 Con valores por defecto si el lenguaje los soporta.
+- 💂 Con guardias para retornos tempranos de casos incorrectos o triviales.
+- 🧐 Sin condiciones complejas.
+- 🚩 Sin flags: crea dos variantes con nombre específico.
 - 💬 ...sin comentarios.
 
 ---
 
 ## ⚠️ Límites
 
-- ✅0_____0❌ _flags_
-- ✅1_____2❌ _argumentos_
-- ✅8____12❌ _complejidad ciclomática_
-- ✅16___24❌ _instrucciones_
+- ✅0**\_**0❌ _flags_
+- ✅1**\_**2❌ _argumentos_
+- ✅8\__\_\_12❌ \_complejidad ciclomática_
+- ✅16*\_\_24❌ \_instrucciones*
 
 ---
 
@@ -44,17 +44,11 @@
 
 ---
 
-## 📦 Métodos en _P.O.O._:
+## 📦 En _P.O.O._ las funciones son los Métodos:
 
 - ### 0️⃣ cuantos menos argumentos mejor.
 
-    - 🎏 evita argumentos _flag_ usando múltiples funciones específicas.
-
-    - favorece objetos en lugar de ~~primitivos~~.
-
-- ### 1️⃣ un mismo nivel de abstracción: delega en funciones privadas
-
-    - las instrucciones en funciones públicas deberían llamar a funciones privadas.
+- ### 🎏 evita argumentos _flag_ usando múltiples funciones específicas.
 
 ---
 
@@ -62,18 +56,19 @@
 
 - 👆 Una función,
 
-    - ## 🦄 un sólo propósito.
+  - ## 🦄 un sólo propósito.
 
-    - ... o al menos 1️⃣ mismo nivel de abstracción.
+  - ... o al menos 1️⃣ mismo nivel de abstracción.
+
+  > las instrucciones en funciones públicas deberían llamar a funciones privadas.
 
 - ❎ retornando datos; nunca errores.
 
-    - los errores tienen su propio flujo mediante `try-catch throw`.
-    - si el lenguaje no lo permite, usar convenio tipo `(err, data)`.
+  - los errores tienen su propio flujo mediante `try-catch throw`.
+  - si el lenguaje no lo permite, usar convenio tipo `(err, data)`.
 
 - 💬 Sin comentarios.
   - ¿Me repito?. MAL!!! 😈
-
 
 ## Tipos de funciones en JavaScript
 
@@ -81,8 +76,9 @@
 
 - Para ser usadas en un ambiente amplio
 - Con nombre para indicar propósito
-``` js
-function isEven(number){
+
+```js
+function isEven(number) {
   return number % 2 === 0;
 }
 ```
@@ -92,11 +88,11 @@ function isEven(number){
 - Para ser usadas como argumentos
 - Mantienen sintaxis similar a las declaraciones
 - Deben ser nombradas para rastreo del callStack
-``` js
-[1,2,3].forEach(function isEven(number){
-  return number % 2 === 0;
-})
 
+```js
+[1, 2, 3].forEach(function isEven(number) {
+  return number % 2 === 0;
+});
 ```
 
 ### Expresiones flecha
@@ -105,11 +101,10 @@ function isEven(number){
 - Usan sintaxis concisa
 - Anónimas
 - Indicadas para expresiones de retorno sencillas de una línea
-``` js
-[1,2,3].forEach((number) => number % 2 === 0)
 
+```js
+[1, 2, 3].forEach(number => number % 2 === 0);
 ```
-
 
 ---
 

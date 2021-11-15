@@ -30,6 +30,24 @@
 
 ---
 
+## 👮 Atajos a vigilar
+
+- ⚠️ Operadores ternarios
+
+  - `condition ? value if true : value if false`
+
+- ⚠️ Operadores lógicos
+
+  - `value = value || defaultValue;`
+
+  - `anObject && anObject.doSomething();`
+
+> No encadenes o agrupes estos atajos.
+
+> Úsalos sólo como una abreviación de casos muy simples.
+
+> Usa características del lenguaje para evitar tratar nulos y valores por defecto.
+
 ## ⚠️ Límites
 
 - ✅1*\_\_2❌ \_niveles de anidamiento*
