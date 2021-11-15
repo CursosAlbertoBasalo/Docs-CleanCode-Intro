@@ -1,3 +1,6 @@
+// ❌ multiple responsibilities
+// ❌ high level and low level logic mixed
+// ❌ incorrect name
 function printOnlyOddNumbers(numbers: number[]): string {
   let odds: number[];
   const rev: number[] = [];

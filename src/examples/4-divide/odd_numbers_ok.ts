@@ -1,5 +1,5 @@
 // ✔️ better naming
-function storeOddNumbersInAReversedString(source: number[]): string {
+function getStringWithOddNumbersReversed(source: number[]): string {
   // ✔️ same level of abstraction
   const odds: number[] = filterOddNumbers(source);
   const reversed: number[] = getReversedArray(odds);

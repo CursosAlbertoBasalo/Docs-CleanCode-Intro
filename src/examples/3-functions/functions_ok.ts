@@ -23,15 +23,15 @@ function getEmptyErrorString(): string {
 // ✅ Avoid flags
 export function doSomething(): void {
   try {
-    writeInformationMessageLog('Done');
+    writeInformationLog('Done');
   } catch (error) {
-    writeErrorMessageLog(error.message);
+    writeErrorLog(error.message);
   }
 }
-export function writeInformationMessageLog(message: string): void {
+export function writeInformationLog(message: string): void {
   console.log(message);
 }
-export function writeErrorMessageLog(message: string): void {
+export function writeErrorLog(message: string): void {
   console.error('ERROR:' + message);
 }
 
@@ -86,5 +86,3 @@ function createOccurrence(occurrences: {}, word: string): void {
 function accumulateOccurrence(occurrences: {}, word: string): void {
   occurrences[word]++;
 }
-
-// ToDo: Further improvement, use the class to store the word and the occurrences
