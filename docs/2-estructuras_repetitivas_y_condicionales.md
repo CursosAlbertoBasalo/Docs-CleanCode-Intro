@@ -50,8 +50,8 @@
 
 ## ⚠️ Límites
 
-- ✅1*\_\_2❌ \_niveles de anidamiento*
-- ✅4*\_\_8❌ \_instrucciones por bloque*
+- ✅1___2❌ _niveles de anidamiento_
+- ✅4___8❌ _instrucciones por bloque_
 
 > Te obliga a extraer código a funciones.
 

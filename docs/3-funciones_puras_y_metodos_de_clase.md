@@ -23,10 +23,10 @@
 
 ## ⚠️ Límites
 
-- ✅0**\_**0❌ _flags_
-- ✅1**\_**2❌ _argumentos_
-- ✅8\__\_\_12❌ \_complejidad ciclomática_
-- ✅16*\_\_24❌ \_instrucciones*
+- ✅0___0❌ _flags_
+- ✅1___2❌ _argumentos_
+- ✅8__12❌ _complejidad ciclomática_
+- ✅16_24❌ _instrucciones
 
 ---
 
@@ -78,8 +78,15 @@
 - Con nombre para indicar propósito
 
 ```js
-function isEven(number) {
-  return number % 2 === 0;
+function fizzzBuzz(number) {
+  if (number % 15 == 0)
+      console.log("FirzzBuzz");
+  else if (number % 3 == 0)
+      console.log("Fizz");
+  else if (number % 5 == 0)
+      console.log("Buzz");
+  else
+      console.log(i);
 }
 ```
 
@@ -90,8 +97,15 @@ function isEven(number) {
 - Deben ser nombradas para rastreo del callStack
 
 ```js
-[1, 2, 3].forEach(function isEven(number) {
-  return number % 2 === 0;
+[1, 2, 3].forEach(function fizzzBuzz(number) {
+   if (number % 15 == 0)
+        console.log("FirzzBuzz");
+    else if (number % 3 == 0)
+        console.log("Fizz");
+    else if (number % 5 == 0)
+        console.log("Buzz");
+    else
+        console.log(i);
 });
 ```
 
@@ -103,7 +117,7 @@ function isEven(number) {
 - Indicadas para expresiones de retorno sencillas de una línea
 
 ```js
-[1, 2, 3].forEach(number => number % 2 === 0);
+[1, 2, 3].filter(number => number % 2 === 0);
 ```
 
 ---
@@ -114,7 +128,7 @@ function isEven(number) {
 
 ---
 
-![Don´t repeat Yourself](https://github.com/LabsAdemy/CleanCodeLab/blob/FUNCTION/assets/dry.jpg)
+![Don´t repeat Yourself](./dry.jpg)
 
 ---
 
