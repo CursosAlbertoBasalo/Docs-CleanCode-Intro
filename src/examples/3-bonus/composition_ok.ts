@@ -10,7 +10,7 @@ export const customer: Customer = {
   tax: { idNumber: 654654654 },
 };
 
-export const suplier: Suplier = {
+export const supplier: Supplier = {
   basicData: {
     name: 'ACME Comp.',
     address: {
@@ -65,7 +65,7 @@ export class Customer {
   tax: Tax;
 }
 
-export class Suplier {
+export class Supplier {
   basicData: BasicData;
   tax: Tax;
   account: Account;

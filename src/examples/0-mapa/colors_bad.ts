@@ -1,9 +1,5 @@
-// 0- black
-// 1- blue
-// 2- red
-// 3- gray
+// ❌ First switch found, bad smell
 function getColorByCode(status: number) {
-  let color = '';
   switch (status) {
     case 0:
       return 'Black';
@@ -16,8 +12,8 @@ function getColorByCode(status: number) {
   }
 }
 
-function getIconoByCode(status: number) {
-  let color = '';
+// ❌ Chances that the same switch appears again
+function getIconByCode(status: number) {
   switch (status) {
     case 0:
       return '🎈';
@@ -30,10 +26,11 @@ function getIconoByCode(status: number) {
   }
 }
 
+// ❌ Ok, I quit.
 function getStatusConfig(status) {
   switch (status) {
     case 0:
-      return { color: 'Black', icono: '🎈', otra: '' };
+      return { color: 'Black', icon: '🎈' };
     case 1:
       return '🎆';
     case 2:
@@ -42,5 +39,3 @@ function getStatusConfig(status) {
       break;
   }
 }
-
-const colors = [{ id: 0, color: 'Black', icono: '🎈' }, {}, {}];

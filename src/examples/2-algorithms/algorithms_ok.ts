@@ -25,8 +25,8 @@ export const areaCalculators = {
 
 // ✔️ this function never gets modified
 export function getArea(shape: Shape): number {
-  const calulateArea = areaCalculators[shape.name];
-  return calulateArea(shape);
+  const calculateArea = areaCalculators[shape.name];
+  return calculateArea(shape);
 }
 
 // 💉 inject another shape without modifying

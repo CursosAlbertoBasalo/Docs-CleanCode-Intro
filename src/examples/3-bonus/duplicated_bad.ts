@@ -5,7 +5,7 @@ export const customer: Customer = {
   taxIdNumber: 654654654,
 };
 
-export const suplier: Suplier = {
+export const supplier: Supplier = {
   name: 'ACME Comp.',
   addressCity: 'New Jersey',
   addressState: 'Fairfield',
@@ -32,7 +32,7 @@ export class Customer {
   taxIdNumber: number;
 }
 
-export class Suplier {
+export class Supplier {
   name: string;
   addressCity: string;
   addressState: string;
