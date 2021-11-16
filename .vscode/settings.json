@@ -2,5 +2,8 @@
   "workbench.iconTheme": "material-icon-theme",
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
-  "cSpell.language": "en,es,es-ES"
+  "cSpell.language": "en,es,es-ES",
+  "cSpell.words": [
+    "Wirth"
+  ]
 }
