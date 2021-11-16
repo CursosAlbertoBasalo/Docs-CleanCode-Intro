@@ -1,12 +1,27 @@
-# Function
+# 🗂️ DATA: Abstracciones de información.
 
-Laboratories for [Clean Code course](https://github.com/BitAdemy/CleanCode)
+### Cohesiona variables y reduce la complejidad
 
-Lesson [3 - Data](https://github.com/BitAdemy/CleanCode/tree/DATA)
+> "Los malos programadores se preocupan por el código.
+> Los buenos se preocupan por las estructuras de datos y sus relaciones".
+>
+> -- ✍️ **Linus Torvalds**.
 
-## On CodeSandbox
+## Documentación
 
-https://codesandbox.io/s/github/LabsAdemy/CleanCodeLab/tree/DATA
+## [🗃️ Cohesion de primitivos](.docs/1-cohesion_de_primitivos.md)
+
+- Agrupación de variables con sentido de negocio.
+
+## [🔱 Condiciones y algoritmos](.docs/2-condiciones_y_algoritmos.md)
+
+- Simplificación de algoritmos.
+
+---
+
+> "La estructura de datos expone sus propiedades y no tiene funciones significativas"
+>
+> -- ✍️ **Robert C. Martin**
 
 ## Examples
 
@@ -16,4 +31,4 @@ https://codesandbox.io/s/github/LabsAdemy/CleanCodeLab/tree/DATA
 
 ## [💻 Tasks](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA/src/tasks)
 
-> by [bitAdemy](https://bitademy.com)
+> by [Alberto Basalo](https://twitter.com/albertobasalo)
