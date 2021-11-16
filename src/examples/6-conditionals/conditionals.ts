@@ -70,22 +70,34 @@ if (stock >= ordered) {
 // 0.0.0.x Not.Assignation.Not.Precondition.Not.BinaryAction.Nested?
 
 // 0.0.0.1 Not.Assignation.Not.Precondition.Not.BinaryAction.Nested
-function printRealStateSellingContract(isResidential, isForInvestingTrust) {
-  if (isResidential) {
+function printRealStateSellingContract() {
+  if (isResidential()) {
     printResidentialContract();
   } else {
-    printNonResidentialContract(isForInvestingTrust);
+    printNonResidentialContract();
   }
 }
 function printResidentialContract() {
   console.log('House or flat to individuals');
 }
-function printNonResidentialContract(isForInvestingTrust) {
-  if (isForInvestingTrust) {
-    console.log('Commercial or industrial property to an investing trust');
+function printNonResidentialContract() {
+  if (isForInvestingTrust()) {
+    printInvestingTrustContract();
   } else {
-    console.log('Commercial or industrial property to a company');
+    printIndustrialContract();
   }
+}
+function printInvestingTrustContract() {
+  console.log('Residential property to an investing trust');
+}
+function printIndustrialContract() {
+  console.log('Industrial property to a company');
+}
+function isResidential() {
+  return true;
+}
+function isForInvestingTrust() {
+  return true;
 }
 
 // 0.0.0.0 Not.Assignation.Not.Precondition.Not.BinaryAction.Not.Nested
