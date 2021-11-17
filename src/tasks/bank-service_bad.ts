@@ -15,7 +15,7 @@ export class BankService {
   // ❌ multiple primitive parameters
   // ❌ no cohesion of currency
   addTransaction(
-    accountdId: string,
+    accountId: string,
     transactionType: string,
     amount: number,
     currency?: 'EURO'
@@ -24,7 +24,7 @@ export class BankService {
     if (this.isInvalidTransaction(transactionType, amount)) {
       throw '💥Invalid transaction';
     }
-    const account = this.getAccount(accountdId);
+    const account = this.getAccount(accountId);
     if (account === undefined) {
       throw '💥Account not found';
     }
@@ -34,13 +34,13 @@ export class BankService {
     return logEntry;
   }
 
-  getReport(accountdId: string, currency?: 'EURO') {
-    const account = this.getAccount(accountdId);
+  getReport(accountId: string, currency?: 'EURO') {
+    const account = this.getAccount(accountId);
     if (account === undefined) {
       throw '💥Account not found';
     }
     const balanceReport = this.getUserFriendlyBalanceMessage(account.balance, currency);
-    return `   ${accountdId} reported: ${balanceReport}`;
+    return `   ${accountId} reported: ${balanceReport}`;
   }
 
   private getAccount(accountID: string): { accountID: string; balance: number } {
@@ -68,7 +68,7 @@ export class BankService {
       return true;
     }
   }
-  // ❌ atribute order error prone
+  // ❌ attribute order error prone
   private executeTransaction(transactionType: string, currentBalance: number, amount: number) {
     // ❌ reduce conditionals
     // ❌ reduce the risk of mistyping
