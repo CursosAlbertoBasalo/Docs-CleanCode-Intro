@@ -2,21 +2,22 @@
 
 type Shape = { name: string; base?: number; height?: number; width?: number; radius?: number };
 
-type MeasureSystem = { systemName: SystemNames; unitName: string; unitSymbol: string };
-
 type SystemNames = 'US' | 'SI' | '?';
+
+type MeasureSystem = { systemName: SystemNames; unitName: string; unitSymbol: string };
 
 const PI = 3.14;
 const HALVE = 0.5;
 
 // ✔️ all the business knowledge is on the same place
-const measureSystems: MeasureSystem[] = [
+const MEASURE_SYSTEMS: MeasureSystem[] = [
   { systemName: 'US', unitName: 'square yards', unitSymbol: 'yd2' },
   { systemName: 'SI', unitName: 'square metres', unitSymbol: 'm2' },
 ];
 
-// ✔️ a data object could be loaded or modified at run time
-export const areaCalculators = {
+// ✔️ a data object with methods on each value
+// could be loaded or modified at run time
+export const AREA_CALCULATORS = {
   TRIANGLE: (shape: Shape): number => HALVE * shape.base * shape.height,
   SQUARE: (shape: Shape): number => shape.height * shape.height,
   RECTANGLE: (shape: Shape): number => shape.height * shape.width,
@@ -25,12 +26,12 @@ export const areaCalculators = {
 
 // ✔️ this function never gets modified
 export function getArea(shape: Shape): number {
-  const calculateArea = areaCalculators[shape.name];
+  const calculateArea = AREA_CALCULATORS[shape.name];
   return calculateArea(shape);
 }
 
 // 💉 inject another shape without modifying
-// areaCalculators['SPHERE'] = shape => 4 * 3.14 * shape.radius * shape.radius;
+AREA_CALCULATORS['SPHERE'] = (shape: { radius: number }) => 4 * PI * shape.radius ** 2;
 
 function getMeasureSystem(systemName: SystemNames): MeasureSystem {
   const defaultNotFound: MeasureSystem = {
@@ -38,19 +39,19 @@ function getMeasureSystem(systemName: SystemNames): MeasureSystem {
     unitName: '',
     unitSymbol: '',
   };
-  const found = measureSystems.find(ms => ms.systemName === systemName);
+  const found = MEASURE_SYSTEMS.find(ms => ms.systemName === systemName);
   return found || defaultNotFound;
 }
 
-// ✔️ with no need for conditions we can use very simple arrow functions
-const getUnitName = (systemName: SystemNames): string => getMeasureSystem(systemName).unitName;
-const getUnitSymbol = (systemName: SystemNames): string => getMeasureSystem(systemName).unitSymbol;
+// ✔️ with no need for conditions we can use very simple pure functions ina fat arrow notation
+export const getUnitName = (systemName: SystemNames): string =>
+  getMeasureSystem(systemName).unitName;
+export const getUnitSymbol = (systemName: SystemNames): string =>
+  getMeasureSystem(systemName).unitSymbol;
 
-// * Alternative: use a class for MeasureSystem instead of simple structure
-
+const myMeasureSystem: SystemNames = 'SI';
 const myCircle: Shape = { name: 'CIRCLE', radius: 5 };
 const myArea = getArea(myCircle);
-const areaTitle = myArea + getUnitSymbol('SI');
-console.log(areaTitle);
-const areaDescription = `My ${myCircle.name} occupies an area of ${myArea} ${getUnitName('SI')}`;
+const myUnits = getUnitName(myMeasureSystem);
+const areaDescription = `My ${myCircle.name} occupies an area of ${myArea} ${myUnits}`;
 console.log(areaDescription);
