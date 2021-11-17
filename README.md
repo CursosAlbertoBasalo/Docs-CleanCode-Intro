@@ -9,11 +9,11 @@
 
 ## Documentación
 
-## [🗃️ Cohesion de primitivos](.docs/1-cohesion_de_primitivos.md)
+## [🗃️ Cohesion de primitivos](./docs/1-cohesion_de_primitivos.md)
 
 - Agrupación de variables con sentido de negocio.
 
-## [🔱 Condiciones y algoritmos](.docs/2-condiciones_y_algoritmos.md)
+## [🔱 Condiciones y algoritmos](./docs/2-condiciones_y_algoritmos.md)
 
 - Simplificación de algoritmos.
 
