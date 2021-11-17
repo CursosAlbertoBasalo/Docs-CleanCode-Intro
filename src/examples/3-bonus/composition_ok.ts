@@ -1,4 +1,39 @@
 // ✅ Prefer Composition over inheritance
+class Address {
+  city: string;
+  state: string;
+}
+
+class BasicData {
+  name: string;
+  address: Address;
+}
+
+class Tax {
+  idNumber: number;
+}
+
+class Account {
+  number: string;
+  bank: string;
+}
+
+export class Customer {
+  basicData: BasicData;
+  tax: Tax;
+}
+
+export class Supplier {
+  basicData: BasicData;
+  tax: Tax;
+  account: Account;
+}
+
+export class Employee {
+  basicData: BasicData;
+  account: Account;
+}
+
 export const customer: Customer = {
   basicData: {
     name: 'Road Runner',
@@ -40,38 +75,3 @@ export const employee: Employee = {
     bank: 'Rabbits Bank',
   },
 };
-
-class Address {
-  city: string;
-  state: string;
-}
-
-class BasicData {
-  name: string;
-  address: Address;
-}
-
-class Tax {
-  idNumber: number;
-}
-
-class Account {
-  number: string;
-  bank: string;
-}
-
-export class Customer {
-  basicData: BasicData;
-  tax: Tax;
-}
-
-export class Supplier {
-  basicData: BasicData;
-  tax: Tax;
-  account: Account;
-}
-
-export class Employee {
-  basicData: BasicData;
-  account: Account;
-}
