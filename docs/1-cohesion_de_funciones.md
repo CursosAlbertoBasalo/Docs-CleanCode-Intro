@@ -2,9 +2,11 @@
 
 ## Clases: Agrupación de funciones con sentido de negocio.
 
-> "Al diseñar nuestras clases debemos juntar las características relacionadas,
-> de modo que cada vez que cambien sea por la misma razón.
-> Y deberíamos separar las características que cambian por diferentes razones."
+> "Al diseñar nuestras clases debemos,
+>
+> **juntar** las características relacionadas que cambien la **misma** razón.
+>
+> Y deberíamos **separar** las características que cambian por **diferentes** razones."
 >
 > -- ✍️ **Steve Fenton**
 
@@ -24,7 +26,7 @@
 
 ## ⚠️ Límites
 
-- ✅8_____16❌ _propiedades y métodos públicos_
-- ✅0______2❌ _argumentos por método_
-- ✅0______1❌ _niveles de herencia_
-- ✅100__200❌ _instrucciones_
+- ✅8------16❌ _propiedades y métodos públicos_
+- ✅0-------2❌ _argumentos por método_
+- ✅0-------1❌ _niveles de herencia_
+- ✅100--200❌ _instrucciones_

@@ -3,5 +3,10 @@
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "cSpell.language": "en,es,es-ES",
-  "cSpell.words": ["Wirth"]
+  "cSpell.words": [
+    "Fenton",
+    "Liskov",
+    "Maguire",
+    "Wirth"
+  ]
 }
