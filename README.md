@@ -26,7 +26,7 @@
 
 ## 🏁 Introducción
 
-- **Programar es expresar procesos con detalle en un lenguaje no ambiguo**  que entiendan las máquinas.
+- **Programar es expresar procesos con detalle en un lenguaje no ambiguo** que entiendan las máquinas.
 
 - Pero también es **comunicar a otras personas la intención** de los procesos para ser corregidos, aumentados y mejorados.
 
@@ -50,10 +50,9 @@
 
 ### [🔀 FUNCTION: Organización de sentencias](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION)
 
-### [3 - DATA](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA)
+### [🗂️ DATA: Abstracciones de información.](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA)
 
-### [4 - OBJECT](https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT)
-
+### [📦 OBJECT: Abstracciones de lógica](https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT)
 
 > "El código limpio parece escrito por alguien que se preocupa."
 >
