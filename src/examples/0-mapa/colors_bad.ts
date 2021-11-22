@@ -26,15 +26,15 @@ function getIconByCode(status: number) {
   }
 }
 
-// ❌ Ok, I quit.
+// ❌ This is not the way
 function getStatusConfig(status) {
   switch (status) {
     case 0:
       return { color: 'Black', icon: '🎈' };
     case 1:
-      return '🎆';
+      return { color: 'Blue', icon: '🎆' };
     case 2:
-      return '🧨';
+      return { color: 'Red', icon: '🧨' };
     default:
       break;
   }

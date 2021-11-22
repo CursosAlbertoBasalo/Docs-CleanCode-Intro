@@ -1,5 +1,5 @@
 // ❌ duplicated data today...
-// may be duplicated logic tomorrow
+// ... may be duplicated logic tomorrow
 
 export class Customer {
   name: string;
