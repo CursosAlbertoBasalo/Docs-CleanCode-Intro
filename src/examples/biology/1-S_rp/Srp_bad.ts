@@ -2,7 +2,7 @@
 export class Animal {
   constructor(public name: string) {}
   getAnimalName(): string {
-    return 'Lassie';
+    return this.name.toLowerCase();
   }
   saveAnimal(animal: Animal): void {
     console.log('Saving' + JSON.stringify(animal));

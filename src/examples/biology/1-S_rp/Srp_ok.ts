@@ -1,8 +1,8 @@
-// ✔️ holds data and basic logic
+// ✔️ holds data and related logic
 export class Animal {
   constructor(public name: string) {}
   getAnimalName(): string {
-    return this.name;
+    return this.name.toLowerCase();
   }
 }
 // ✔️ persistence
