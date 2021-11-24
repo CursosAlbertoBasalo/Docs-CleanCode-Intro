@@ -35,3 +35,5 @@
 > "No importa lo lento vayas mientras no te detengas".
 >
 > -- ✍️ **Confucio**
+
+> by [Alberto Basalo](https://twitter.com/albertobasalo)
