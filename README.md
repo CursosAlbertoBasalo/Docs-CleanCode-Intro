@@ -22,6 +22,10 @@
 
 [Visualizing Refactoring](https://twitter.com/LlewellynFalco/status/633363986273189888)
 
+## [🏗️ Construcción de aplicaciones](./docs/3-construccion-de-aplicaciones.md)
+
+- Componentes: Agrupación de clases para construir aplicaciones
+
 ---
 
 > "Los objetos protegen sus datos detrás de abstracciones y exponen las funciones que operan con esos datos."
