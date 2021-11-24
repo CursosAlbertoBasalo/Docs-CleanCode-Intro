@@ -1,12 +1,10 @@
 # 📘 NAME: Escribir para leer
 
-
 ### Estilo y nombrado.
 
 > "Solo hay dos cosas difíciles en Informática: invalidar la caché y nombrar las cosas"
 >
 > -- ✍️ **Phil Karlton**
-
 
 > "El tiempo dedicado a la lectura es muy superior al de escritura.
 > Leemos código antiguo para escribir código nuevo.
@@ -24,7 +22,6 @@
 
 ### [💪 4 - Acciones con verbos](./docs/4-acciones_con_verbos.md)
 
-
 ## Local Configuration
 
 ### [✨ 1 - Style](./docs/style-config.md)
@@ -39,7 +36,8 @@
 
 ### [💪 2 - verbs](./src/examples/2-verbs)
 
+### [💭 3 - Comments](./src/examples/3-comments)
+
 ## [💻 Tasks](./src/tasks)
 
 > by [Alberto Basalo](https://twitter.com/albertobasalo)
-
