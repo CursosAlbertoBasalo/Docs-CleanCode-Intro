@@ -1,4 +1,4 @@
-# Artesanía: La mejora constante.
+# 👨‍🍳 Artesanía: La mejora constante.
 
 ### Profesionalismo, pragmatismo y orgullo.
 
