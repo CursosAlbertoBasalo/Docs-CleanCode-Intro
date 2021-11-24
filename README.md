@@ -25,10 +25,10 @@
 
 ## Examples
 
-### [👉 1 - Structures](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA/src/examples/1-structures)
+### [👉 1 - Structures](./src/examples/1-structures)
 
-### [📜 2 - Algorithms](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA/src/examples/2-algorithms)
+### [📜 2 - Algorithms](./src/examples/2-algorithms)
 
-## [💻 Tasks](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA/src/tasks)
+## [💻 Tasks](./src/tasks)
 
 > by [Alberto Basalo](https://twitter.com/albertobasalo)
