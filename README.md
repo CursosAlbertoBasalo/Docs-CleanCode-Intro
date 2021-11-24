@@ -24,18 +24,18 @@
 
 ## Examples
 
-### [👉 1 - Instructions](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/examples/1-instructions)
+### [👉 1 - Instructions](./src/examples/1-instructions)
 
-### [📜 2 - Blocks](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/examples/2-blocks)
+### [📜 2 - Blocks](./src/examples/2-blocks)
 
-### [🧩 3 - Functions](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/examples/3-functions)
+### [🧩 3 - Functions](./src/examples/3-functions)
 
-### [🧩 4 - Divide](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/examples/4-divide)
+### [🧩 4 - Divide](./src/examples/4-divide)
 
-### [🧩 5 - Coherency](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/examples/5-coherency)
+### [🧩 5 - Coherency](./src/examples/5-coherency)
 
-### [🔱 6 - Conditionals](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/examples/6-conditionals)
+### [🔱 6 - Conditionals](./src/examples/6-conditionals)
 
-## [💻 Tasks](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/tasks)
+## [💻 Tasks](./src/tasks)
 
 > by [Alberto Basalo](https://twitter.com/albertobasalo)
