@@ -34,8 +34,8 @@
 
 ## Examples
 
-### [⚒️ SOLID](https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT/src/examples/)
+### [⚒️ SOLID](./src/examples/)
 
-## [💻 Tasks](https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT/src/tasks)
+## [💻 Tasks](./src/tasks)
 
-> by [bitAdemy](https://bitademy.com)
+> by [Alberto Basalo](https://twitter.com/albertobasalo)
