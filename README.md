@@ -8,11 +8,11 @@
 
 ---
 
-## [📝 Hacer las cosas bien](.docs/1-hacer_las_cosas_bien.md)
+## [📝 Hacer las cosas bien](./docs/1-hacer_las_cosas_bien.md)
 
 - Del manifiesto ágil al artesano.
 
-## [✒️ Disciplina y buenos hábitos.](.docs/2-disciplina_y_buenos_habitos.md)
+## [✒️ Disciplina y buenos hábitos.](./docs/2-disciplina_y_buenos_habitos.md)
 
 - Ni artista 👩‍🎨 ni operario/a 👨‍🏭
 
