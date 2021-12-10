@@ -2,7 +2,7 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable max-depth */
 /* eslint-disable complexity */
-// ❌
+// ❌ complex
 export function getPrimes(limit: number): number[] {
   const FIRST_PRIME = 2;
   const TOTAL_NUMBERS = limit + 1;

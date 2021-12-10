@@ -9,7 +9,7 @@
     "complexity": ["error", { "max": 8 }],
     "max-depth": ["error", 2],
     "max-lines": ["warn", 160],
-    "max-lines-per-function": ["warn", 20],
+    "max-lines-per-function": ["warn", 4],
     "max-nested-callbacks": ["error", 1],
     "max-params": ["warn", 2],
     "no-magic-numbers": [

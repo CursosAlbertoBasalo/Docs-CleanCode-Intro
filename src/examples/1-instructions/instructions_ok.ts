@@ -8,9 +8,9 @@ export function getMinutesBetweenDates(initial: Date, final: Date): number {
   const millisecondsBetweenDates = final.getTime() - initial.getTime();
   const absoluteMillisecondsBetweenDates = Math.abs(millisecondsBetweenDates);
   const absoluteMinutesBetweenDates = absoluteMillisecondsBetweenDates / MILLISECONDS_PER_MINUTE;
-  const minutesBetweenDates = Math.floor(absoluteMinutesBetweenDates);
+  const wholeMinutesBetweenDates = Math.floor(absoluteMinutesBetweenDates);
 
-  return minutesBetweenDates;
+  return wholeMinutesBetweenDates;
 }
 
 // ✔️ avoid nested ternaries

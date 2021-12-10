@@ -14,8 +14,6 @@
 
 - Primero las constantes.
 
-- Inicializar siempre con un valor.
-
 ## 📥 Asignación
 
 - Asignar el resultado de expresiones sencillas.

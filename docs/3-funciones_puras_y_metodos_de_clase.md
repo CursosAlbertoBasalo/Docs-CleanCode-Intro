@@ -23,10 +23,10 @@
 
 ## ⚠️ Límites
 
-- ✅0___0❌ _flags_
-- ✅1___2❌ _argumentos_
-- ✅8__12❌ _complejidad ciclomática_
-- ✅16_24❌ _instrucciones
+- ✅0---0❌ flags
+- ✅1---2❌ argumentos
+- ✅8--12❌ complejidad ciclomática
+- ✅4---8❌ instrucciones
 
 ---
 
@@ -44,7 +44,7 @@
 
 ---
 
-## 📦 En _P.O.O._ las funciones son los Métodos:
+## 📦 En P.O.O. las funciones son los Métodos:
 
 - ### 0️⃣ cuantos menos argumentos mejor.
 
@@ -74,46 +74,37 @@
 
 ### Declaraciones
 
-- Para ser usadas en un ambiente amplio
+- Para ser usadas como regla general
 - Con nombre para indicar propósito
 
 ```js
-function fizzzBuzz(number) {
-  if (number % 15 == 0)
-      console.log("FirzzBuzz");
-  else if (number % 3 == 0)
-      console.log("Fizz");
-  else if (number % 5 == 0)
-      console.log("Buzz");
-  else
-      console.log(i);
+function fizzBuzz(number) {
+  if (number % 15 == 0) console.log('FizzBuzz');
+  else if (number % 3 == 0) console.log('Fizz');
+  else if (number % 5 == 0) console.log('Buzz');
+  else console.log(i);
 }
 ```
 
 ### Expresiones complejas
 
-- Para ser usadas como argumentos
+- Para ser usadas como argumentos de funciones de orden superior
 - Mantienen sintaxis similar a las declaraciones
 - Deben ser nombradas para rastreo del callStack
 
 ```js
-[1, 2, 3].forEach(function fizzzBuzz(number) {
-   if (number % 15 == 0)
-        console.log("FirzzBuzz");
-    else if (number % 3 == 0)
-        console.log("Fizz");
-    else if (number % 5 == 0)
-        console.log("Buzz");
-    else
-        console.log(i);
+[1, 2, 3].forEach(function fizzBuzz(number) {
+  if (number % 15 == 0) console.log('FizzBuzz');
+  else if (number % 3 == 0) console.log('Fizz');
+  else if (number % 5 == 0) console.log('Buzz');
+  else console.log(i);
 });
 ```
 
 ### Expresiones flecha
 
-- Para ser usadas como argumentos
-- Usan sintaxis concisa
-- Anónimas
+- Para ser usadas como argumentos de funciones de orden superior
+- Aprovechan sintaxis concisa y anónima
 - Indicadas para expresiones de retorno sencillas de una línea
 
 ```js

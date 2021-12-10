@@ -41,11 +41,12 @@ export function getSquaredOfPrimes(): number[] {
   const NATURAL_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const squaredPrimes = [];
 
-  NATURAL_NUMBERS.filter(isPrimeNumber) // use functional programming // using a pointer to a function declaration
+  // use functional programming
+  NATURAL_NUMBERS.filter(isPrimeNumber) // using a pointer to a function declaration
     .map(prime => prime * prime) // using an arrow function expression
     .forEach(function processSquaredPrime(squaredPrime) {
       // using a function declaration
-      // ✔️ same levels os abstraction
+      // ✔️ same level of abstraction
       savePrime(squaredPrimes, squaredPrime);
       printProcess(squaredPrime);
       printTotals(squaredPrimes);
@@ -53,6 +54,7 @@ export function getSquaredOfPrimes(): number[] {
 
   return squaredPrimes;
 }
+
 // function declaration
 function isPrimeNumber(number: number): boolean {
   const FIRST_PRIME = 2;

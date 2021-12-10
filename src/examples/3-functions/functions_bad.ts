@@ -1,8 +1,8 @@
 /* eslint-disable max-depth */
 /* eslint-disable max-lines-per-function */
-export function getErrorMessage(error: object, isTouched: boolean): string {
+export function getErrorMessage(error: object, isTouchedByUser: boolean): string {
   // ❌ Avoid complex conditionals
-  if (error !== null && isTouched) {
+  if (error !== null && isTouchedByUser) {
     return JSON.stringify(error);
   } else {
     return '';

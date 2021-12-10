@@ -1,17 +1,17 @@
 // ✅ Avoid complex conditionals
 // ✅ Same level of abstraction
-export function getErrorMessage(error: object, isTouched: boolean): string {
-  if (mustShowError(error, isTouched)) {
+export function getErrorMessage(error: object, isTouchedByUser: boolean): string {
+  if (mustShowError(error, isTouchedByUser)) {
     return getErrorString(error);
   } else {
     return getEmptyErrorString();
   }
 }
 // ✅ The name of the function is clear, is live documentation
-function mustShowError(error: object, isTouched: boolean): boolean {
-  // ✅ One line per operand
+function mustShowError(error: object, isTouchedByUser: boolean): boolean {
+  // ✅ One operand per instruction
   const hasError = error !== null;
-  return hasError && isTouched;
+  return hasError && isTouchedByUser;
 }
 function getErrorString(error: object): string {
   return JSON.stringify(error);
@@ -73,6 +73,8 @@ function isEmpty(input: string): boolean {
   return input.length <= 0;
 }
 function splitString(input: string): string[] {
+  // ✅ meaningful comments
+  // split by spaces new line and tabs
   const delimiters = /\s+|\n|\t/;
   return input.split(delimiters);
 }

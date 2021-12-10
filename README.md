@@ -18,10 +18,6 @@
 
 ### [🧩 3 - Funciones puras y metodos de clase](./docs/3-funciones_puras_y_metodos_de_clase.md)
 
-## Local Configuration
-
-### [🚨 ESlint rules](./docs/eslint-rules.md)
-
 ## Examples
 
 ### [👉 1 - Instructions](./src/examples/1-instructions)
@@ -37,5 +33,9 @@
 ### [🔱 6 - Conditionals](./src/examples/6-conditionals)
 
 ## [💻 Tasks](./src/tasks)
+
+## Configuration
+
+### [🚨 ESlint rules](./docs/eslint-rules.md)
 
 > by [Alberto Basalo](https://twitter.com/albertobasalo)

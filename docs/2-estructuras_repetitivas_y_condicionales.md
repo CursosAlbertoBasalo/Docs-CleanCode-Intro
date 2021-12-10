@@ -46,12 +46,12 @@
 
 > Úsalos sólo como una abreviación de casos muy simples.
 
-> Usa características del lenguaje para evitar tratar nulos y valores por defecto.
+> Usa características del lenguaje para evitar tratar nulos.
 
 ## ⚠️ Límites
 
-- ✅1___2❌ _niveles de anidamiento_
-- ✅4___8❌ _instrucciones por bloque_
+- ✅1---2❌ niveles de anidamiento
+- ✅1---4❌ instrucciones por bloque
 
 > Te obliga a extraer código a funciones.
 
