@@ -18,9 +18,9 @@
 
 ## ⚠️Límites
 
-- ✅80____120❌ _caracteres por línea_
-- ✅1_______2❌ _líneas en blanco seguidas_
-- ✅100___200❌ _líneas por fichero_
+- ✅80\__\_\_120❌ \_caracteres por línea_
+- ✅1**\_\_\_**1❌ _líneas en blanco seguidas_
+- ✅100*\_\_200❌ \_líneas por fichero*
 
 ---
 
@@ -37,17 +37,17 @@
 
 ### ⚔️ Evita conflictos trasladando la decisión a otros:
 
-  - Tabs vs Spaces
-  - Comillas simples o dobles
-  - Posición de llaves, paréntesis, operadores...
+- Tabs vs Spaces
+- Comillas simples o dobles
+- Posición de llaves, paréntesis, operadores...
 
 ---
 
 ### 🛠 Herramientas de limpieza
 
-  - [Prettier](https://prettier.io/)
-  - [Beautify](https://www.npmjs.com/package/js-beautify)
-  - Buscar según IDE y lenguaje.
+- [Prettier](https://prettier.io/)
+- [Beautify](https://www.npmjs.com/package/js-beautify)
+- Buscar según IDE y lenguaje.
 
 > Aplicable a todo tipo de lenguajes.
 

@@ -29,7 +29,7 @@
 
 - Define listas permitidas para acciones comunes.
 
- `get | set  - read | write - select | insert`
+`get | set --- read | write --- select | insert`
 
 - Clarifica añadiendo sustantivos, adverbios o preposiciones. ❇️
 
@@ -38,8 +38,8 @@
 ## 🤔 Piensa en mi
 
 ### 😲 No me sorprendas
-### 😕 No me hagas pensar
 
+### 😕 No me hagas pensar
 
 ---
 

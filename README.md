@@ -22,14 +22,6 @@
 
 ### [💪 4 - Acciones con verbos](./docs/4-acciones_con_verbos.md)
 
-## Local Configuration
-
-### [✨ 1 - Style](./docs/style-config.md)
-
-### [📏 2 - Size](./docs/size-config.md)
-
-### [🧪 3 - Test](./docs/jest-tests.md)
-
 ## Examples
 
 ### [📫 1 - Nouns](./src/examples/1-nouns)
@@ -39,5 +31,13 @@
 ### [💭 3 - Comments](./src/examples/3-comments)
 
 ## [💻 Tasks](./src/tasks)
+
+## Configuration
+
+### [✨ 1 - Style](./docs/style-config.md)
+
+### [📏 2 - Size](./docs/size-config.md)
+
+### [🧪 3 - Test](./docs/jest-tests.md)
 
 > by [Alberto Basalo](https://twitter.com/albertobasalo)

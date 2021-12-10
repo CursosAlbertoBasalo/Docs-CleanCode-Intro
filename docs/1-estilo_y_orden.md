@@ -24,28 +24,29 @@
 
 ### 🚥 Belleza **horizontal**
 
-  - Sangría y llaves en **bloques**
-  - Tamaño de las **líneas**
+- Sangría y llaves en **bloques**
+- Tamaño de las **líneas**
 
 ### 🚦 Belleza **vertical**
 
-  - **Orden** de las variables o propiedades
-    - clases: propiedades -> constructor -> métodos
-    - módulos: variables -> funciones
-  - **Orden** de las funciones o métodos:
-    - revelador: públicos -> privados
-    - newsletter: público -> privados -> público -> privados
+- **Orden** de las variables o propiedades
+  - clases: propiedades -> constructor -> métodos
+  - módulos: variables -> funciones
+- **Orden** de las funciones o métodos:
+  - revelador: públicos -> privados
+  - newsletter: público -> privados -> público -> privados
 
 ---
 
 ### 🔬 Belleza **interna**
 
-  - **Separadores** de listas e instrucciones
-  - **Espacios** en las expresiones
-    - alrededor de los paréntesis
-    - alrededor de los operadores
-  - **Delimitadores** de cadenas
-  - Líneas de separación ¿?
+- **Separadores** de listas e instrucciones
+- **Espacios** en las expresiones
+  - alrededor de los paréntesis
+  - alrededor de los operadores
+- **Delimitadores** de cadenas
+
+#### Líneas de separación ¿?
 
 ---
 
@@ -53,7 +54,7 @@
 
 ---
 
->> ¿Dónde vas a colocar ESA línea de separación?
+> > ¿Dónde vas a colocar ESA línea de separación?
 
 ---
 

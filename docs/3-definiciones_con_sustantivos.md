@@ -22,7 +22,7 @@
 
 - Para que sean **pronunciables y corregibles** ortográficamente.
 
-- 📚 Vocabulario de **entidades y propiedades** de negocio.
+- 📚 Vocabulario de **entidades y propiedades** de negocio: _Lenguaje ubicuo_.
 
 - **Sin** prefijos o sufijos técnicos.
 
@@ -42,8 +42,7 @@
 
 - [Clean Code Applied to JavaScript — Part II. Variables](https://dev.to/carlillo/clean-code-applied-to-javascript-part-ii-variables-pc)
 
-
- ## 📝 Laboratorio
+## 📝 Laboratorio
 
 https://github.com/LabsAdemy/CleanCodeLab/blob/NAME/docs/jest-tests.md
 https://github.com/LabsAdemy/CleanCodeLab/tree/NAME/src/examples/1-nouns
