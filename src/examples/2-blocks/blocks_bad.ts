@@ -2,6 +2,11 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable max-depth */
 /* eslint-disable complexity */
+
+/*
+ * https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+ */
+
 // ❌ complex
 export function getPrimes(limit: number): number[] {
   const FIRST_PRIME = 2;

@@ -1,3 +1,7 @@
+/*
+ * https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+ */
+
 const PRIME = true;
 const COMPOSITE = false;
 // ✔️ no nested blocks
