@@ -22,6 +22,8 @@
 
 ### [💪 4 - Acciones con verbos](./docs/4-acciones_con_verbos.md)
 
+> [The 7 principles of naming](https://www.namingthings.co/naming-things-principles)
+
 ## Examples
 
 ### [📫 1 - Nouns](./src/examples/1-nouns)
