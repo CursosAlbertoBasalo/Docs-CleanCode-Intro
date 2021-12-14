@@ -18,8 +18,7 @@ export class Client {
   }
 
   //✔️ good names require no comment
-  // Gets the orders by status
-  getOrdersBy(status: number): object[] {
+  getOrdersByStatus(status: number): object[] {
     console.log('Getting by ', status);
     return [];
   }
