@@ -12,13 +12,14 @@ export function getErrorMessage(error: object, isTouchedByUser: boolean): string
 // ❌ Avoid flags
 export function doSomething(): void {
   try {
-    writeMessageLog('Done', false);
+    writeMessageLog('Done', false); // What is the purpose of the second parameter?
   } catch (error) {
     writeMessageLog(error.message, true);
   }
 }
 
 export function writeMessageLog(message: string, isError: boolean): void {
+  // ❌ Avoid flags
   if (isError) {
     console.error('ERROR:' + message);
   } else {

@@ -46,10 +46,10 @@ export function getSquaredOfPrimes(): number[] {
   const squaredPrimes = [];
 
   // use functional programming
-  NATURAL_NUMBERS.filter(isPrimeNumber) // using a pointer to a function declaration
-    .map(prime => prime * prime) // using an arrow function expression
+  NATURAL_NUMBERS.filter(isPrimeNumber) // using a pointer (beware of arguments and this related issues) to a function declaration for complex logic
+    .map(prime => prime * prime) // using an arrow function expression for simple logic
     .forEach(function processSquaredPrime(squaredPrime) {
-      // using a function declaration
+      // using a function declaration (with name) for medium complexity
       // ✔️ same level of abstraction
       savePrime(squaredPrimes, squaredPrime);
       printProcess(squaredPrime);
@@ -64,11 +64,13 @@ function isPrimeNumber(number: number): boolean {
   const FIRST_PRIME = 2;
   // ✔️ guard for early return
   if (number < FIRST_PRIME) return false;
-  // ✔️ no complex logic
+  // ✔️ complex logic on function call, no comments needed
   const maxPrime = getMaxPossiblePrime(number);
   let isPrime = true;
-  for (let i = FIRST_PRIME; i <= maxPrime; i++) {
-    if (isEvenlyDivisible(number, i)) {
+  // ✔️ use proper variable names on loops
+  for (let currentNumber = FIRST_PRIME; currentNumber <= maxPrime; currentNumber++) {
+    // ✔️ complex condition on function call, no comments needed
+    if (isEvenlyDivisible(number, currentNumber)) {
       isPrime = false;
       break;
     }
@@ -85,12 +87,12 @@ function getMaxPossiblePrime(number) {
   const lowerInteger = Math.floor(squareRoot);
   return lowerInteger;
 }
-function savePrime(squaredPrimes, squaredPrime) {
+function savePrime(squaredPrimes: number[], squaredPrime: number) {
   squaredPrimes.push(squaredPrime);
 }
-function printProcess(number) {
+function printProcess(number: number) {
   console.log(`Added ${number} as the square of a prime number`);
 }
-function printTotals(squaredPrimes) {
+function printTotals(squaredPrimes: number[]) {
   console.log(`Calculated ${squaredPrimes.length} primes`);
 }

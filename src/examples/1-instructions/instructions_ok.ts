@@ -5,6 +5,7 @@ export function getMinutesBetweenDates(initial: Date, final: Date): number {
 
   const MILLISECONDS_PER_MINUTE = MILLISECONDS_PER_SECOND * SECONDS_PER_MINUTE;
 
+  // ✔️ one operator per instruction
   const millisecondsBetweenDates = final.getTime() - initial.getTime();
   const absoluteMillisecondsBetweenDates = Math.abs(millisecondsBetweenDates);
   const absoluteMinutesBetweenDates = absoluteMillisecondsBetweenDates / MILLISECONDS_PER_MINUTE;
@@ -18,6 +19,7 @@ export function getMinutesBetweenDates(initial: Date, final: Date): number {
 export function isLeapBlocks(year: number): boolean {
   let isLeap = false;
 
+  // ✔️ one operator per condition
   if (year % 400 === 0) {
     isLeap = true;
   } else if (year % 100 === 0) {
@@ -34,6 +36,7 @@ export function isLeapEarly(year: number): boolean {
   const IS_LEAP = true;
   const IS_NOT_LEAP = false;
 
+  // ✔️ early returns avoiding else blocks
   if (year % 400 === 0) {
     return IS_LEAP;
   }

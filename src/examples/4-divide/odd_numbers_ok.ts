@@ -1,4 +1,4 @@
-// ✔️ better naming
+// ✔️ better naming, say what the function does
 function getStringWithOddNumbersReversed(source: number[]): string {
   // ✔️ same level of abstraction
   const odds: number[] = filterOddNumbers(source);
@@ -16,6 +16,7 @@ function filterOddNumbers(source: number[]): number[] {
 function getReversedArray(source: number[]): number[] {
   const reversed: number[] = [];
   const lastIndex = source.length - 1;
+  // ✔️ index could be named as i
   for (let i = lastIndex; i >= 0; i--) {
     reversed.push(source[i]);
   }
@@ -23,7 +24,7 @@ function getReversedArray(source: number[]): number[] {
 }
 
 function storeArrayInString(source: number[]): string {
-  let stringArray = '';
-  source.forEach(n => (stringArray += n));
-  return stringArray;
+  let stringified = '';
+  source.forEach(number => (stringified += number));
+  return stringified;
 }

@@ -53,6 +53,7 @@ export function countWords(input: string): object {
   const splittedArray = splitString(cleanedInput);
   // ✅ use expressions with name for complex logic
   splittedArray.forEach(function classifyWord(word) {
+    // ✅ business logic expressed in code, not in comments
     if (isANewOccurrence(word, occurrences)) {
       createOccurrence(occurrences, word);
     } else {

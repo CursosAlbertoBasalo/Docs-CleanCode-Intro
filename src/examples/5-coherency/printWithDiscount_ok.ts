@@ -7,6 +7,11 @@ export function printWithDiscount(product: { price: number }) {
   printPrice(finalPrice);
 }
 
+// ⚠️ Avoid nested complex calls
+export function printWithDiscountOnLiner(product: { price: number }) {
+  printPrice(calculateFinalPrice(getPrice(product)));
+}
+
 // low level functions
 
 function getPrice(product: { price: number }) {

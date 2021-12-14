@@ -1,7 +1,7 @@
-printWithDiscount_Bad({ price: 100 });
+printWithDiscount({ price: 100 });
 
 // ❌ high level and low level logic mixed
-function printWithDiscount_Bad(prod: { price: any }): void {
+function printWithDiscount(prod: { price: any }): void {
   const price = prod.price;
   const discount = 0.9;
   const finalPrice = price * discount;
