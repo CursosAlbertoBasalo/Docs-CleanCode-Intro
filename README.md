@@ -6,7 +6,7 @@
 >
 > -- ✍️ **Steve McConnell**
 
-> "La verdad sólo se encuentra en un lugar: el código"
+> "La verdad sólo se encuentra en un lugar: el código."
 >
 > -- ✍️ **Robert C. Martin**
 

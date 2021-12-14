@@ -8,23 +8,29 @@
 
 ---
 
-## 👶 Declaración
+## ¿Para qué escribir una instrucción?
 
-- Una variable o constante por línea.
+### 👶 Declaración
 
-- Primero las constantes.
+- De variables, constantes, funciones, clases...
 
-## 📥 Asignación
+### 📥 Asignación
 
-- Asignar el resultado de expresiones sencillas.
+- Asignar el resultado de expresiones a variables.
 
-- ❌ AVOID NULL / UNDEFINED
+### 📞 Invocación
 
-## 📞 Invocación
+- Llamadas a métodos, subrutinas, procedimientos o funciones.
 
-- En cuanto se complique...
+## ¿Cómo escribir una instrucción?
 
-- Llamar a métodos, subrutinas, procedimientos o funciones.
+### 🍭 Sencilla
+
+- Sin anidamientos ni llamadas encadenadas
+
+### 🦄 Un sólo operador
+
+- En las asignaciones reducir la cantidad de operadores lógicos y aritméticos
 
 ---
 

@@ -10,11 +10,13 @@
 
 ## ❓ Condicionales
 
-- ⚠️ Usar ternarios sólo en casos triviales.
-
-- Envolver siempre 🔑 entre llaves.🗝
+- Si hay un `if` debes ponerlo cuanto antes. Idealmente lo primero.
 
 - La condición de 1️⃣ sólo operador lógico. En otro caso debe ser una función.
+
+- Envolver los bloques siempre 🔑 entre llaves.🗝
+
+- ⚠️ Usar ternarios sólo en casos triviales.
 
 - Valorar retorno **anticipado** _vs_ retorno **unificado.**
 
@@ -53,13 +55,11 @@
 - ✅1---2❌ niveles de anidamiento
 - ✅1---4❌ instrucciones por bloque
 
-> Te obliga a extraer código a funciones.
-
-> Te obliga a nombrar las nuevas funciones.
-
 ## Consecuencias
 
-- 💼 Más **reglas de negocio**
+- 🛢️ Te obliga a **extraer** código a funciones.
+- 🏷️ Te obliga a **nombrar** las nuevas funciones.
+- 💼 Más **reglas de negocio** en tu código
 - 💬 **Cero** necesidad de comentarios
 
 ---

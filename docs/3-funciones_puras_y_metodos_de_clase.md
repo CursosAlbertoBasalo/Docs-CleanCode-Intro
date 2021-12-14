@@ -13,7 +13,7 @@
 - ♻️ Cuanto más pequeñas más reutilizables.
 - 💪 Con **verbos** en su nombre que indiquen propósito
 - 🐫 _DRY_: Don´t Repeat yourself.
-- 🥚 Con valores por defecto si el lenguaje los soporta.
+- 🥚 Con valores por defecto en sus argumentos si el lenguaje los soporta.
 - 💂 Con guardias para retornos tempranos de casos incorrectos o triviales.
 - 🧐 Sin condiciones complejas.
 - 🚩 Sin flags: crea dos variantes con nombre específico.
@@ -26,7 +26,7 @@
 - ✅0---0❌ flags
 - ✅1---2❌ argumentos
 - ✅8--12❌ complejidad ciclomática
-- ✅4---8❌ instrucciones
+- ✅4---8❌ instrucciones 😱
 
 ---
 
@@ -42,13 +42,15 @@
 
 - ### 🚯 Sin efectos secundarios en el entorno.
 
----
+## 📦 En P.O.O. favorece la cohesión
 
-## 📦 En P.O.O. las funciones son los Métodos:
+> Los Métodos de una clase deben usar principalmente sus Propiedades
+>
+> -- ✍️ **Alguien a quien le gustan las clases**.
 
-- ### 0️⃣ cuantos menos argumentos mejor.
+- ### 0️⃣ Cuantos menos argumentos mejor.
 
-- ### 🎏 evita argumentos _flag_ usando múltiples funciones específicas.
+- ### 🏘️ Usa tus propiedades.
 
 ---
 
@@ -58,9 +60,9 @@
 
   - ## 🦄 un sólo propósito.
 
-  - ... o al menos 1️⃣ mismo nivel de abstracción.
+  - ## 👨‍💼 un mismo nivel de abstracción.
 
-  > las instrucciones en funciones públicas deberían llamar a funciones privadas.
+  > Las instrucciones en funciones públicas deberían llamar a funciones privadas.
 
 - ❎ retornando datos; nunca errores.
 
@@ -68,7 +70,10 @@
   - si el lenguaje no lo permite, usar convenio tipo `(err, data)`.
 
 - 💬 Sin comentarios.
+
   - ¿Me repito?. MAL!!! 😈
+
+---
 
 ## Tipos de funciones en JavaScript
 
@@ -76,6 +81,7 @@
 
 - Para ser usadas como regla general
 - Con nombre para indicar propósito
+- Entre llaves para delimitar le bloque de instrucciones
 
 ```js
 function fizzBuzz(number) {
@@ -101,7 +107,7 @@ function fizzBuzz(number) {
 });
 ```
 
-### Expresiones flecha
+### Expresiones flecha (lambda)
 
 - Para ser usadas como argumentos de funciones de orden superior
 - Aprovechan sintaxis concisa y anónima
