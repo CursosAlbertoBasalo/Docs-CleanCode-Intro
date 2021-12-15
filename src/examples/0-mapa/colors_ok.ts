@@ -25,24 +25,15 @@ function getStatusConfiguration(statusId: number) {
   return configuration || defaultConfiguration;
 }
 
-/** more examples */
+/** more examples
+ * Discounts
+ */
 
-// < 10  unidades 0%
-// 10 < 100 10%
-// > 100 20 %
+// < 10     units =>  0%
+// 10 < 100 units => 10%
+// > 100    units => 20%
 
-function getDiscountIf(units: number) {
-  let discount = 0;
-  if (units < 10) {
-    discount = 0;
-  } else if (units < 100) {
-    discount = 10;
-  } else {
-    discount = 100;
-  }
-  return discount;
-}
-
+// ✔️ Solve with a structure
 const RANGE_DISCOUNTS = [
   {
     min: 0,
@@ -66,15 +57,3 @@ function getDiscountMap(units: number) {
   const defaultRange = RANGE_DISCOUNTS[0];
   return rangeDiscount || defaultRange;
 }
-
-// function getDiscountSwitch(units: number) {
-//   let discount = 0;
-//   switch (units) {
-//     case :
-
-//       break;
-
-//     default:
-//       break;
-//   }
-// }

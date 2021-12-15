@@ -1,4 +1,10 @@
 /* eslint-disable max-lines-per-function */
+const myMeasureSystem = 'US';
+const myCircle: Shape = { name: 'CIRCLE', radius: 5 };
+const myArea = getArea(myCircle);
+const myUnits = getUnitName(myMeasureSystem);
+const areaDescription = `My ${myCircle.name} occupies an area of ${myArea} ${myUnits}`;
+console.log(areaDescription);
 
 type Shape = { name: string; base?: number; height?: number; width?: number; radius?: number };
 
@@ -46,10 +52,3 @@ export function getUnitSymbol(measureSystem: string): string {
   }
 }
 // 🔥 and can need another else or a switch if there is another case
-
-const myMeasureSystem = 'US';
-const myCircle: Shape = { name: 'CIRCLE', radius: 5 };
-const myArea = getArea(myCircle);
-const myUnits = getUnitName(myMeasureSystem);
-const areaDescription = `My ${myCircle.name} occupies an area of ${myArea} ${myUnits}`;
-console.log(areaDescription);

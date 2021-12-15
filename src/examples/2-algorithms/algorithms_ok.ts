@@ -2,9 +2,9 @@
 
 type Shape = { name: string; base?: number; height?: number; width?: number; radius?: number };
 
-type SystemNames = 'US' | 'SI' | '?';
+type MeasureSystemNames = 'US' | 'SI' | '?';
 
-type MeasureSystem = { systemName: SystemNames; unitName: string; unitSymbol: string };
+type MeasureSystem = { systemName: MeasureSystemNames; unitName: string; unitSymbol: string };
 
 const PI = 3.14;
 const HALVE = 0.5;
@@ -15,8 +15,14 @@ const MEASURE_SYSTEMS: MeasureSystem[] = [
   { systemName: 'SI', unitName: 'square metres', unitSymbol: 'm2' },
 ];
 
+// ✔️ this function never gets modified
+export function getArea(shape: Shape): number {
+  const calculateArea = AREA_CALCULATORS[shape.name];
+  return calculateArea(shape);
+}
+
 // ✔️ a data object with methods on each value
-// could be loaded or modified at run time
+// ⚠️ could be loaded or modified at run time
 export const AREA_CALCULATORS = {
   TRIANGLE: (shape: Shape): number => HALVE * shape.base * shape.height,
   SQUARE: (shape: Shape): number => shape.height * shape.height,
@@ -24,16 +30,10 @@ export const AREA_CALCULATORS = {
   CIRCLE: (shape: Shape): number => PI * shape.radius * shape.radius,
 };
 
-// ✔️ this function never gets modified
-export function getArea(shape: Shape): number {
-  const calculateArea = AREA_CALCULATORS[shape.name];
-  return calculateArea(shape);
-}
-
 // 💉 inject another shape without modifying
 AREA_CALCULATORS['SPHERE'] = (shape: { radius: number }) => 4 * PI * shape.radius ** 2;
 
-function getMeasureSystem(systemName: SystemNames): MeasureSystem {
+function getMeasureSystem(systemName: MeasureSystemNames): MeasureSystem {
   const defaultNotFound: MeasureSystem = {
     systemName: '?',
     unitName: '',
@@ -43,15 +43,15 @@ function getMeasureSystem(systemName: SystemNames): MeasureSystem {
   return found || defaultNotFound;
 }
 
-// ✔️ with no need for conditions we can use very simple pure functions ina fat arrow notation
-export const getUnitName = (systemName: SystemNames): string =>
+// ✔️ with no need for conditions we can use very simple pure functions in a fat arrow notation
+export const getUnitName = (systemName: MeasureSystemNames): string =>
   getMeasureSystem(systemName).unitName;
-export const getUnitSymbol = (systemName: SystemNames): string =>
+export const getUnitSymbol = (systemName: MeasureSystemNames): string =>
   getMeasureSystem(systemName).unitSymbol;
 
-const myMeasureSystem: SystemNames = 'SI';
+const myMeasureSystemName: MeasureSystemNames = 'SI';
 const myCircle: Shape = { name: 'CIRCLE', radius: 5 };
 const myArea = getArea(myCircle);
-const myUnits = getUnitName(myMeasureSystem);
+const myUnits = getUnitName(myMeasureSystemName);
 const areaDescription = `My ${myCircle.name} occupies an area of ${myArea} ${myUnits}`;
 console.log(areaDescription);
