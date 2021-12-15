@@ -8,7 +8,7 @@
 
 ---
 
-## 🔨 Usa estructuras de datos que eviten el uso de estructuras condicionales
+## 🔨 Usa estructuras de **datos** que eviten el uso de estructuras **condicionales**
 
 ### El `if` y sobre todo el `switch` huelen mal 🤢
 
@@ -30,3 +30,9 @@ https://github.com/LabsAdemy/CleanCodeLab/tree/DATA/src/examples/2-algorithms
 > "La verdad sólo se encuentra en un lugar: el código"
 >
 > -- ✍️ **Robert C. Martin**
+
+---
+
+- [⏭️ Next: 📦 OBJECT: Abstracciones de lógica.](.https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT)
+
+- [⏮️ Back: 🗂️ DATA: Abstracciones de información.](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA)

@@ -10,9 +10,13 @@
 
 ## 😶 Sin comportamiento de negocio: poca o ninguna función
 
+## 🦺 Aportan validación y coherencia
+
 ## 💞 Cohesionan variables relacionadas
 
 ## 📦 Suelen tener nombres de Entidades
+
+## 🎁 Tambien se conoce como Value Objects
 
 ## 👴 _Composición_ mejor que ~~herencia~~
 
@@ -20,11 +24,11 @@
 
 ## ⚠️ Límites
 
-- ✅1___2❌ _variables con tipos primitivos_
-- ✅2___8❌ _propiedades primitivas por estructura_
-- ✅2___8❌ _propiedades compuestas por estructura_
-- ✅1___4❌ _niveles de jerarquía_
-- ✅0___1❌ _niveles de herencia_
+- ✅1---2❌ variables con tipos primitivos
+- ✅2---8❌ propiedades primitivas por estructura
+- ✅2---8❌ propiedades compuestas por estructura
+- ✅1---4❌ niveles de jerarquía
+- ✅0---1❌ niveles de herencia
 
 ---
 
@@ -36,4 +40,8 @@ https://github.com/LabsAdemy/CleanCodeLab/tree/DATA/src/examples/1-structures
 >
 > -- ✍️ **Robert C. Martin**
 
+---
 
+- [⏭️ Next: 🔱 Condiciones y algoritmos](./2-condiciones_y_algoritmos.md)
+
+- [⏮️ Back: 🗂️ DATA: Abstracciones de información.](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA)
