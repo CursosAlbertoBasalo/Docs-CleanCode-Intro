@@ -1,6 +1,15 @@
 // ❌ duplicated data today...
 // ... may be duplicated logic tomorrow
 
+export class Entity {
+  name: string;
+  addressCity: string;
+  addressState: string;
+  taxIdNumber: number;
+  accountNumber: string;
+  accountBank: string;
+}
+
 export class Customer {
   name: string;
   addressCity: string;

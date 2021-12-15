@@ -63,8 +63,7 @@ function assertRateRange(rate: number) {
 }
 
 function assertAmountPositive(amount: number) {
-  const MAX_AMOUNT = 10000;
-  if (amount > MAX_AMOUNT) throw new Error(`Maximum amount for capital is ${MAX_AMOUNT}`);
+  if (amount < 0) throw new Error(`Amount must be positive`);
 }
 
 function getSimpleInterest(conditions: SavingsCondition): Money {
