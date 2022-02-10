@@ -32,6 +32,12 @@
 
 - En las asignaciones reducir la cantidad de operadores lógicos y aritméticos
 
+- SI puede ser a uno solo.
+
+- Si hay varios, al menos que sea seimpre el mismo.
+
+- Si son distintos, al menos que tengan la misma precedencia.
+
 ---
 
 ## 📝 Laboratorio
