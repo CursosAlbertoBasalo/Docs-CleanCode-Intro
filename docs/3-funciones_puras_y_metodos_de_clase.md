@@ -25,8 +25,8 @@
 
 - ✅0---0❌ flags
 - ✅1---2❌ argumentos
-- ✅8--12❌ complejidad ciclomática
-- ✅4---8❌ instrucciones 😱
+- ✅9--12❌ complejidad ciclomática
+- ✅9--19❌ instrucciones 😱
 
 ---
 
