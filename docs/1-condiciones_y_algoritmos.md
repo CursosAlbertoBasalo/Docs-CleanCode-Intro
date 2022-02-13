@@ -33,6 +33,6 @@ https://github.com/LabsAdemy/CleanCodeLab/tree/DATA/src/examples/2-algorithms
 
 ---
 
-- [⏭️ Next: 📦 OBJECT: Abstracciones de lógica.](.https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT)
+- [⏭️ Next: 🔱 Condiciones y algoritmos](./2-condiciones_y_algoritmos.md)
 
 - [⏮️ Back: 🗂️ DATA: Abstracciones de información.](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA)
