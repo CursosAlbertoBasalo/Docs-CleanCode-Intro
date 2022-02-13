@@ -33,6 +33,6 @@ https://github.com/LabsAdemy/CleanCodeLab/tree/DATA/src/examples/2-algorithms
 
 ---
 
-- [⏭️ Next: 🔱 Condiciones y algoritmos](./2-condiciones_y_algoritmos.md)
+- [⏭️ Next: 🗃️ Cohesión de primitivos](./2-cohesion_de_primitivos)
 
 - [⏮️ Back: 🗂️ DATA: Abstracciones de información.](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA)
