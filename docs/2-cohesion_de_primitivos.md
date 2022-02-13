@@ -42,6 +42,6 @@ https://github.com/LabsAdemy/CleanCodeLab/tree/DATA/src/examples/1-structures
 
 ---
 
-- [⏭️ Next: 📦 OBJECT: Abstracciones de lógica.](.https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT)
+- [⏭️ Next: 📦 OBJECT: Abstracciones de lógica.](https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT)
 
 - [⏮️ Back: 🗂️ DATA: Abstracciones de información.](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA)
