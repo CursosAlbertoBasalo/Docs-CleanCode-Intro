@@ -1,4 +1,4 @@
-# 🧼 CleanCode Lab
+# 🧼 CleanCode Docs
 
 ## Código limpio y artesanía del software
 
