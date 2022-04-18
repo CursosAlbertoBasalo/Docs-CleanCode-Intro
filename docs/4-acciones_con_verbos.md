@@ -43,16 +43,12 @@
 
 ---
 
-## 📝 Laboratorio
-
-https://github.com/LabsAdemy/CleanCodeLab/tree/NAME/src/examples/2-verbs
-
 > "La verdad sólo se encuentra en un lugar: el código"
 >
 > -- ✍️ **Robert C. Martin**
 
 ---
 
-- [⏭️ Next: 🔀 FUNCTION: Organización de sentencias.](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION)
+- [⏭️ Next: 🔀 FUNCTION: Organización de sentencias.](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/FUNCTION)
 
-- [⏮️ Back: 📘 NAME: Escribir para leer](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
+- [⏮️ Back: 📘 NAME: Escribir para leer](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/NAME)

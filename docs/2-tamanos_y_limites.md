@@ -69,10 +69,6 @@
 
 ---
 
-## 📝 Laboratorio
-
-https://github.com/LabsAdemy/CleanCodeLab/blob/NAME/docs/size-config.md
-
 > "La verdad sólo se encuentra en un lugar: el código"
 >
 > -- ✍️ **Robert C. Martin**
@@ -81,4 +77,4 @@ https://github.com/LabsAdemy/CleanCodeLab/blob/NAME/docs/size-config.md
 
 - [⏭️ Next: 📫 3 - Definiciones con sustantivos](./3-definiciones_con_sustantivos.md)
 
-- [⏮️ Back: 📘 NAME: Escribir para leer](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
+- [⏮️ Back: 📘 NAME: Escribir para leer](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/NAME)

@@ -24,7 +24,7 @@
 
 #### [📕 The 7 principles of naming](https://www.namingthings.co/naming-things-principles)
 
-## Examples
+<!-- ## Examples
 
 ### [📫 1 - Nouns](./src/examples/1-nouns)
 
@@ -42,4 +42,4 @@
 
 ### [🧪 3 - Test](./docs/jest-tests.md)
 
-> by [Alberto Basalo](https://twitter.com/albertobasalo)
+> by [Alberto Basalo](https://twitter.com/albertobasalo) -->

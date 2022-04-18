@@ -42,11 +42,6 @@
 
 - [Clean Code Applied to JavaScript — Part II. Variables](https://dev.to/carlillo/clean-code-applied-to-javascript-part-ii-variables-pc)
 
-## 📝 Laboratorio
-
-https://github.com/LabsAdemy/CleanCodeLab/blob/NAME/docs/jest-tests.md
-https://github.com/LabsAdemy/CleanCodeLab/tree/NAME/src/examples/1-nouns
-
 > "La verdad sólo se encuentra en un lugar: el código"
 >
 > -- ✍️ **Robert C. Martin**
@@ -55,4 +50,4 @@ https://github.com/LabsAdemy/CleanCodeLab/tree/NAME/src/examples/1-nouns
 
 - [⏭️ Next: 💪 4 - Acciones con verbos](./4-acciones_con_verbos.md)
 
-- [⏮️ Back: 📘 NAME: Escribir para leer](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
+- [⏮️ Back: 📘 NAME: Escribir para leer](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/NAME)
