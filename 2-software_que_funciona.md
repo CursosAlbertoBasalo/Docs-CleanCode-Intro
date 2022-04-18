@@ -51,4 +51,4 @@
 
 - [⏭️ Next: ✅ NAME](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/NAME)
 
-- [⏮️ Back: 🧼 CleanCode Lab](https://github.com/LabsAdemy/CleanCodeLab)
+- [⏮️ Back: 🧼 CleanCode Lab](https://github.com/LabsAdemy/Docs-CleanCode-Intro)
