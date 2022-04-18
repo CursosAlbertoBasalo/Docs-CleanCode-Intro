@@ -14,7 +14,7 @@
 
 ---
 
-![Perdone pero... le huele el código](https://github.com/LabsAdemy/CleanCodeLab/blob/main/assets/your-code-smells.jpg)
+![Perdone pero... le huele el código](https://github.com/LabsAdemy/Docs-CleanCode-Intro/blob/main/assets/your-code-smells.jpg)
 
 > Perdone, le huele el código.
 
@@ -25,7 +25,6 @@
 - El software de hoy exige mantenimiento futuro.
 
 - Con el paso del tiempo, digamos que el olor va a peor.
-
 
 > "Cualquier código tuyo que no hayas mirado últimamente, es como si lo hubiese escrito otro."
 >
@@ -51,10 +50,10 @@
 
 ...
 
-5️⃣. Keep It Simple, (*not*) Stupid **(KISS)**
+5️⃣. Keep It Simple, (_not_) Stupid **(KISS)**
 
 ---
 
-- [⏭️ Next: ✅ Software que funciona](https://github.com/LabsAdemy/CleanCodeLab/blob/main/2-software_que_funciona.md)
+- [⏭️ Next: ✅ Software que funciona](https://github.com/LabsAdemy/Docs-CleanCode-Intro/blob/main/2-software_que_funciona.md)
 
-- [⏮️ Back: 🧼 CleanCode Lab](https://github.com/LabsAdemy/CleanCodeLab)
+- [⏮️ Back: 🧼 CleanCode Lab](https://github.com/LabsAdemy/Docs-CleanCode-Intro)
