@@ -2,7 +2,7 @@
 
 ### Mejora tu código sin miedo.
 
->"Codifica como si la persona que mantendrá tu código fuera un psicópata violento que sabe dónde vives."
+> "Codifica como si la persona que mantendrá tu código fuera un psicópata violento que sabe dónde vives."
 >
 > -- ✍️ **Martin Golding**
 
@@ -18,14 +18,14 @@
 
 --
 
->"[Write tests. Not too many. Mostly integration.](https://kentcdodds.com/blog/write-tests)"
+> "[Write tests. Not too many. Mostly integration.](https://kentcdodds.com/blog/write-tests)"
 > -- ✍️ **Kent C. Dodds**
 
 ---
 
 ### Si funciona...
 
-![No siempre pruebo mi código... pero cuando lo hago, es en producción](https://github.com/LabsAdemy/CleanCodeLab/blob/main/assets/test-production.jpeg)
+![No siempre pruebo mi código... pero cuando lo hago, es en producción](https://github.com/LabsAdemy/Docs-CleanCode-Intro/blob/main/assets/test-production.jpeg)
 
 ---
 
@@ -55,6 +55,6 @@ https://github.com/LabsAdemy/CleanCodeLab/
 
 ---
 
-- [⏭️ Next: ✅ NAME](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
+- [⏭️ Next: ✅ NAME](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/NAME)
 
 - [⏮️ Back: 🧼 CleanCode Lab](https://github.com/LabsAdemy/CleanCodeLab)

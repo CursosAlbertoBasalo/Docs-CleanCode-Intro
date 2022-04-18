@@ -36,25 +36,25 @@
 
 ---
 
-### [🤢 Perdona pero... tu código huele](https://github.com/LabsAdemy/CleanCodeLab/blob/main/1-perdona_pero_tu_codigo_huele.md)
+### [🤢 Perdona pero... tu código huele](https://github.com/LabsAdemy/Docs-CleanCode-Intro/blob/main/1-perdona_pero_tu_codigo_huele.md)
 
 - Lo primero es admitir que todo código es mejorable.
 
-### [✅ Software que funciona](https://github.com/LabsAdemy/CleanCodeLab/blob/main/2-software_que_funciona.md)
+### [✅ Software que funciona](https://github.com/LabsAdemy/Docs-CleanCode-Intro/blob/main/2-software_que_funciona.md)
 
 - Mejora tu código sin miedo.
 
 ## Branch lessons
 
-### [📘 NAME: Escribir para leer](https://github.com/LabsAdemy/CleanCodeLab/tree/NAME)
+### [📘 NAME: Escribir para leer](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/NAME)
 
-### [🔀 FUNCTION: Organización de sentencias](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION)
+### [🔀 FUNCTION: Organización de sentencias](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/FUNCTION)
 
-### [🗂️ DATA: Abstracciones de información.](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA)
+### [🗂️ DATA: Abstracciones de información.](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/DATA)
 
-### [📦 OBJECT: Abstracciones de lógica](https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT)
+### [📦 OBJECT: Abstracciones de lógica](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/OBJECT)
 
-### [👨‍🍳 ARTISAN: La mejora constante.](https://github.com/LabsAdemy/CleanCodeLab/tree/ARTISAN)
+### [👨‍🍳 ARTISAN: La mejora constante.](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/ARTISAN)
 
 > "El código limpio parece escrito por alguien que se preocupa."
 >
