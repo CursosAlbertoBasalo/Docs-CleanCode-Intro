@@ -43,7 +43,7 @@
 
 ---
 
-![Writing Code](https://github.com/LabsAdemy/Docs-CleanCode-Intro/blob/main/assets/1-Writing_Code.png)
+- [⏭️ Next: 👉 Declaración, asignación e invocación.](../2-function/1-declaracion_asignacion_e_invocacion.md)
 
 ---
 

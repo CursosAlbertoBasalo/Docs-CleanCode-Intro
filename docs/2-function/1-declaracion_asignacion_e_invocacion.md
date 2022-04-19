@@ -51,5 +51,3 @@ https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/examples/1-instructi
 ---
 
 - [⏭️ Next: ➰ Estructuras repetitivas y condicionales.](./2-estructuras_repetitivas_y_condicionales.md)
-
-- [⏮️ Back: 🔀 FUNCTION: Organización de sentencias.](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION)

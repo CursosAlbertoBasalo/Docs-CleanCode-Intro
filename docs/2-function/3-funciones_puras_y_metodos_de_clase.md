@@ -134,17 +134,3 @@ function fizzBuzz(number) {
 > -- ✍️ **Robert C. Martin**
 
 ---
-
-## 📝 Laboratorio
-
-https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/examples/3-functions
-
-> "La verdad sólo se encuentra en un lugar: el código"
->
-> -- ✍️ **Robert C. Martin**
-
----
-
-- [⏭️ Next: 🗂️ DATA: Abstracciones de información.](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA)
-
-- [⏮️ Back: 🔀 FUNCTION: Organización de sentencias.](https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION)
