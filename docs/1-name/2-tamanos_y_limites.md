@@ -76,5 +76,3 @@
 ---
 
 - [⏭️ Next: 📫 3 - Definiciones con sustantivos](./3-definiciones_con_sustantivos.md)
-
-- [⏮️ Back: 📘 NAME: Escribir para leer](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/NAME)

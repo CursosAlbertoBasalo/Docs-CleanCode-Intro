@@ -65,5 +65,3 @@
 ---
 
 - [⏭️ Next: 📏 2 - Tamaños y límites](./2-tamanos_y_limites.md)
-
-- [⏮️ Back: 📘 NAME: Escribir para leer](./2-tamanos_y_limites.md)

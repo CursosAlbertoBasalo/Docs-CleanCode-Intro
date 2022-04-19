@@ -43,12 +43,12 @@
 
 ---
 
+![Writing Code](https://github.com/LabsAdemy/Docs-CleanCode-Intro/blob/main/assets/1-Writing_Code.png)
+
+---
+
 > "La verdad sólo se encuentra en un lugar: el código"
 >
 > -- ✍️ **Robert C. Martin**
 
 ---
-
-- [⏭️ Next: 🔀 FUNCTION: Organización de sentencias.](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/FUNCTION)
-
-- [⏮️ Back: 📘 NAME: Escribir para leer](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/NAME)

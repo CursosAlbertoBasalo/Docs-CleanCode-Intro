@@ -49,5 +49,3 @@
 ---
 
 - [⏭️ Next: 💪 4 - Acciones con verbos](./4-acciones_con_verbos.md)
-
-- [⏮️ Back: 📘 NAME: Escribir para leer](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/NAME)
