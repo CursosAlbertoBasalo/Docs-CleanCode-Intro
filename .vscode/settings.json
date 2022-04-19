@@ -2,6 +2,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
+<<<<<<< HEAD
   "window.zoomLevel": 1.6,
   "cSpell.language": "en,es-ES",
   "cSpell.words": [
@@ -18,4 +19,6 @@
     "prettierrc",
     "spellright"
   ]
+=======
+>>>>>>> FUNCTION
 }
