@@ -49,6 +49,4 @@
 
 ---
 
-- [⏭️ Next: ✅ NAME](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/NAME)
-
-- [⏮️ Back: 🧼 CleanCode Lab](https://github.com/LabsAdemy/Docs-CleanCode-Intro)
+- [⏭️ Next: ✅ NAME](./1-name/1-estilo_y_orden.md)

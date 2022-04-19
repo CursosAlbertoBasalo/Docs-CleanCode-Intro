@@ -55,5 +55,3 @@
 ---
 
 - [⏭️ Next: ✅ Software que funciona](./2-software_que_funciona.md)
-
-- [⏮️ Back: 🧼 CleanCode Lab](https://github.com/LabsAdemy/Docs-CleanCode-Intro)
