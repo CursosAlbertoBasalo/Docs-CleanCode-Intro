@@ -54,6 +54,6 @@
 
 ---
 
-- [⏭️ Next: ✅ Software que funciona](https://github.com/LabsAdemy/Docs-CleanCode-Intro/blob/main/2-software_que_funciona.md)
+- [⏭️ Next: ✅ Software que funciona](./2-software_que_funciona.md)
 
 - [⏮️ Back: 🧼 CleanCode Lab](https://github.com/LabsAdemy/Docs-CleanCode-Intro)
