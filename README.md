@@ -36,11 +36,11 @@
 
 ---
 
-### [🤢 Perdona pero... tu código huele](.docs/1-perdona_pero_tu_codigo_huele.md)
+### [🤢 Perdona pero... tu código huele](https://github.com/LabsAdemy/Docs-CleanCode-Intro/blob/main/docs/1-perdona_pero_tu_codigo_huele.md)
 
 - Lo primero es admitir que todo código es mejorable.
 
-### [✅ Software que funciona](.docs/2-software_que_funciona.md)
+### [✅ Software que funciona](https://github.com/LabsAdemy/Docs-CleanCode-Intro/blob/main/docs/2-software_que_funciona.md)
 
 - Mejora tu código sin miedo.
 
