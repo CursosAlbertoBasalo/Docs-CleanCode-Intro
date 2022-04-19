@@ -49,4 +49,4 @@
 
 ---
 
-- [⏭️ Next: ✅ NAME](./1-name/1-estilo_y_orden.md)
+- [⏭️ Next: ✨ Estilo y orden](./1-name/1-estilo_y_orden.md)
