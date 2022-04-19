@@ -25,7 +25,7 @@
 
 ### Si funciona...
 
-![No siempre pruebo mi código... pero cuando lo hago, es en producción](https://github.com/LabsAdemy/Docs-CleanCode-Intro/blob/main/assets/test-production.jpeg)
+![No siempre pruebo mi código... pero cuando lo hago, es en producción](./test-production.jpeg)
 
 ---
 

@@ -30,21 +30,11 @@
 
 ---
 
-![wtf-naming](https://github.com/labsademy/cleancodelab/raw/NAME/assets/naming.png)
+![wtf-naming](./naming.png)
 
 ### 🔮 Reduce WTF!
 
 ❌ **No magic numbers**.
-
----
-
-### 🔗 Links de referencia
-
-- [Clean Code Applied to JavaScript — Part II. Variables](https://dev.to/carlillo/clean-code-applied-to-javascript-part-ii-variables-pc)
-
-> "La verdad sólo se encuentra en un lugar: el código"
->
-> -- ✍️ **Robert C. Martin**
 
 ---
 

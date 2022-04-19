@@ -58,10 +58,4 @@
 
 ---
 
-> "La verdad sólo se encuentra en un lugar: el código"
->
-> -- ✍️ **Robert C. Martin**
-
----
-
 - [⏭️ Next: 📏 2 - Tamaños y límites](./2-tamanos_y_limites.md)

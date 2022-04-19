@@ -134,3 +134,9 @@ function fizzBuzz(number) {
 > -- ✍️ **Robert C. Martin**
 
 ---
+
+> "La verdad sólo se encuentra en un lugar: el código"
+>
+> -- ✍️ **Robert C. Martin**
+
+---

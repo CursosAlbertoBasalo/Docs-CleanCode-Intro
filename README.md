@@ -44,15 +44,11 @@
 
 - Mejora tu código sin miedo.
 
-## Branch lessons
+## Infographic lessons
 
-### [📘 NAME: Escribir para leer](.docs/1-name/1-estilo_y_orden.md)
+### [📘 NAME: Escribir para leer](https://github.com/LabsAdemy/Docs-CleanCode-Intro/blob/main/assets/1-Writing_Code.png)
 
-[🏷️ Writing Code](https://github.com/LabsAdemy/Docs-CleanCode-Intro/blob/main/assets/1-Writing_Code.png)
-
-### [🔀 FUNCTION: Organización de sentencias](.docs/2-function/1-declaracion_asignacion_e_invocacion.md)
-
-[🏷️ Function Rule One](https://github.com/LabsAdemy/Docs-CleanCode-Intro/blob/main/assets/1-Writing_Code.png)
+### [🔀 FUNCTION: Rule One](.docs/2-function/1-declaracion_asignacion_e_invocacion.md)
 
 ### [🗂️ DATA: Abstracciones de información.](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/DATA)
 

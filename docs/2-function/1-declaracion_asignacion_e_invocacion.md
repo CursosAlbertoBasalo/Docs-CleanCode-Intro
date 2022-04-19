@@ -40,14 +40,4 @@
 
 ---
 
-## 📝 Laboratorio
-
-https://github.com/LabsAdemy/CleanCodeLab/tree/FUNCTION/src/examples/1-instructions
-
-> "La verdad sólo se encuentra en un lugar: el código"
->
-> -- ✍️ **Robert C. Martin**
-
----
-
 - [⏭️ Next: ➰ Estructuras repetitivas y condicionales.](./2-estructuras_repetitivas_y_condicionales.md)

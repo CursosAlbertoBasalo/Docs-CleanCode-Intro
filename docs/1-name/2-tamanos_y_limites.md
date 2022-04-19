@@ -31,7 +31,7 @@
 
 ---
 
-![Tabs vs Spaces](https://github.com/labsademy/cleancodelab/raw/NAME/assets/tabs_vs_spaces.png)
+![Tabs vs Spaces](./tabs_vs_spaces.png)
 
 ---
 
@@ -66,12 +66,6 @@
 - [12 Principles For Clean HTML Code](https://www.smashingmagazine.com/2008/11/12-principles-for-keeping-your-code-clean/)
 
 - [Clean Code in SQL](https://riptutorial.com/sql/topic/9843/clean-code-in-sql)
-
----
-
-> "La verdad sólo se encuentra en un lugar: el código"
->
-> -- ✍️ **Robert C. Martin**
 
 ---
 
