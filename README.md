@@ -1,6 +1,6 @@
 # 🧼 Clean Code Docs
 
-> [Tutorial](https://labsademy.github.io/Docs-CleanCode-Intro/)
+## [Tutorial de código limpio](https://labsademy.github.io/Docs-CleanCode-Intro/)
 
 > "El código limpio parece escrito por alguien que se preocupa."
 >
