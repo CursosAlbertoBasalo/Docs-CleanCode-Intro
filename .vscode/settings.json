@@ -3,6 +3,7 @@
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "window.zoomLevel": 1.6,
   "cSpell.language": "en,es-ES",
   "cSpell.words": [
@@ -22,3 +23,10 @@
 =======
 >>>>>>> FUNCTION
 }
+=======
+  "cSpell.language": "en,es,es-ES",
+  "cSpell.words": [
+    "Wirth"
+  ]
+}
+>>>>>>> DATA
