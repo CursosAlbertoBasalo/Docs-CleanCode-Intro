@@ -36,6 +36,8 @@
 
 ---
 
+## Intro y Motivación
+
 ### [🤢 Perdona pero... tu código huele](./1-perdona_pero_tu_codigo_huele.md)
 
 - Lo primero es admitir que todo código es mejorable.
@@ -44,15 +46,17 @@
 
 - Mejora tu código sin miedo.
 
-## Infographic lessons
+## Lecciones
 
-### [📘 NAME: Escribir para leer](./1-Writing_Code.png)
+### [📘 NAME: Escribir para leer](./1-name/1-estilo_y_orden.md)
 
-### [🔀 FUNCTION: Rule One](.docs/2-function/1-declaracion_asignacion_e_invocacion.md)
+### [🔀 FUNCTION: Rule One](./2-function/1-declaracion_asignacion_e_invocacion.md)
 
 ### [🗂️ DATA: Abstracciones de información.](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/DATA)
 
 ### [📦 OBJECT: Abstracciones de lógica](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/OBJECT)
+
+## Corolario
 
 ### [👨‍🍳 ARTISAN: La mejora constante.](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/ARTISAN)
 
