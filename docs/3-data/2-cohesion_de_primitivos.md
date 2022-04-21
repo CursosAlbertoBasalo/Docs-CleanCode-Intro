@@ -32,10 +32,6 @@
 
 ---
 
-## 📝 Laboratorio
-
-https://github.com/LabsAdemy/CleanCodeLab/tree/DATA/src/examples/1-structures
-
 > "La verdad sólo se encuentra en un lugar: el código"
 >
 > -- ✍️ **Robert C. Martin**
@@ -43,5 +39,3 @@ https://github.com/LabsAdemy/CleanCodeLab/tree/DATA/src/examples/1-structures
 ---
 
 - [⏭️ Next: 📦 OBJECT: Abstracciones de lógica.](https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT)
-
-- [⏮️ Back: 🗂️ DATA: Abstracciones de información.](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA)

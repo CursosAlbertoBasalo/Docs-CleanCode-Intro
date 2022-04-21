@@ -23,16 +23,4 @@
 
 ---
 
-## 📝 Laboratorio
-
-https://github.com/LabsAdemy/CleanCodeLab/tree/DATA/src/examples/2-algorithms
-
-> "La verdad sólo se encuentra en un lugar: el código"
->
-> -- ✍️ **Robert C. Martin**
-
----
-
 - [⏭️ Next: 🗃️ Cohesión de primitivos](./2-cohesion_de_primitivos.md)
-
-- [⏮️ Back: 🗂️ DATA: Abstracciones de información.](https://github.com/LabsAdemy/CleanCodeLab/tree/DATA)
