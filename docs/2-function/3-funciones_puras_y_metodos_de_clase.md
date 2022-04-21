@@ -81,16 +81,7 @@
 
 - Para ser usadas como regla general
 - Con nombre para indicar propósito
-- Entre llaves para delimitar le bloque de instrucciones
-
-```js
-function fizzBuzz(number) {
-  if (number % 15 == 0) console.log('FizzBuzz');
-  else if (number % 3 == 0) console.log('Fizz');
-  else if (number % 5 == 0) console.log('Buzz');
-  else console.log(i);
-}
-```
+- Entre llaves para delimitar el bloque de instrucciones
 
 ### Expresiones complejas
 
@@ -98,24 +89,11 @@ function fizzBuzz(number) {
 - Mantienen sintaxis similar a las declaraciones
 - Deben ser nombradas para rastreo del callStack
 
-```js
-[1, 2, 3].forEach(function fizzBuzz(number) {
-  if (number % 15 == 0) console.log('FizzBuzz');
-  else if (number % 3 == 0) console.log('Fizz');
-  else if (number % 5 == 0) console.log('Buzz');
-  else console.log(i);
-});
-```
-
 ### Expresiones flecha (lambda)
 
 - Para ser usadas como argumentos de funciones de orden superior
 - Aprovechan sintaxis concisa y anónima
 - Indicadas para expresiones de retorno sencillas de una línea
-
-```js
-[1, 2, 3].filter(number => number % 2 === 0);
-```
 
 ---
 

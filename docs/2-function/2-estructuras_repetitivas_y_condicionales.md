@@ -36,7 +36,7 @@
 
 - ⚠️ Operadores ternarios
 
-  - `condition ? value if true : value if false`
+  - `condition ? value_if_true : value_if_false`
 
 - ⚠️ Operadores lógicos
 
@@ -59,8 +59,8 @@
 
 - 🛢️ Te obliga a **extraer** código a funciones.
 - 🏷️ Te obliga a **nombrar** las nuevas funciones.
-- 💼 Más **reglas de negocio** en tu código
-- 💬 **Cero** necesidad de comentarios
+- 💼 Más **reglas de negocio** en tu código.
+- 💬 **Cero** necesidad de comentarios.
 
 ---
 

@@ -50,7 +50,11 @@
 
 ### [📘 NAME: Escribir para leer](./1-name/1-estilo_y_orden.md)
 
+- [Infographic 1 - Writing Code](/infographics/1-writing_code.png)
+
 ### [🔀 FUNCTION: Rule One](./2-function/1-declaracion_asignacion_e_invocacion.md)
+
+- [Infographic 2- Functions Rule One](/infographics/2-functions_rule_one.png)
 
 ### [🗂️ DATA: Abstracciones de información.](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/DATA)
 
