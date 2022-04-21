@@ -6,6 +6,11 @@
 >
 > -- ✍️ **Robert C. Martin**
 
+## Infographic lessons
+
+- [1- Writing Code](https://labsademy.github.io/Docs-CleanCode-Intro/infographics/1-writing_code.png)
+- [2- Functions Rule One](https://labsademy.github.io/Docs-CleanCode-Intro/infographics/2-functions_rule_one.png)
+
 ---
 
 <h3>By Alberto Basalo</h3>
