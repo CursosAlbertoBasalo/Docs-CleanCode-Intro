@@ -56,7 +56,7 @@
 
 - [Infographic 2- Functions Rule One](/infographics/2-functions_rule_one.png)
 
-### [🗂️ DATA: Abstracciones de información.](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/DATA)
+### [🗂️ DATA: Abstracciones de información.](./3-data/1-condiciones_y_algoritmos.md)
 
 ### [📦 OBJECT: Abstracciones de lógica](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/OBJECT)
 
