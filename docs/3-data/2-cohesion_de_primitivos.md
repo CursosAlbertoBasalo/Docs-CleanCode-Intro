@@ -8,15 +8,15 @@
 
 ---
 
-## 😶 Sin comportamiento de negocio: poca o ninguna función
+## 😶 Sin comportamiento de negocio: pocas funciones de validación trivial
 
-## 🦺 Aportan validación y coherencia
+## 🦺 Aportan coherencia
 
 ## 💞 Cohesionan variables relacionadas
 
 ## 📦 Suelen tener nombres de Entidades
 
-## 🎁 Tambien se conoce como Value Objects
+## 🎁 También se conocen como **Value Objects**
 
 ## 👴 _Composición_ mejor que ~~herencia~~
 
@@ -26,8 +26,8 @@
 
 - ✅1---2❌ variables con tipos primitivos
 - ✅2---8❌ propiedades primitivas por estructura
-- ✅2---8❌ propiedades compuestas por estructura
-- ✅1---4❌ niveles de jerarquía
+- ✅2---8❌ propiedades compuestas por agregado
+- ✅1---2❌ niveles de jerarquía
 - ✅0---1❌ niveles de herencia
 
 ---
@@ -35,7 +35,3 @@
 > "La verdad sólo se encuentra en un lugar: el código"
 >
 > -- ✍️ **Robert C. Martin**
-
----
-
-- [⏭️ Next: 📦 OBJECT: Abstracciones de lógica.](https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT)

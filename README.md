@@ -10,6 +10,7 @@
 
 - [1- Writing Code](https://labsademy.github.io/Docs-CleanCode-Intro/infographics/1-writing_code.png)
 - [2- Functions Rule One](https://labsademy.github.io/Docs-CleanCode-Intro/infographics/2-functions_rule_one.png)
+- [3- Data models evolution](https://labsademy.github.io/Docs-CleanCode-Intro/infographics/3-data_models_evolution.png)
 
 ---
 

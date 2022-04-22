@@ -12,7 +12,7 @@
 
 ### El `if` y sobre todo el `switch` huelen mal 🤢
 
-- Reduce los `if` evitando 🚩 flags en las funciones.
+- Reduce los `if` evitando encapsulando las comprobaciones en estructuras.
 - Reduce los `if` evitando 🕳️ nulls.
 - Sustituye un 🔱`switch` por un objeto, un array o un mapa.
 - Incluso valora cambiar un 🔱`switch` por un sistema de clases con ~~herencia~~ 🙃.

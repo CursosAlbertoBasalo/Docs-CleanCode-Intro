@@ -58,6 +58,8 @@
 
 ### [🗂️ DATA: Abstracciones de información.](./3-data/1-condiciones_y_algoritmos.md)
 
+- [Infographic 3- Data Models Evolution](/infographics/3-data_models_evolution.png)
+
 ### [📦 OBJECT: Abstracciones de lógica](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/OBJECT)
 
 ## Corolario
