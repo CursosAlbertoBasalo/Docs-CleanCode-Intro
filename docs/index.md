@@ -38,11 +38,11 @@
 
 ## Intro y Motivación
 
-### [🤢 Perdona pero... tu código huele](./1-perdona_pero_tu_codigo_huele.md)
+### [🤢 Perdona pero... tu código huele](./0-smells/1-perdona_pero_tu_codigo_huele.md)
 
 - Lo primero es admitir que todo código es mejorable.
 
-### [✅ Software que funciona](./2-software_que_funciona.md)
+### [✅ Software que funciona](./0-smells/2-software_que_funciona.md)
 
 - Mejora tu código sin miedo.
 
@@ -60,11 +60,11 @@
 
 - [Infographic 3- Data Models Evolution](/infographics/3-data_models_evolution.png)
 
-### [📦 OBJECT: Abstracciones de lógica](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/OBJECT)
+### [📦 OBJECT: Abstracciones de lógica](./4-object/1-cohesion_de_funciones.md)
 
 ## Corolario
 
-### [👨‍🍳 ARTISAN: La mejora constante.](https://github.com/LabsAdemy/Docs-CleanCode-Intro/tree/ARTISAN)
+### [👨‍🍳 ARTISAN: La mejora constante.](./5-artisan/1-la_mejora_constante.md)
 
 ---
 
