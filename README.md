@@ -6,6 +6,8 @@
 >
 > -- ✍️ **Robert C. Martin**
 
+![La única métrica del código limpio](https://labsademy.github.io/Docs-CleanCode-Intro/clean-code_wtf.jpg)
+
 ## Infographic lessons
 
 - [1- Writing Code](https://labsademy.github.io/Docs-CleanCode-Intro/infographics/1-writing_code.png)
