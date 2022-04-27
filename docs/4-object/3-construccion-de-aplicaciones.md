@@ -1,6 +1,6 @@
 # 🏗️ Construcción de aplicaciones
 
-## Componentes: Agrupación de clases con un proposito
+## Componentes: Agrupación de clases con un propósito
 
 > "La **simplicidad** consiste en,
 >
@@ -36,7 +36,7 @@
 
 - No hables con extraños
 
-- No más de un _punto_ despues del `this.`
+- No más de un _punto_ después del `this.`
 
 ## 🔀 Command | Query
 
@@ -63,3 +63,7 @@
 ### ⬇️ Bajo acoplamiento
 
 - Si cambian mis colaboradores no me afecta
+
+---
+
+- [⏭️ Next: 📝 Hacer las cosas bien.](../5-artisan/1-hacer_las_cosas_bien.md)

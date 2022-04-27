@@ -64,6 +64,4 @@ Depender de abstracciones, no de implementaciones concretas. Resolver en ejecuci
 
 ---
 
-## 📝 Laboratorio
-
-https://github.com/LabsAdemy/CleanCodeLab/tree/OBJECT/src/examples/
+- [⏭️ Next: 🏗️ Construcción de aplicaciones.](./3-construccion-de-aplicaciones.md)

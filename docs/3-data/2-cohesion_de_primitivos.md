@@ -35,3 +35,7 @@
 > "La verdad sólo se encuentra en un lugar: el código"
 >
 > -- ✍️ **Robert C. Martin**
+
+---
+
+- [⏭️ Next: 🧱 Cohesión de funciones](../4-object/1-cohesion_de_funciones.md)

@@ -27,3 +27,7 @@
 > El profesionalismo y la artesanía provienen de valores que impulsa la **DISCIPLINA**."
 >
 > -- ✍️ **Robert C. Martin**
+
+---
+
+> ⏭️ Next: Clean code avanzado: Principios y patrones de diseño.

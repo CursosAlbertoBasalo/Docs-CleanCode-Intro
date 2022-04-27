@@ -31,3 +31,5 @@
 ### No sólo respondo al cambio, también **agrego valor**
 
 ---
+
+- [⏭️ Next: ✒️ Disciplina y buenos hábitos.](./2-disciplina_y_buenos_habitos.md)

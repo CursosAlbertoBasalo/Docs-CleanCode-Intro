@@ -30,3 +30,7 @@
 - ✅0-------2❌ _argumentos por método_
 - ✅0-------1❌ _niveles de herencia_
 - ✅100--200❌ _instrucciones_
+
+---
+
+- [⏭️ Next: ⚒️ Principios sólidos para finales flexibles.](./2-principios_solidos_para_finales_flexibles.md)
