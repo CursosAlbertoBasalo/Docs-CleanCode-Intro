@@ -2,7 +2,7 @@
 
 ### Ni artista 👩‍🎨 ni operario/a 👨‍🏭
 
-> "Voy a hacer un **buen trabajo**.
+> "Voy a hacer un **BUEN TRABAJO**.
 >
 > No tengo prisa.
 >
@@ -14,13 +14,13 @@
 >
 > Voy a practicar, practicar y practicar
 >
-> porque eso es lo que hace un **profesional**.
+> porque eso es lo que hace un **PROFESIONAL**.
 >
 > -- ✍️ **Sandro Mancuso**
 
 ---
 
-> "El **código limpio** no se escribe siguiendo un conjunto de reglas.
+> "El **CÓDIGO LIMPIO** no se escribe siguiendo un conjunto de reglas.
 >
 > No te conviertes en un artesano de software al aprender una lista de heurísticas.
 >

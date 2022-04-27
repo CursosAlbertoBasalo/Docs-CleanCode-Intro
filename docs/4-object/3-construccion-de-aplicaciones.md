@@ -40,11 +40,11 @@
 
 ## 🔀 Command | Query
 
-- Ordenas un cambio el estado
+- **Ordenas** un cambio del estado
 
-- O consultas el valor del estado
+- O **consultas** el valor del estado
 
-- Pero no ambas
+- Pero _no ambas_
 
 ---
 
@@ -58,11 +58,11 @@
 
 ### ⬆️ Alta cohesión
 
-- Usar mis propiedades en mis métodos
+- Usar _mis_ propiedades en _mis_ métodos
 
 ### ⬇️ Bajo acoplamiento
 
-- Si cambian mis colaboradores no me afecta
+- Si cambian mis _colaboradores_ no me afecta
 
 ---
 
