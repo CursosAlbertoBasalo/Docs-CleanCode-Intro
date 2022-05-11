@@ -64,7 +64,7 @@
 
 ## Corolario
 
-### [👨‍🍳 ARTISAN: La mejora constante.](./5-artisan/1-la_mejora_constante.md)
+### [👨‍🍳 ARTISAN: La mejora constante.](./5-artisan/1-hacer_las_cosas_bien.md)
 
 ---
 

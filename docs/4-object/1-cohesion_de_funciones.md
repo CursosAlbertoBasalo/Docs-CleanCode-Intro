@@ -4,7 +4,7 @@
 
 > "Al diseñar nuestras clases debemos,
 >
-> **juntar** las características relacionadas que cambien la **misma** razón.
+> **juntar** las características relacionadas que cambien por la **misma** razón.
 >
 > Y deberíamos **separar** las características que cambian por **diferentes** razones."
 >
