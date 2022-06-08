@@ -10,12 +10,13 @@
 
 ## 🔨 Usa estructuras de **datos** que eviten el uso de estructuras **condicionales**
 
-### El `if` y sobre todo el `switch` huelen mal 🤢
+### El `if` y, sobre todo, el `switch` huelen mal 🤢
 
-- Reduce los `if` evitando encapsulando las comprobaciones en estructuras.
+- Reduce los `if` encapsulando las comprobaciones en estructuras 🔏.
 - Reduce los `if` evitando 🕳️ nulls.
+- Reduce los `if` evitando 💣 errores.
 - Sustituye un 🔱`switch` por un objeto, un array o un mapa.
-- Incluso valora cambiar un 🔱`switch` por un sistema de clases con ~~herencia~~ 🙃.
+- Valora cambiar un 🔱`switch` por un patrón estrategia 🎖️.
 
 ---
 

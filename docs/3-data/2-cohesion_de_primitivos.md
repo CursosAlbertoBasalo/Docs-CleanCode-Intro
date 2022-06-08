@@ -8,21 +8,21 @@
 
 ---
 
-## 😶 Sin comportamiento de negocio: pocas funciones de validación trivial
-
-## 🦺 Aportan coherencia
-
 ## 💞 Cohesionan variables relacionadas
 
-## 📦 Suelen tener nombres de Entidades
+## 📦 Suelen tener nombres de Entidades de negocio
 
-## 🎁 También se conocen como **Value Objects**
+## 😶 Sin comportamiento, un poco **Data Transfer Objects**
+
+## 🎁 Con funciones de validación trivial se convierten en **Value Objects**
+
+## 🎁 Con funciones de negocio se convierten en **Entities**
 
 ## 👴 _Composición_ mejor que ~~herencia~~
 
 ---
 
-## ⚠️ Límites
+## ⚠️ Límites (revisar el modelo cuando nos pasemos)
 
 - ✅1---2❌ variables con tipos primitivos
 - ✅2---8❌ propiedades primitivas por estructura

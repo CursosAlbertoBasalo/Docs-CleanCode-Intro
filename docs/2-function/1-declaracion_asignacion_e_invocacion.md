@@ -22,7 +22,7 @@
 
 - Llamadas a métodos, subrutinas, procedimientos o funciones.
 
-## ¿Cómo escribir una instrucción?
+## ¿Cómo escribir una expresión?
 
 ### 🍭 Sencilla
 
