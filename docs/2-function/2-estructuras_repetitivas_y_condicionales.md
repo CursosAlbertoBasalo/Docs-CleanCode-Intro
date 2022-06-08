@@ -12,23 +12,23 @@
 
 - Si hay un `if` debes ponerlo cuanto antes. Idealmente lo primero.
 
-- La condición de 1️⃣ sólo operador lógico. En otro caso debe ser una función.
+- Valorar el retorno **anticipado** _vs_ el retorno **unificado.**
+
+- La condición es una expresión... y tiene que ser sencilla 🍭
 
 - Envolver los bloques siempre 🔑 entre llaves.🗝
-
-- ⚠️ Usar ternarios sólo en casos triviales.
-
-- Valorar retorno **anticipado** _vs_ retorno **unificado.**
 
 - Evitar los ~~switches~~.
 
 ## ➿ Repetitivas
 
-- La condición de ruptura 1️⃣ sólo operador lógico.
+- La condición de ruptura es una expresión... y tiene que ser sencilla 🍭.
 
 - Las variables **locales** deben ser legibles.
 
-- Se permiten los índices clásicos `i, j`.
+- Se permiten los índices clásicos `i, j` para bucles.
+
+- Se permite abreviaturas en funciones de segundo orden triviales
 
 ---
 
@@ -36,7 +36,7 @@
 
 - ⚠️ Operadores ternarios
 
-  - `condition ? value_if_true : value_if_false`
+  - `variable = condition ? value_if_true : value_if_false`
 
 - ⚠️ Operadores lógicos
 

@@ -11,11 +11,10 @@
 ## 🛩️ Pequeñas y Claras
 
 - ♻️ Cuanto más pequeñas más reutilizables.
-- 💪 Con **verbos** en su nombre que indiquen propósito
 - 🐫 _DRY_: Don´t Repeat yourself.
+- 💪 Con **verbos** en su nombre que indiquen propósito
 - 🥚 Con valores por defecto en sus argumentos si el lenguaje los soporta.
 - 💂 Con guardias para retornos tempranos de casos incorrectos o triviales.
-- 🧐 Sin condiciones complejas.
 - 🚩 Sin flags: crea dos variantes con nombre específico.
 - 💬 ...sin comentarios.
 
@@ -60,7 +59,7 @@
 
   - ## 🦄 un sólo propósito.
 
-  - ## 👨‍💼 un mismo nivel de abstracción.
+  - ## 👩🏼‍💼 un mismo nivel de abstracción 👨🏼‍🔧.
 
   > Las instrucciones en funciones públicas deberían llamar a funciones privadas.
 
@@ -75,7 +74,7 @@
 
 ---
 
-## Tipos de funciones en JavaScript
+## 🟨 Tipos de funciones en JavaScript
 
 ### Declaraciones
 

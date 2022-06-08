@@ -16,7 +16,7 @@
 
 ### 📥 Asignación
 
-- Asignar el resultado de expresiones a variables.
+- Establecer el valor de variables con el resultado de expresiones.
 
 ### 📞 Invocación
 
@@ -30,7 +30,7 @@
 
 ### 🦄 Un sólo operador
 
-- En las asignaciones reducir la cantidad de operadores lógicos y aritméticos
+- En las expresiones reducir la cantidad de operadores lógicos y aritméticos
 
 - Si puede ser a UNO solo.
 
