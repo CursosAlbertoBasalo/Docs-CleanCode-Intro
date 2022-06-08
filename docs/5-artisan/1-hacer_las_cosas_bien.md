@@ -2,7 +2,7 @@
 
 ### Del manifiesto ágil al artesano.
 
-> "Deja siempre el campamento más limpio de lo que estaba."
+> "🏕️ Deja siempre el campamento más limpio de lo que estaba."
 >
 > -- ✍️ **La regla Scout**
 
