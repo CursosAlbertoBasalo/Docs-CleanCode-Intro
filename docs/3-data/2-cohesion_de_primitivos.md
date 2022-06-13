@@ -14,7 +14,7 @@
 
 ## 😶 Sin comportamiento, un poco **Data Transfer Objects**
 
-## 🎁 Con funciones de validación trivial se convierten en **Value Objects**
+## 🎁 Con funciones de validación se convierten en **Value Objects**
 
 ## 🎁 Con funciones de negocio se convierten en **Entities**
 

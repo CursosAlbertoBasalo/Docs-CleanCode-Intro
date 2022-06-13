@@ -14,9 +14,7 @@
 
 - Reduce los `if` encapsulando las comprobaciones en estructuras 🔏.
 - Reduce los `if` evitando 🕳️ nulls.
-- Reduce los `if` evitando 💣 errores.
 - Sustituye un 🔱`switch` por un objeto, un array o un mapa.
-- Valora cambiar un 🔱`switch` por un patrón estrategia 🎖️.
 
 ---
 
